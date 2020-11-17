@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                xmlns:util="http://xmlns.jcp.org/jsf/composite/util"
+                xmlns:ruex="http://xmlns.jcp.org/jsf/composite/comp/ruex"
+                template="#{_config.template}">
+    <ui:define name="title">
+        <span  class="text-primary">
+            <i class="fa fa-check"/>
+            CORRECION DE DOCUMENTOS
+        </span>
+    </ui:define>
+    <ui:define name="content">
+        <h:form enctype="multipart/form-data">
+            <hsk:note rendered="#{_regRegistro.regRegistro == null}">
+                #{TXT.ERROR_STATE}
+                <h:commandLink value="#{BTN.PAGE_RETURN}"
+                               action="inbox"
+                               immediate="true"
+                               styleClass="text-danger"/>
+            </hsk:note>
+            <hsk:cardForm rendered="#{_regRegistro.regRegistro != null}" styleClass="center col-10">
+                <f:facet name="header">
+                    CORRECION DE DOCUMENTOS
+                    <i class="fa fa-key"/>
+                    #{_regRegistro.regRegistro.idRegistro}
+                </f:facet>
+                <h5 class="card-title">Registro</h5>
+                <ruex:registroView value="#{_regRegistro.regRegistro}"
+                                   cliEmpresaRendered="false"
+                                   descripcionRendered="false"/>
+                <h5 class="card-title">Empresa</h5>
+                <ruex:empresaView value="#{_regRegistro.regRegistro.cliEmpresa}"
+                                  nombreComercialRendered="false"
+                                  descripcionRendered="false"/>
+                <h5 class="card-title">Documentos</h5>
+                <c:forEach var="it" items="#{_regRegistro.regRegistro.cliEmpresa.cliDocumentoList}">
+                    <ruex:documentoForm value="#{it}"
+                                        vigenciaDesdeRendered="false"
+                                        vigenciaHastaRendered="false"
+                                        tipoDisabled="true"
+                                        observacionDisabled="true"
+                                        estadoDisabled="true"
+                                        rendered="#{it.observacion != null}">
+                    </ruex:documentoForm>
+                    <ruex:documentoView value="#{it}"
+                                        rendered="#{it.observacion == null}">
+                    </ruex:documentoView>
+                    <hr/>
+                </c:forEach>
+                <f:facet name="footer">
+                    <h:commandLink action="#{_regRegistro.retornarAction}"
+                                   immediate="true"
+                                   styleClass="btn btn-sm btn-secondary ml-1">
+                        <i class="fa fa-arrow-left"/>
+                        #{BTN.CANCEL}
+                    </h:commandLink>
+                    <h:commandLink action="#{_regRegistro.corregirDocumentosAction()}"
+                                   styleClass="btn btn-sm btn-primary ml-1">
+                        <i class="fa fa-check"/>
+                        GUARDAR CORRECCIONES
+                    </h:commandLink>
+                </f:facet>
+            </hsk:cardForm>
+        </h:form>
+    </ui:define>
+</ui:composition>

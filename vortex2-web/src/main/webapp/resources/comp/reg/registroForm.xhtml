@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.RegRegistro"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="classInput" default="form-control"/>
+        <!-- attribute handler -->
+
+        <!-- idRegistro -->
+        <cc:attribute name="idRegistroLabel" default="#{LBL.REGISTRO.ID_REGISTRO}"/>
+        <cc:attribute name="idRegistroDisabled" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="idRegistroRendered" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- codigo -->
+        <cc:attribute name="codigoLabel" default="#{LBL.REGISTRO.CODIGO}"/>
+        <cc:attribute name="codigoDisabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="codigoRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- fechaSolicitud -->
+        <cc:attribute name="fechaSolicitudLabel" default="#{LBL.REGISTRO.FECHA_SOLICITUD}"/>
+        <cc:attribute name="fechaSolicitudDisabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaSolicitudRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- fechaEmision -->
+        <cc:attribute name="fechaEmisionLabel" default="#{LBL.REGISTRO.FECHA_EMISION}"/>
+        <cc:attribute name="fechaEmisionDisabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaEmisionRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- fechaVencimiento -->
+        <cc:attribute name="fechaVencimientoLabel" default="#{LBL.REGISTRO.FECHA_VENCIMIENTO}"/>
+        <cc:attribute name="fechaVencimientoDisabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaVencimientoRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- descripcion -->
+        <cc:attribute name="descripcionLabel" default="#{LBL.REGISTRO.DESCRIPCION}"/>
+        <cc:attribute name="descripcionDisabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="descripcionRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- origen -->
+        <cc:attribute name="origenLabel" default="#{LBL.REGISTRO.ORIGEN}"/>
+        <cc:attribute name="origenDisabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="origenRendered" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="origenOption" default="#{_option.regRegistroOrigenOption}" type="java.util.List"/>
+
+
+        <!-- tipo -->
+        <cc:attribute name="tipoLabel" default="#{LBL.REGISTRO.TIPO}"/>
+        <cc:attribute name="tipoDisabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="tipoOption" default="#{_option.regRegistroTipoOption}" type="java.util.List"/>
+
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.REGISTRO.ESTADO}"/>
+        <cc:attribute name="estadoDisabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="estadoOption" default="#{_option.regRegistroEstadoOption}" type="java.util.List"/>
+
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.idRegistroLabel}"
+                          rendered="#{cc.attrs.idRegistroRendered}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="idRegistro"
+                             value="#{cc.attrs.value.idRegistro}"
+                             label="#{cc.attrs.idRegistroLabel}"
+                             title="#{cc.attrs.idRegistroLabel}"
+                             pt:placeholder="#{cc.attrs.idRegistroLabel}"
+                             disabled="#{cc.attrs.idRegistroDisabled}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="idRegistro"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.codigoLabel}"
+                          rendered="#{cc.attrs.codigoRendered}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="codigo"
+                             value="#{cc.attrs.value.codigo}"
+                             label="#{cc.attrs.codigoLabel}"
+                             title="#{cc.attrs.codigoLabel}"
+                             pt:placeholder="#{cc.attrs.codigoLabel}"
+                             disabled="#{cc.attrs.codigoDisabled}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="codigo"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaSolicitudLabel}"
+                          rendered="#{cc.attrs.fechaSolicitudRendered}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="fechaSolicitud"
+                             value="#{cc.attrs.value.fechaSolicitud}"
+                             label="#{cc.attrs.fechaSolicitudLabel}"
+                             title="#{cc.attrs.fechaSolicitudLabel}"
+                             pt:placeholder="#{cc.attrs.fechaSolicitudLabel}"
+                             disabled="#{cc.attrs.fechaSolicitudDisabled}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="fechaSolicitud"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaEmisionLabel}"
+                          rendered="#{cc.attrs.fechaEmisionRendered}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="fechaEmision"
+                             value="#{cc.attrs.value.fechaEmision}"
+                             label="#{cc.attrs.fechaEmisionLabel}"
+                             title="#{cc.attrs.fechaEmisionLabel}"
+                             pt:placeholder="#{cc.attrs.fechaEmisionLabel}"
+                             disabled="#{cc.attrs.fechaEmisionDisabled}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="fechaEmision"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaVencimientoLabel}"
+                          rendered="#{cc.attrs.fechaVencimientoRendered}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="fechaVencimiento"
+                             value="#{cc.attrs.value.fechaVencimiento}"
+                             label="#{cc.attrs.fechaVencimientoLabel}"
+                             title="#{cc.attrs.fechaVencimientoLabel}"
+                             pt:placeholder="#{cc.attrs.fechaVencimientoLabel}"
+                             disabled="#{cc.attrs.fechaVencimientoDisabled}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="fechaVencimiento"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.descripcionLabel}"
+                          rendered="#{cc.attrs.descripcionRendered}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputTextarea id="descripcion"
+                                 value="#{cc.attrs.value.descripcion}"
+                                 label="#{cc.attrs.descripcionLabel}"
+                                 title="#{cc.attrs.descripcionLabel}"
+                                 pt:placeholder="#{cc.attrs.descripcionLabel}"
+                                 disabled="#{cc.attrs.descripcionDisabled}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 required="true"
+                                 cols="50"
+                                 rows="2"/>
+
+                <h:message for="descripcion"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.origenLabel}"
+                          rendered="#{cc.attrs.origenRendered}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="origen"
+                                 value="#{cc.attrs.value.origen}"
+                                 label="#{cc.attrs.origenLabel}"
+                                 title="#{cc.attrs.origenLabel}"
+                                 disabled="#{cc.attrs.origenDisabled}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.origenOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="origen"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.tipoLabel}"
+                          rendered="#{cc.attrs.tipoRendered}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="tipo"
+                                 value="#{cc.attrs.value.tipo}"
+                                 label="#{cc.attrs.tipoLabel}"
+                                 title="#{cc.attrs.tipoLabel}"
+                                 disabled="#{cc.attrs.tipoDisabled}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.tipoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="tipo"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="estado"
+                                 value="#{cc.attrs.value.estado}"
+                                 label="#{cc.attrs.estadoLabel}"
+                                 title="#{cc.attrs.estadoLabel}"
+                                 disabled="#{cc.attrs.estadoDisabled}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.estadoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="estado"/>
+            </hsk:rowLabel>
+
+        </div>
+    </cc:implementation>
+</div>

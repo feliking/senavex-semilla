@@ -1,0 +1,9 @@
+# Sistema SENAVEX
+
+## Documentacion
+
+Se disponen los siguientes documentos:
+
+* link:siporta-docs/src/main/lineamientos/01-entorno.adoc[01 Entorno de desarrollo] 
+* link:siporta-docs/src/main/lineamientos/02-proyecto.adoc[02 Proyecto]
+* link:siporta-docs/src/main/lineamientos/03-vista.adoc[03 Vista] 

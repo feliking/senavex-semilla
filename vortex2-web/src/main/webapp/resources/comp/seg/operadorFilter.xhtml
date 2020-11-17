@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.filter.SegOperadorFilter"/>
+        <cc:attribute name="disabled" default="#{cc.attrs.value == null}" type="java.lang.Boolean"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <!-- attribute handler -->
+
+        <!-- empresaKey -->
+        <cc:attribute name="empresaKeyCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="empresaKeyLabel" default="#{LBL.EMPRESA.REF_KEY}"/>
+        <cc:attribute name="empresaKeyDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="empresaKeyRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- empresaName -->
+        <cc:attribute name="empresaNameCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="empresaNameLabel" default="#{LBL.EMPRESA.REF_NAME}"/>
+        <cc:attribute name="empresaNameDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="empresaNameRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- segPersonaNombreCompleto -->
+        <cc:attribute name="nombreCompletoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="nombreCompletoLabel" default="#{LBL.PERSONA.NOMBRE_COMPLETO}"/>
+        <cc:attribute name="nombreCompletoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreCompletoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- numeroDocumento -->
+        <cc:attribute name="numeroDocumentoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="numeroDocumentoLabel" default="#{LBL.OPERADOR.NUMERO_DOCUMENTO}"/>
+        <cc:attribute name="numeroDocumentoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroDocumentoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- correoElectronico -->
+        <cc:attribute name="correoElectronicoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="correoElectronicoLabel" default="#{LBL.OPERADOR.CORREO_ELECTRONICO}"/>
+        <cc:attribute name="correoElectronicoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="correoElectronicoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- nombreCargo -->
+        <cc:attribute name="nombreCargoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="nombreCargoLabel" default="#{LBL.OPERADOR.NOMBRE_CARGO}"/>
+        <cc:attribute name="nombreCargoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreCargoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- perfil -->
+        <cc:attribute name="perfilCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="perfilLabel" default="#{LBL.OPERADOR.PERFIL}"/>
+        <cc:attribute name="perfilDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="perfilRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="perfilOption" default="#{_option.segOperadorPerfilOption}" type="java.util.List"/>
+
+        <!-- estado -->
+        <cc:attribute name="estadoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="estadoLabel" default="#{LBL.OPERADOR.ESTADO}"/>
+        <cc:attribute name="estadoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoOption" default="#{_option.segOperadorEstadoOption}" type="java.util.List"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-filter #{cc.attrs.styleClass}">
+            
+            
+            <h:panelGroup rendered="#{cc.attrs.empresaKeyRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.cliEmpresaRefKey}"
+                                 label="#{cc.attrs.empresaKeyLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.empresaKeyCol}"
+                                 disabled="#{cc.attrs.empresaKeyDisabled}"/>
+
+            </h:panelGroup>
+            
+            <h:panelGroup rendered="#{cc.attrs.empresaNameRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.cliEmpresaRefName}"
+                                 label="#{cc.attrs.empresaNameLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.empresaNameCol}"
+                                 disabled="#{cc.attrs.empresaNameDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.numeroDocumentoRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.numeroDocumento}"
+                                 label="#{cc.attrs.numeroDocumentoLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.numeroDocumentoCol}"
+                                 disabled="#{cc.attrs.numeroDocumentoDisabled}"/>
+
+            </h:panelGroup>
+            
+            <h:panelGroup rendered="#{cc.attrs.nombreCompletoRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.nombreCompleto}"
+                                 label="#{cc.attrs.nombreCompletoLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.nombreCompletoCol}"
+                                 disabled="#{cc.attrs.nombreCompletoDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.correoElectronicoRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.correoElectronico}"
+                                 label="#{cc.attrs.correoElectronicoLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.correoElectronicoCol}"
+                                 disabled="#{cc.attrs.correoElectronicoDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.nombreCargoRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.nombreCargo}"
+                                 label="#{cc.attrs.nombreCargoLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.nombreCargoCol}"
+                                 disabled="#{cc.attrs.nombreCargoDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.perfilRendered}">
+
+                <hsk:selectFilter value="#{cc.attrs.value.perfil}"
+                                  label="#{cc.attrs.perfilLabel}"
+                                  styleClass="#{cc.attrs.perfilCol}"
+                                  disabled="#{cc.attrs.perfilDisabled}"
+                                  converter="hiska.faces.Param">
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.perfilOption}" 
+                                   itemValue="#{item}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </hsk:selectFilter>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.estadoRendered}">
+
+                <hsk:selectFilter value="#{cc.attrs.value.estado}"
+                                  label="#{cc.attrs.estadoLabel}"
+                                  styleClass="#{cc.attrs.estadoCol}"
+                                  disabled="#{cc.attrs.estadoDisabled}"
+                                  converter="hiska.faces.Param">
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.estadoOption}" 
+                                   itemValue="#{item}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </hsk:selectFilter>
+
+            </h:panelGroup>
+
+        </div>
+    </cc:implementation>
+</div>

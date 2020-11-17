@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.filter.SegCorreoFilter"/>
+        <cc:attribute name="disabled" default="#{cc.attrs.value == null}" type="java.lang.Boolean"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <!-- attribute handler -->
+
+        <!-- idCorreo -->
+        <cc:attribute name="idCorreoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="idCorreoLabel" default="#{LBL.CORREO.ID_CORREO}"/>
+        <cc:attribute name="idCorreoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="idCorreoRendered" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- idReferencia -->
+        <cc:attribute name="idReferenciaCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="idReferenciaLabel" default="#{LBL.CORREO.ID_REFERENCIA}"/>
+        <cc:attribute name="idReferenciaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="idReferenciaRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- correoDestino -->
+        <cc:attribute name="correoDestinoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="correoDestinoLabel" default="#{LBL.CORREO.CORREO_DESTINO}"/>
+        <cc:attribute name="correoDestinoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="correoDestinoRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- correoCopia -->
+        <cc:attribute name="correoCopiaCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="correoCopiaLabel" default="#{LBL.CORREO.CORREO_COPIA}"/>
+        <cc:attribute name="correoCopiaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="correoCopiaRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- valorToken -->
+        <cc:attribute name="valorTokenCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="valorTokenLabel" default="#{LBL.CORREO.VALOR_TOKEN}"/>
+        <cc:attribute name="valorTokenDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="valorTokenRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- fechaSolicitud -->
+        <cc:attribute name="fechaSolicitudCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="fechaSolicitudLabel" default="#{LBL.CORREO.FECHA_SOLICITUD}"/>
+        <cc:attribute name="fechaSolicitudDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaSolicitudRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- fechaUso -->
+        <cc:attribute name="fechaUsoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="fechaUsoLabel" default="#{LBL.CORREO.FECHA_USO}"/>
+        <cc:attribute name="fechaUsoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaUsoRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- fechaVigencia -->
+        <cc:attribute name="fechaVigenciaCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="fechaVigenciaLabel" default="#{LBL.CORREO.FECHA_VIGENCIA}"/>
+        <cc:attribute name="fechaVigenciaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaVigenciaRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- tipo -->
+        <cc:attribute name="tipoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="tipoLabel" default="#{LBL.CORREO.TIPO}"/>
+        <cc:attribute name="tipoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="tipoOption" default="#{_option.segCorreoTipoOption}" type="java.util.List"/>
+
+        <!-- plantilla -->
+        <cc:attribute name="plantillaCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="plantillaLabel" default="#{LBL.CORREO.PLANTILLA}"/>
+        <cc:attribute name="plantillaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="plantillaRendered" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="plantillaOption" default="#{_option.segCorreoPlantillaOption}" type="java.util.List"/>
+
+        <!-- estado -->
+        <cc:attribute name="estadoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+        <cc:attribute name="estadoLabel" default="#{LBL.CORREO.ESTADO}"/>
+        <cc:attribute name="estadoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="estadoOption" default="#{_option.segCorreoEstadoOption}" type="java.util.List"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-filter #{cc.attrs.styleClass}">
+
+            <h:panelGroup rendered="#{cc.attrs.idCorreoRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.idCorreo}"
+                                 label="#{cc.attrs.idCorreoLabel}"
+                                 converter="javax.faces.Long"
+                                 styleClass="#{cc.attrs.idCorreoCol}"
+                                 disabled="#{cc.attrs.idCorreoDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.idReferenciaRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.idReferencia}"
+                                 label="#{cc.attrs.idReferenciaLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.idReferenciaCol}"
+                                 disabled="#{cc.attrs.idReferenciaDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.correoDestinoRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.correoDestino}"
+                                 label="#{cc.attrs.correoDestinoLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.correoDestinoCol}"
+                                 disabled="#{cc.attrs.correoDestinoDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.correoCopiaRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.correoCopia}"
+                                 label="#{cc.attrs.correoCopiaLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.correoCopiaCol}"
+                                 disabled="#{cc.attrs.correoCopiaDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.valorTokenRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.valorToken}"
+                                 label="#{cc.attrs.valorTokenLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.valorTokenCol}"
+                                 disabled="#{cc.attrs.valorTokenDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.fechaSolicitudRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.fechaSolicitud}"
+                                 label="#{cc.attrs.fechaSolicitudLabel}"
+                                 converter="javax.faces.Date"
+                                 styleClass="#{cc.attrs.fechaSolicitudCol}"
+                                 disabled="#{cc.attrs.fechaSolicitudDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.fechaUsoRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.fechaUso}"
+                                 label="#{cc.attrs.fechaUsoLabel}"
+                                 converter="javax.faces.Date"
+                                 styleClass="#{cc.attrs.fechaUsoCol}"
+                                 disabled="#{cc.attrs.fechaUsoDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.fechaVigenciaRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.fechaVigencia}"
+                                 label="#{cc.attrs.fechaVigenciaLabel}"
+                                 converter="javax.faces.Date"
+                                 styleClass="#{cc.attrs.fechaVigenciaCol}"
+                                 disabled="#{cc.attrs.fechaVigenciaDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.tipoRendered}">
+
+                <hsk:selectFilter value="#{cc.attrs.value.tipo}"
+                                  label="#{cc.attrs.tipoLabel}"
+                                  styleClass="#{cc.attrs.tipoCol}"
+                                  disabled="#{cc.attrs.tipoDisabled}"
+                                  converter="hiska.faces.Param">
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.tipoOption}" 
+                                   itemValue="#{item}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </hsk:selectFilter>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.plantillaRendered}">
+
+                <hsk:inputFilter value="#{cc.attrs.value.plantilla}"
+                                 label="#{cc.attrs.plantillaLabel}"
+                                 converter="javax.faces.String"
+                                 styleClass="#{cc.attrs.plantillaCol}"
+                                 disabled="#{cc.attrs.plantillaDisabled}"/>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{cc.attrs.estadoRendered}">
+
+                <hsk:selectFilter value="#{cc.attrs.value.estado}"
+                                  label="#{cc.attrs.estadoLabel}"
+                                  styleClass="#{cc.attrs.estadoCol}"
+                                  disabled="#{cc.attrs.estadoDisabled}"
+                                  converter="hiska.faces.Param">
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.estadoOption}" 
+                                   itemValue="#{item}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </hsk:selectFilter>
+
+            </h:panelGroup>
+
+        </div>
+    </cc:implementation>
+</div>

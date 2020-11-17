@@ -1,0 +1,137 @@
+# Lineamientos de desarrollo EJB
+
+La capa de Negocio se divide en 3 componentes, Servicio / Implementacion / Logica
+
+* *Service* son interfaces que declaran las funcionalidades a implementar
+
+* *Implement* son las implementacion de las interfaces que conciertan los servicios atomicos
+
+* *Logica* son metodos atomicos de de bajo nivel
+
+
+[source,]
+----
+/src
+    /<paquete base>.serv
+        <BEAN FUNCIONALIDAD>Serv
+            - Defincion de Metodos
+            - NO PUEDEN retornar EXCEPCIONES
+            - Cada Metodo recibe un solo objeto
+            - Cada Mrtodo retorna un objeto RESULT
+    /<paquete base>.impl
+        <BEAN FUNCIONALIDAD>Impl
+            - Implementa los metodos definidos en <BEAN FUNCIONALIDAD>Serv
+            - Maneja la Transaccion y Rollback
+            - Manejo el patron Bloque o Pipeline
+            - Solo puede invocar a metodos definidos en la capa LOGIC
+            - Controlar el mensaje final al usuario
+    /<paquete base>.logic
+        <BEAN FUNCIONALIDAD>Logic
+            - Metodos Atomicos
+            - Alta abstraccion para su reutilizacion
+            - Control de Validacion 
+            - Retorna el objeto RESULT
+----
+
+# Definicion basica de un Servicio
+
+[source,java]
+----
+package bo.gob.senavex.vortex2.serv;
+
+public interface SegAccesoServ {
+   Result ping();
+
+   ResultItem<SegUsuario> segUsuarioLogin(final Captcha<Login> captcha);
+
+   Result segUsuarioRegisterToken(final Captcha<SegUsuario> captcha);
+
+   Result segUsuarioRegisterConfirm(final String id);
+
+   Result segUsuarioRecoveryToken(final Captcha<String> captcha);
+
+   Result segUsuarioRecoveryConfirm(final Captcha<String> captcha);
+
+   Result segTokenDelete(final String id);
+
+   Result segUsuarioLogout();
+}
+
+----
+# Algoritmo basico de Implementacion
+
+[source,java]
+----
+   // PIPELINE BASICO
+   // PF: https://ramdajs.com/
+   @Override
+   @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
+   public Result segUsuarioRegisterToken(final Captcha<SegUsuario> captcha) {
+      SegUsuario segUsuario = captcha.getData();
+      SegPersona segPersona = segUsuario.getSegPersona();
+      Result result = segTokenLogic.assertCaptcha(captcha);
+      if (result.isSuccess()) {
+         Result resultItem = segUsuarioLogic.segUsuarioVerify(segUsuario.getCorreoElectronico());
+         result.accept(resultItem);
+      }
+      if (result.isSuccess()) {
+         ResultItem<SegPersona> resultItem = i16dService.segipVerificar(segPersona);
+         segPersona = resultItem.getValue();
+         result.accept(resultItem);
+      }
+      if (result.isSuccess()) {
+         segPersona.setEstado(SegPersonaLogic.E_REGISTRADO);
+         ResultItem<SegPersona> resultItem = segPersonaLogic.segPersonaPersist(segPersona);
+         segPersona = resultItem.getValue();
+         segUsuario.setSegPersona(segPersona);
+         result.accept(resultItem);
+      }
+      if (result.isSuccess()) {
+         segUsuario.setEstado(SegUsuarioLogic.E_REGISTRADO);
+         segUsuario.setTipo(SegUsuarioLogic.T_NORMAL);
+         ResultItem<SegUsuario> resultItem = segUsuarioLogic.segUsuarioPersist(segUsuario);
+         result.accept(resultItem);
+      }
+      if (result.isSuccess()) {
+         SegToken segToken = createTokenRegister(segUsuario);
+         ResultItem<SegToken> resultItem = segTokenLogic.segTokenPersist(segToken);
+         result.accept(resultItem);
+      }
+      if (result.isError()) {
+         // Marcamos el metodo para realizar Rollback
+         sessionContext.setRollbackOnly();
+      }
+      return result;
+   }
+----
+
+
+# Algoritmo basico de Logica
+
+[source,java]
+----
+
+
+   public ResultItem<SegPersona> segPersonaPersist(final SegPersona segPersona) {
+      ResultItem<SegPersona> result = new ResultItem<>();
+      //Validacion de la Entidad SegPersona
+      Message message = MessageBuilder.create("SEG-2001: Validacion Registro Persona")
+            //Ver API Ajava
+            .validate(segPersona, "idPersona") Validation
+            .get();
+      if (!message.isCauseEmpty()) {
+         // Retornamos un mensaje de error
+         result.setSuccess(false);
+         result.addMessage(message);
+         return result;
+      }
+      em.persist(segPersona);
+      // Retornamos un mensaje de exito
+      result.setValue(segPersona);
+      result.message("SEG-1001: El Persona fue registrado correctamente")
+            .cause("ID: " + segPersona.getIdPersona())
+            .action("Puede proceder a realizar mas operaciones");
+      return result;
+   }
+----
+

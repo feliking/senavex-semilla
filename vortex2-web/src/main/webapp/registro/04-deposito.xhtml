@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                xmlns:util="http://xmlns.jcp.org/jsf/composite/util"
+                xmlns:ruex="http://xmlns.jcp.org/jsf/composite/comp/ruex"
+                template="#{_config.template}">
+    <ui:define name="title">
+        <span  class="text-primary">
+            <i class="fa fa-check"/>
+            REGISTRO DE DEPOSITOS
+        </span>
+    </ui:define>
+    <ui:define name="content">
+        <h:form enctype="multipart/form-data">
+            <hsk:note rendered="#{_regRegistro.regRegistro == null}">
+                #{TXT.ERROR_STATE}
+                <h:commandLink value="#{BTN.PAGE_RETURN}"
+                               action="inbox"
+                               immediate="true"
+                               styleClass="text-danger"/>
+            </hsk:note>
+
+            <hsk:cardForm rendered="#{_regRegistro.regRegistro != null}" styleClass="center col-10">
+                <f:facet name="header">
+                    REGISTRO DE DEPOSITOS
+                    <i class="fa fa-key"/>
+                    #{_regRegistro.regRegistro.idRegistro}
+                </f:facet>
+                <h5 class="card-title cursor-pointer"
+                    data-toggle="collapse" 
+                    data-target="#regRegistro">
+                    <h:outputText value="#{_regRegistro.regRegistro.tipo}"/>
+                </h5>
+                <div id="regRegistro" class="collapse">
+                    <ruex:registroView value="#{_regRegistro.regRegistro}"
+                                       descripcionRendered="false"/>
+                </div>
+                <h5 class="card-title cursor-pointer"
+                    data-toggle="collapse" 
+                    data-target="#ctaPago">
+                    <h:outputText value="#{_regRegistro.regRegistro.ctaPago.tipo}"/>
+                </h5>
+                <div id="ctaPago" class="collapse show">
+                    <ruex:pagoForm value="#{_regRegistro.regRegistro.ctaPago}"
+                                   disabled="true"/>
+                </div>
+
+                <h5 class="card-title">
+                    REGISTRAR DEPOSITO
+                </h5>
+
+                <hsk:cardForm styleClass="center col-12 col-xl-8"
+                              rendered="#{_regRegistro.part.partForm}">
+                    <f:facet name="header">
+                        Registro de Deposito
+                    </f:facet>
+                    <ruex:depositoForm value="#{_regRegistro.part.item}"/>
+                    <f:facet name="footer">
+                        <h:commandLink action="#{_regRegistro.part.cancelar()}"
+                                           styleClass="btn btn-sm btn-secondary ml-1"
+                                       immediate="true">
+                            <i class="fa fa-arrow-left"/>
+                            #{BTN.CANCEL}
+                        </h:commandLink>
+                        <h:commandLink styleClass="btn btn-sm btn-primary"
+                                       action="#{_regRegistro.part.adicionar(_regRegistro.regRegistro.ctaPago.ctaDepositoList)}">
+                            <i class="fa fa-check"/>
+                            Adicionar
+                        </h:commandLink>
+                    </f:facet>
+                </hsk:cardForm>
+                <ruex:depositoTable value="#{_regRegistro.regRegistro.ctaPago.ctaDepositoList}"
+                                    rendered="#{_regRegistro.part.partList}">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:commandLink action="#{_regRegistro.part.crear()}"
+                                           styleClass="btn btn-sm btn-primary pb-0 pt-0"
+                                           immediate="true">
+                                <i class="fa fa-plus"/>
+                                Nuevo Deposito
+                            </h:commandLink>
+                        </f:facet>
+                        <h:commandLink styleClass="btn btn-sm btn-primary pb-0 pt-0"
+                                       action="#{_regRegistro.part.editar(row)}"
+                                       immediate="true">
+                            <i class="fa fa-check"/>
+                            Editar
+                        </h:commandLink>
+                        <h:commandLink styleClass="btn btn-sm btn-danger pb-0 pt-0"
+                                       action="#{_regRegistro.part.quitar(_regRegistro.regRegistro.ctaPago.ctaDepositoList, row)}"
+                                       immediate="true"
+                                       rendered="#{row.idDeposito == null}">
+                            <i class="fa fa-minus"/>
+                            Quitar
+                        </h:commandLink>
+                    </h:column>
+                </ruex:depositoTable>
+
+                <f:facet name="footer">
+                    <h:commandLink action="#{_regRegistro.retornarAction}"
+                                   immediate="true"
+                                   styleClass="btn btn-sm btn-secondary ml-1">
+                        <i class="fa fa-arrow-left"/>
+                        #{BTN.CANCEL}
+                    </h:commandLink>
+                <h:commandLink action="#{_regRegistro.guardarDepositosAction()}"
+                               styleClass="btn btn-sm btn-primary ml-1 center">
+                    <i class="fa fa-check"/>
+                    GUARDAR DEPOSITOS
+                </h:commandLink>
+                </f:facet>
+            </hsk:cardForm>
+        </h:form>
+    </ui:define>
+</ui:composition>

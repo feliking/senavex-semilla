@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio -->
+<jasperTemplate xmlns="http://jasperreports.sourceforge.net/jasperreports/template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/template http://jasperreports.sourceforge.net/xsd/jaspertemplate.xsd">
+	<style name="DEFAULT_FONT" hTextAlign="Left" vTextAlign="Middle" isBlankWhenNull="true" fontName="SansSerif" fontSize="7">
+		<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2"/>
+	</style>
+	<style name="DEFAULT_H1" style="DEFAULT_FONT" fontSize="12" isBold="true"/>
+	<style name="DEFAULT_H2" style="DEFAULT_FONT" fontSize="10" isBold="true"/>
+	<style name="DEFAULT_H3" style="DEFAULT_FONT" fontSize="8" isBold="true"/>
+	<style name="DEFAULT_H4" style="DEFAULT_FONT" mode="Transparent" fontSize="7" isBold="true"/>
+	<style name="DEFAULT_H5" style="DEFAULT_FONT" fontSize="6" isBold="true" isItalic="true"/>
+	<style name="DEFAULT_H6" style="DEFAULT_FONT" fontSize="5" isBold="true" isItalic="true"/>
+	<style name="DEFAULT_D1" style="DEFAULT_FONT" fontSize="10"/>
+	<style name="DEFAULT_D2" style="DEFAULT_FONT" fontSize="9"/>
+	<style name="DEFAULT_D3" style="DEFAULT_FONT" fontSize="8"/>
+	<style name="DEFAULT_D4" style="DEFAULT_FONT" fontSize="7"/>
+	<style name="DEFAULT_D5" style="DEFAULT_FONT" fontSize="6" isItalic="true"/>
+	<style name="DEFAULT_D6" style="DEFAULT_FONT" fontSize="5" isItalic="true"/>
+	<style name="H1" style="DEFAULT_H1"/>
+	<style name="H1L" style="DEFAULT_H1">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H1X" style="DEFAULT_H1">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H1F" style="DEFAULT_H1" mode="Opaque" forecolor="#FFFFFF" backcolor="#333333">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D1" style="DEFAULT_D1"/>
+	<style name="D1L" style="DEFAULT_D1">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D1X" style="DEFAULT_D1">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D1F" style="DEFAULT_D1" mode="Opaque" forecolor="#FFFFFF" backcolor="#333333">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H2" style="DEFAULT_H2"/>
+	<style name="H2L" style="DEFAULT_H2">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H2X" style="DEFAULT_H2">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H2F" style="DEFAULT_H2" mode="Opaque" forecolor="#FFFFFF" backcolor="#333333">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D2" style="DEFAULT_D2"/>
+	<style name="D2L" style="DEFAULT_D2">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D2X" style="DEFAULT_D2">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D2F" style="DEFAULT_D2" mode="Opaque" forecolor="#FFFFFF" backcolor="#333333">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H3" style="DEFAULT_H3"/>
+	<style name="H3L" style="DEFAULT_H3">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H3X" style="DEFAULT_H3">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H3F" style="DEFAULT_H3" mode="Opaque" forecolor="#000000" backcolor="#BFBFBF">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D3" style="DEFAULT_D3"/>
+	<style name="D3L" style="DEFAULT_D3">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D3X" style="DEFAULT_D3">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D3F" style="DEFAULT_D3" mode="Opaque" forecolor="#000000" backcolor="#BFBFBF">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H4" style="DEFAULT_H4"/>
+	<style name="H4L" style="DEFAULT_H4">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H4X" style="DEFAULT_H4">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H4F" style="DEFAULT_H4" mode="Opaque" forecolor="#000000" backcolor="rgba(227, 222, 222, 0.5019608)">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D4" style="DEFAULT_D4"/>
+	<style name="D4L" style="DEFAULT_D4">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D4X" style="DEFAULT_D4">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D4F" style="DEFAULT_D4" mode="Opaque" forecolor="#000000" backcolor="#D1D1D1">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H5" style="DEFAULT_H5"/>
+	<style name="H5L" style="DEFAULT_H5">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H5X" style="DEFAULT_H5">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H5F" style="DEFAULT_H5" mode="Opaque" forecolor="#000000" backcolor="#E8E8E8">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D5" style="DEFAULT_D5"/>
+	<style name="D5L" style="DEFAULT_D5">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D5X" style="DEFAULT_D5">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D5F" style="DEFAULT_D5" mode="Opaque" forecolor="#000000" backcolor="#E8E8E8">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H6" style="DEFAULT_H6"/>
+	<style name="H6L" style="DEFAULT_H6">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H6X" style="DEFAULT_H6">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="H6F" style="DEFAULT_H6" mode="Opaque" forecolor="#000000" backcolor="#FFFFFF">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D6" style="DEFAULT_D6"/>
+	<style name="D6L" style="DEFAULT_D6">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D6X" style="DEFAULT_D6">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="D6F" style="DEFAULT_D6" mode="Opaque" forecolor="#000000" backcolor="#FFFFFF">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.3"/>
+			<leftPen lineWidth="0.3"/>
+			<bottomPen lineWidth="0.3"/>
+			<rightPen lineWidth="0.3"/>
+		</box>
+	</style>
+	<style name="LINE">
+		<box>
+			<pen lineColor="#000000"/>
+			<bottomPen lineWidth="0.5"/>
+		</box>
+	</style>
+</jasperTemplate>

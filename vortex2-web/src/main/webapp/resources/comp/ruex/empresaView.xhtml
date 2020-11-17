@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.CliEmpresa"/>
+        <cc:attribute name="size" default="sm"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="classInput" default="form-control form-control-#{cc.attrs.size}"/>
+        <!-- attribute handler -->
+
+        <!-- fechaFundacion -->
+        <cc:attribute name="fechaFundacionLabel" default="#{LBL.EMPRESA.FECHA_FUNDACION}"/>
+        <cc:attribute name="fechaFundacionRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- fechaOperacion -->
+        <cc:attribute name="fechaOperacionLabel" default="#{LBL.EMPRESA.FECHA_OPERACION}"/>
+        <cc:attribute name="fechaOperacionRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- descripcion -->
+        <cc:attribute name="descripcionLabel" default="#{LBL.EMPRESA.DESCRIPCION}"/>
+        <cc:attribute name="descripcionRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- actividad -->
+        <cc:attribute name="actividadLabel" default="#{LBL.EMPRESA.ACTIVIDAD}"/>
+        <cc:attribute name="actividadRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- tipo -->
+        <cc:attribute name="tipoLabel" default="#{LBL.EMPRESA.TIPO}"/>
+        <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- afiliaciones -->
+        <cc:attribute name="afiliacionesLabel" default="#{LBL.EMPRESA.AFILIACIONES}"/>
+        <cc:attribute name="afiliacionesRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.EMPRESA.ESTADO}"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- refName -->
+        <cc:attribute name="refNameLabel" default="#{LBL.EMPRESA.REF_NAME}"/>
+        <cc:attribute name="refNameRendered" default="true" type="java.lang.Boolean"/>
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.actividadLabel}"
+                          rendered="#{cc.attrs.actividadRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:outputText value="#{cc.attrs.value.actividad}"
+                              title="#{cc.attrs.actividadLabel}"
+                              styleClass="#{cc.attrs.classInput}"
+                              converter="hiska.faces.Param"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:outputText value="#{cc.attrs.value.estado}"
+                              title="#{cc.attrs.estadoLabel}"
+                              styleClass="#{cc.attrs.classInput}"
+                              converter="hiska.faces.Param"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.refNameLabel}"
+                          rendered="#{cc.attrs.refNameRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <h:outputText value="#{cc.attrs.value.refName}"
+                              title="#{cc.attrs.refNameLabel}"
+                              styleClass="#{cc.attrs.classInput}"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.tipoLabel}"
+                          rendered="#{cc.attrs.tipoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <h:outputText value="#{cc.attrs.value.tipo}"
+                              title="#{cc.attrs.tipoLabel}"
+                              styleClass="#{cc.attrs.classInput}"
+                              converter="hiska.faces.Param"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.descripcionLabel}"
+                          rendered="#{cc.attrs.descripcionRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:outputText value="#{cc.attrs.value.descripcion}"
+                              title="#{cc.attrs.descripcionLabel}"
+                              styleClass="#{cc.attrs.classInput}"/>
+
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.fechaFundacionLabel}"
+                          rendered="#{cc.attrs.fechaFundacionRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:outputText value="#{cc.attrs.value.fechaFundacion}"
+                              title="#{cc.attrs.fechaFundacionLabel}"
+                              styleClass="#{cc.attrs.classInput}"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.fechaOperacionLabel}"
+                          rendered="#{cc.attrs.fechaOperacionRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:outputText value="#{cc.attrs.value.fechaOperacion}"
+                              title="#{cc.attrs.fechaOperacionLabel}"
+                              styleClass="#{cc.attrs.classInput}"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.afiliacionesLabel}"
+                          rendered="#{cc.attrs.afiliacionesRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <div class="overflow-auto">
+                    <c:forEach var="it" items="#{cc.attrs.value.afiliaciones}">
+                        <h:outputText value="#{it}"
+                                      title="#{cc.attrs.afiliacionesLabel}"
+                                      styleClass="#{cc.attrs.classInput}"
+                                      converter="hiska.faces.Param"/>
+                    </c:forEach>
+                </div>
+            </hsk:rowLabel>
+        </div>
+    </cc:implementation>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+    <context-root>/vortex2</context-root>
+    <security-domain>vortex2-realm</security-domain>
+    <resource-ref>
+        <res-ref-name>jdbc/vortex2-store</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <jndi-name>java:/senavex-dev/jdbc/vortex2-store</jndi-name>
+    </resource-ref>
+    <resource-ref>
+        <res-ref-name>mail/vortex2-send</res-ref-name>
+        <jndi-name>java:/senavex-dev/mail/vortex2-send</jndi-name>
+    </resource-ref>
+</jboss-web>

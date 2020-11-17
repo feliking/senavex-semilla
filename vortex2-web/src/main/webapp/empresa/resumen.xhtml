@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                xmlns:ruex="http://xmlns.jcp.org/jsf/composite/comp/ruex"
+                xmlns:cli="http://xmlns.jcp.org/jsf/composite/comp/cli"
+                template="#{_config.template}">
+    <ui:define name="title">
+        <span  class="text-primary">
+            <i class="fa fa-eye"/>
+            #{TXT.EMPRESA.TITLE} - #{TXT.EMPRESA.PAGE_DETAIL}
+        </span>
+    </ui:define>
+    <ui:define name="content">
+        <h:form>
+            <hsk:note rendered="#{_cliEmpresa.cliEmpresa == null}">
+                #{TXT.ERROR_STATE}
+                <h:commandLink value="#{BTN.PAGE_RETURN}"
+                               action="inbox"
+                               immediate="true"
+                               styleClass="text-danger"/>
+            </hsk:note>
+            <hsk:cardForm rendered="#{_cliEmpresa.cliEmpresa != null}"
+                          styleClass="col-12 col-xl-8 center">
+                <f:facet name="header">
+                    #{TXT.EMPRESA.TITLE_VIEW}
+                    <i class="fa fa-key"/>
+                    #{_cliEmpresa.cliEmpresa.idEmpresa}
+                </f:facet>
+                <h5 class="card-title">Empresa</h5>
+                <ruex:empresaView value="#{_cliEmpresa.cliEmpresa}"/>
+                <h5 class="card-title">Documentos</h5>
+                <ruex:documentoTable value="#{_cliEmpresa.cliEmpresa.cliDocumentoList}"
+                                     descripcionRendered="false">
+                </ruex:documentoTable>
+                <h5 class="card-title">Categorias</h5>
+                <ruex:categoriaView value="#{_cliEmpresa.cliEmpresa.cliCategoriaList[0]}"
+                                    importacionesRubrosRendered="false"
+                                    categoriaRendered="false"
+                                    fechaRegistroRendered="false"
+                                    estadoRendered="false"/>
+                <h5 class="card-title">Direcciones</h5>
+                <ruex:direccionTable value="#{_cliEmpresa.cliEmpresa.cliDireccionList}">
+                </ruex:direccionTable>
+                <h5 class="card-title">Contactos</h5>
+                <ruex:contactoTable value="#{_cliEmpresa.cliEmpresa.cliContactoList}">
+                </ruex:contactoTable>
+                <h5 class="card-title">Representantes</h5>
+                <ruex:operadorTable value="#{_cliEmpresa.cliEmpresa.segOperadorList}">
+                </ruex:operadorTable>
+                <f:facet name="footer">
+                    <h:commandLink action="#{_cliEmpresa.navegationAction(null, 'inbox')}"
+                                   immediate="true"
+                                   styleClass="btn btn-sm btn-secondary ml-1">
+                        <i class="fa fa-arrow-left"/>
+                        #{BTN.CANCEL}
+                    </h:commandLink>
+                </f:facet>
+            </hsk:cardForm>
+        </h:form>
+    </ui:define>
+</ui:composition>

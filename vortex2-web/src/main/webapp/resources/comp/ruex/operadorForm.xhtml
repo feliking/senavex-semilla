@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.SegOperador"/>
+        <cc:attribute name="disabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="size" default="sm"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="classInput" default="form-control form-control-#{cc.attrs.size}"/>
+        <!-- attribute handler -->
+
+        <!-- nombreCargo -->
+        <cc:attribute name="nombreCargoLabel" default="#{LBL.OPERADOR.NOMBRE_CARGO}"/>
+        <cc:attribute name="nombreCargoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreCargoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreCargoRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- correoElectronico -->
+        <cc:attribute name="correoElectronicoLabel" default="#{LBL.OPERADOR.CORREO_ELECTRONICO}"/>
+        <cc:attribute name="correoElectronicoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="correoElectronicoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="correoElectronicoRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- numeroDocumento -->
+        <cc:attribute name="numeroDocumentoLabel" default="#{LBL.OPERADOR.NUMERO_DOCUMENTO}"/>
+        <cc:attribute name="numeroDocumentoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroDocumentoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroDocumentoRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- fechaDesde -->
+        <cc:attribute name="fechaDesdeLabel" default="#{LBL.OPERADOR.FECHA_DESDE}"/>
+        <cc:attribute name="fechaDesdeDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaDesdeRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaDesdeRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- fechaHasta -->
+        <cc:attribute name="fechaHastaLabel" default="#{LBL.OPERADOR.FECHA_HASTA}"/>
+        <cc:attribute name="fechaHastaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaHastaRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaHastaRequired" default="false" type="java.lang.Boolean"/>
+
+
+
+
+        <!-- perfil -->
+        <cc:attribute name="perfilLabel" default="#{LBL.OPERADOR.PERFIL}"/>
+        <cc:attribute name="perfilDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="perfilRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="perfilRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="perfilOption" default="#{_option.segOperadorPerfilOption}" type="java.util.List"/>
+
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.OPERADOR.ESTADO}"/>
+        <cc:attribute name="estadoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoOption" default="#{_option.segOperadorEstadoOption}" type="java.util.List"/>
+
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.correoElectronicoLabel}"
+                          rendered="#{cc.attrs.correoElectronicoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="correoElectronico"
+                             value="#{cc.attrs.value.correoElectronico}"
+                             label="#{cc.attrs.correoElectronicoLabel}"
+                             title="#{cc.attrs.correoElectronicoLabel}"
+                             disabled="#{cc.attrs.correoElectronicoDisabled}"
+                             required="#{cc.attrs.correoElectronicoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             validator="senavex.EmailValidator"
+                             autocomplete="off"/>
+
+                <h:message for="correoElectronico"/>
+            </hsk:rowLabel>
+
+
+            <hsk:rowLabel text="#{cc.attrs.numeroDocumentoLabel}"
+                          rendered="#{cc.attrs.numeroDocumentoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="numeroDocumento"
+                             value="#{cc.attrs.value.numeroDocumento}"
+                             label="#{cc.attrs.numeroDocumentoLabel}"
+                             title="#{cc.attrs.numeroDocumentoLabel}"
+                             disabled="#{cc.attrs.numeroDocumentoDisabled}"
+                             required="#{cc.attrs.numeroDocumentoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="numeroDocumento"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.nombreCargoLabel}"
+                          rendered="#{cc.attrs.nombreCargoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:inputText id="nombreCargo"
+                             value="#{cc.attrs.value.nombreCargo}"
+                             label="#{cc.attrs.nombreCargoLabel}"
+                             title="#{cc.attrs.nombreCargoLabel}"
+                             disabled="#{cc.attrs.nombreCargoDisabled}"
+                             required="#{cc.attrs.nombreCargoRequired}"
+                             styleClass="#{cc.attrs.classInput}"/>
+
+                <h:message for="nombreCargo"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.perfilLabel}"
+                          rendered="#{cc.attrs.perfilRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:selectOneMenu id="perfil"
+                                 value="#{cc.attrs.value.perfil}"
+                                 label="#{cc.attrs.perfilLabel}"
+                                 title="#{cc.attrs.perfilLabel}"
+                                 disabled="#{cc.attrs.perfilDisabled}"
+                                 required="#{cc.attrs.perfilRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.perfilOption}" 
+                                   itemValue="#{item}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="perfil"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaDesdeLabel}"
+                          rendered="#{cc.attrs.fechaDesdeRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="fechaDesde"
+                             value="#{cc.attrs.value.fechaDesde}"
+                             label="#{cc.attrs.fechaDesdeLabel}"
+                             title="#{cc.attrs.fechaDesdeLabel}"
+                             disabled="#{cc.attrs.fechaDesdeDisabled}"
+                             required="#{cc.attrs.fechaDesdeRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:inputText>
+
+                <h:message for="fechaDesde"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaHastaLabel}"
+                          rendered="#{cc.attrs.fechaHastaRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="fechaHasta"
+                             value="#{cc.attrs.value.fechaHasta}"
+                             label="#{cc.attrs.fechaHastaLabel}"
+                             title="#{cc.attrs.fechaHastaLabel}"
+                             disabled="#{cc.attrs.fechaHastaDisabled}"
+                             required="#{cc.attrs.fechaHastaRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:inputText>
+
+                <h:message for="fechaHasta"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="estado"
+                                 value="#{cc.attrs.value.estado}"
+                                 label="#{cc.attrs.estadoLabel}"
+                                 title="#{cc.attrs.estadoLabel}"
+                                 disabled="#{cc.attrs.estadoDisabled}"
+                                 required="#{cc.attrs.estadoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel="--#{cc.attrs.estadoLabel}--"/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.estadoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="estado"/>
+            </hsk:rowLabel>
+
+        </div>
+    </cc:implementation>
+</div>

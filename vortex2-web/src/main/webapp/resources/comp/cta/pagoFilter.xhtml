@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <div xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:f="http://xmlns.jcp.org/jsf/core"
+             xmlns:cc="http://java.sun.com/jsf/composite"
+             xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+            <cc:interface>
+                <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.filter.CtaPagoFilter"/>
+                <cc:attribute name="disabled" default="#{cc.attrs.value == null}" type="java.lang.Boolean"/>
+                <cc:attribute name="styleClass" default="row"/>
+                <!-- attribute handler -->
+                
+                <!-- idPago -->
+                <cc:attribute name="idPagoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+                <cc:attribute name="idPagoLabel" default="#{LBL.PAGO.ID_PAGO}"/>
+                <cc:attribute name="idPagoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+                <cc:attribute name="idPagoRendered" default="false" type="java.lang.Boolean"/>
+                
+                
+                <!-- fechaRegistro -->
+                <cc:attribute name="fechaRegistroCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+                <cc:attribute name="fechaRegistroLabel" default="#{LBL.PAGO.FECHA_REGISTRO}"/>
+                <cc:attribute name="fechaRegistroDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+                <cc:attribute name="fechaRegistroRendered" default="true" type="java.lang.Boolean"/>
+                
+                
+                <!-- fechaAceptacion -->
+                <cc:attribute name="fechaAceptacionCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+                <cc:attribute name="fechaAceptacionLabel" default="#{LBL.PAGO.FECHA_ACEPTACION}"/>
+                <cc:attribute name="fechaAceptacionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+                <cc:attribute name="fechaAceptacionRendered" default="true" type="java.lang.Boolean"/>
+                
+                
+                <!-- monto -->
+                <cc:attribute name="montoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+                <cc:attribute name="montoLabel" default="#{LBL.PAGO.MONTO}"/>
+                <cc:attribute name="montoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+                <cc:attribute name="montoRendered" default="true" type="java.lang.Boolean"/>
+                
+                
+                <!-- observacion -->
+                <cc:attribute name="observacionCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+                <cc:attribute name="observacionLabel" default="#{LBL.PAGO.OBSERVACION}"/>
+                <cc:attribute name="observacionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+                <cc:attribute name="observacionRendered" default="true" type="java.lang.Boolean"/>
+                
+                
+                <!-- descripcion -->
+                <cc:attribute name="descripcionCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+                <cc:attribute name="descripcionLabel" default="#{LBL.PAGO.DESCRIPCION}"/>
+                <cc:attribute name="descripcionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+                <cc:attribute name="descripcionRendered" default="true" type="java.lang.Boolean"/>
+                
+                
+                <!-- tipo -->
+                <cc:attribute name="tipoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+                <cc:attribute name="tipoLabel" default="#{LBL.PAGO.TIPO}"/>
+                <cc:attribute name="tipoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+                <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+                
+                <cc:attribute name="tipoOption" default="#{_option.ctaPagoTipoOption}" type="java.util.List"/>
+                
+                <!-- moneda -->
+                <cc:attribute name="monedaCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+                <cc:attribute name="monedaLabel" default="#{LBL.PAGO.MONEDA}"/>
+                <cc:attribute name="monedaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+                <cc:attribute name="monedaRendered" default="true" type="java.lang.Boolean"/>
+                
+                <cc:attribute name="monedaOption" default="#{_option.ctaPagoMonedaOption}" type="java.util.List"/>
+                
+                <!-- estado -->
+                <cc:attribute name="estadoCol" default="col-xl-3 col-lg-4 col-md-6 col-12"/>
+                <cc:attribute name="estadoLabel" default="#{LBL.PAGO.ESTADO}"/>
+                <cc:attribute name="estadoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+                <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+                
+                <cc:attribute name="estadoOption" default="#{_option.ctaPagoEstadoOption}" type="java.util.List"/>
+                
+            </cc:interface>
+            <cc:implementation>
+                <div id="#{cc.clientId}" class="row row-filter #{cc.attrs.styleClass}">
+                    
+                    <h:panelGroup rendered="#{cc.attrs.idPagoRendered}">
+                        
+                        <hsk:inputFilter value="#{cc.attrs.value.idPago}"
+                                         label="#{cc.attrs.idPagoLabel}"
+                                         converter="javax.faces.Long"
+                                         styleClass="#{cc.attrs.idPagoCol}"
+                                         disabled="#{cc.attrs.idPagoDisabled}"/>
+                        
+                    </h:panelGroup>
+                    
+                    <h:panelGroup rendered="#{cc.attrs.tipoRendered}">
+                        
+                        <hsk:selectFilter value="#{cc.attrs.value.tipo}"
+                                          label="#{cc.attrs.tipoLabel}"
+                                          styleClass="#{cc.attrs.tipoCol}"
+                                          disabled="#{cc.attrs.tipoDisabled}"
+                                          converter="hiska.faces.Param">
+                            <f:selectItems var="item" 
+                                           value="#{cc.attrs.tipoOption}" 
+                                           itemValue="#{item}" 
+                                           itemLabel="#{item.label}" 
+                                           itemDescription="#{item.description}"/>
+                        </hsk:selectFilter>
+                        
+                    </h:panelGroup>
+                    
+                    <h:panelGroup rendered="#{cc.attrs.montoRendered}">
+                        
+                        <hsk:inputFilter value="#{cc.attrs.value.monto}"
+                                         label="#{cc.attrs.montoLabel}"
+                                         converter="javax.faces.Integer"
+                                         styleClass="#{cc.attrs.montoCol}"
+                                         disabled="#{cc.attrs.montoDisabled}"/>
+                        
+                    </h:panelGroup>
+                    
+                    <h:panelGroup rendered="#{cc.attrs.monedaRendered}">
+                        
+                        <hsk:inputFilter value="#{cc.attrs.value.moneda}"
+                                         label="#{cc.attrs.monedaLabel}"
+                                         converter="javax.faces.String"
+                                         styleClass="#{cc.attrs.monedaCol}"
+                                         disabled="#{cc.attrs.monedaDisabled}"/>
+                        
+                    </h:panelGroup>
+                    
+                    <h:panelGroup rendered="#{cc.attrs.fechaRegistroRendered}">
+                        
+                        <hsk:inputFilter value="#{cc.attrs.value.fechaRegistro}"
+                                         label="#{cc.attrs.fechaRegistroLabel}"
+                                         converter="javax.faces.Date"
+                                         styleClass="#{cc.attrs.fechaRegistroCol}"
+                                         disabled="#{cc.attrs.fechaRegistroDisabled}"/>
+                        
+                    </h:panelGroup>
+                    
+                    <h:panelGroup rendered="#{cc.attrs.fechaAceptacionRendered}">
+                        
+                        <hsk:inputFilter value="#{cc.attrs.value.fechaAceptacion}"
+                                         label="#{cc.attrs.fechaAceptacionLabel}"
+                                         converter="javax.faces.Date"
+                                         styleClass="#{cc.attrs.fechaAceptacionCol}"
+                                         disabled="#{cc.attrs.fechaAceptacionDisabled}"/>
+                        
+                    </h:panelGroup>
+                    
+                    <h:panelGroup rendered="#{cc.attrs.descripcionRendered}">
+                        
+                        <hsk:inputFilter value="#{cc.attrs.value.descripcion}"
+                                         label="#{cc.attrs.descripcionLabel}"
+                                         converter="javax.faces.String"
+                                         styleClass="#{cc.attrs.descripcionCol}"
+                                         disabled="#{cc.attrs.descripcionDisabled}"/>
+                        
+                    </h:panelGroup>
+                    
+                    <h:panelGroup rendered="#{cc.attrs.observacionRendered}">
+                        
+                        <hsk:inputFilter value="#{cc.attrs.value.observacion}"
+                                         label="#{cc.attrs.observacionLabel}"
+                                         converter="javax.faces.String"
+                                         styleClass="#{cc.attrs.observacionCol}"
+                                         disabled="#{cc.attrs.observacionDisabled}"/>
+                        
+                    </h:panelGroup>
+                    
+                    <h:panelGroup rendered="#{cc.attrs.estadoRendered}">
+                        
+                        <hsk:selectFilter value="#{cc.attrs.value.estado}"
+                                          label="#{cc.attrs.estadoLabel}"
+                                          styleClass="#{cc.attrs.estadoCol}"
+                                          disabled="#{cc.attrs.estadoDisabled}"
+                                          converter="hiska.faces.Param">
+                            <f:selectItems var="item" 
+                                           value="#{cc.attrs.estadoOption}" 
+                                           itemValue="#{item}" 
+                                           itemLabel="#{item.label}" 
+                                           itemDescription="#{item.description}"/>
+                        </hsk:selectFilter>
+                        
+                    </h:panelGroup>
+                    
+                </div>
+            </cc:implementation>
+        </div>

@@ -1,0 +1,67 @@
+<html lang="es">
+    <head>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <div class="box">
+            <table>
+                <tr>
+                    <td>
+                        <img class="banner"
+                             src="${url-logo}"
+                             alt="Servicio Nacional de Verificación de Exportaciones"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <header>
+                            Invitacion Operador de Comercio Exterior
+                        </header>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            El <b>Servicio Nacional de Verificación de Exportaciones</b>, 
+                            le informa que su correo fue registrado como un <b>Operador de Comercio Exterior</b>
+                            bajo el siguiente detalle:
+                        </p>
+                        <ul class="info">
+                            <li>Empresa: <b>${empresa}</b></li>
+                            <li>Cargo: <b>${cargo}</b></li>
+                            <li>Perfil: <b>${perfil}</b></li>
+                        </ul>
+                        <p>
+                            Para aceptar dicho cargo, debera tener una cuenta activa en el sistema y aceptar la invitacion.
+                        </p>
+                        <a href="${url-base}/publico/invitacion.xhtml?id=${id}" class="blue">
+                            Aceptar Invitacion
+                        </a>
+                        <p>
+                            Caso contrario, si usted no tiene relacion con dicha empresa puede 
+                            rechazar la invitacion haciendo click en el siguiente enlace.
+                        </p>
+                        <a href="${url-base}/publico/error.xhtml?id=${id}" class="red">
+                            Rechazar Invitacion
+                        </a>
+                        <p>
+                            Puede ingresar al sistema desde el siguiente enlace:
+                        </p>
+                        <a href="${url-base}" class="white">
+                            ${url-base}
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <footer>
+                            Av. Camacho esq. Bueno Nº 1488 5to Piso Edif. Viceministerio de Comercio Interno 
+                            <br/>
+                            <b>Teléfono:</b> (591 – 2) 2113621 / <b>Fax:</b> (591 – 2) 2372055
+                        </footer>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

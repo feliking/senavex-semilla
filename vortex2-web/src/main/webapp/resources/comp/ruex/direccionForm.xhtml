@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.CliDireccion"/>
+        <cc:attribute name="disabled" default="#{cc.attrs.value == null}"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="classInput" default="form-control form-control-sm"/>
+        <!-- attribute handler -->
+
+        <!-- nombre -->
+        <cc:attribute name="nombreLabel" default="#{LBL.DIRECCION.NOMBRE}"/>
+        <cc:attribute name="nombreDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- avenida -->
+        <cc:attribute name="avenidaLabel" default="#{LBL.DIRECCION.AVENIDA}"/>
+        <cc:attribute name="avenidaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="avenidaRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- calles -->
+        <cc:attribute name="callesLabel" default="#{LBL.DIRECCION.CALLES}"/>
+        <cc:attribute name="callesDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="callesRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- domicilio -->
+        <cc:attribute name="domicilioLabel" default="#{LBL.DIRECCION.DOMICILIO}"/>
+        <cc:attribute name="domicilioDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="domicilioRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- edificio -->
+        <cc:attribute name="edificioLabel" default="#{LBL.DIRECCION.EDIFICIO}"/>
+        <cc:attribute name="edificioDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="edificioRendered" default="true" type="java.lang.Boolean"/>
+
+
+
+        <!-- oficina -->
+        <cc:attribute name="oficinaLabel" default="#{LBL.DIRECCION.OFICINA}"/>
+        <cc:attribute name="oficinaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="oficinaRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- piso -->
+        <cc:attribute name="pisoLabel" default="#{LBL.DIRECCION.PISO}"/>
+        <cc:attribute name="pisoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="pisoRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- geoReferencia -->
+        <cc:attribute name="geoReferenciaLabel" default="#{LBL.DIRECCION.GEO_REFERENCIA}"/>
+        <cc:attribute name="geoReferenciaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="geoReferenciaRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- referencia -->
+        <cc:attribute name="referenciaLabel" default="#{LBL.DIRECCION.REFERENCIA}"/>
+        <cc:attribute name="referenciaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="referenciaRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- departamento -->
+        <cc:attribute name="departamentoLabel" default="#{LBL.DIRECCION.DEPARTAMENTO}"/>
+        <cc:attribute name="departamentoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="departamentoRendered" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="departamentoOption" default="#{_option.cliDireccionDepartamentoOption}" type="java.util.List"/>
+
+
+        <!-- municipio -->
+        <cc:attribute name="municipioLabel" default="#{LBL.DIRECCION.MUNICIPIO}"/>
+        <cc:attribute name="municipioDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="municipioRendered" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="municipioOption" default="#{_option.cliDireccionMunicipioOption(cc.attrs.value.departamento)}" type="java.util.List"/>
+
+
+        <!-- tipo -->
+        <cc:attribute name="tipoLabel" default="#{LBL.DIRECCION.TIPO}"/>
+        <cc:attribute name="tipoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="tipoOption" default="#{_option.cliDireccionTipoOption}" type="java.util.List"/>
+
+
+    </cc:interface>
+    <cc:implementation>
+
+
+
+        <fieldset id="#{cc.clientId}" class="card m-0">
+            <legend class="h6 p-1">
+                #{cc.attrs.value.nombre}
+            </legend>
+            <div class="card-body pt-0 pb-0">
+
+                <div class="row row-form #{cc.attrs.styleClass}">
+
+                    <hsk:rowLabel text="#{cc.attrs.tipoLabel}"
+                                  rendered="#{cc.attrs.tipoRendered}"
+                                  size="sm"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">                    
+
+                        <h:selectOneMenu id="tipo"
+                                         value="#{cc.attrs.value.tipo}"
+                                         label="#{cc.attrs.tipoLabel}"
+                                         title="#{cc.attrs.tipoLabel}"
+                                         disabled="#{cc.attrs.tipoDisabled}"
+                                         styleClass="#{cc.attrs.classInput}"
+                                         converter="hiska.faces.Param"
+                                         required="true">
+                            <f:selectItems var="item" 
+                                           value="#{cc.attrs.tipoOption}" 
+                                           itemValue="#{item.value}" 
+                                           itemLabel="#{item.label}" 
+                                           itemDescription="#{item.description}"/>
+                        </h:selectOneMenu>                    
+
+                        <h:message for="tipo"/>
+                    </hsk:rowLabel>
+
+
+
+
+
+                    <hsk:rowLabel text="#{cc.attrs.departamentoLabel}"
+                                  rendered="#{cc.attrs.departamentoRendered}"
+                                  size="sm"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+
+                        <h:selectOneMenu id="departamento"
+                                         value="#{cc.attrs.value.departamento}"
+                                         label="#{cc.attrs.departamentoLabel}"
+                                         title="#{cc.attrs.departamentoLabel}"
+                                         disabled="#{cc.attrs.departamentoDisabled}"
+                                         styleClass="#{cc.attrs.classInput}"
+                                         converter="hiska.faces.Param"
+                                         required="true">
+                            <f:ajax render="#{cc.attrs.update}"/>
+                            <f:selectItem itemValue="#{null}"
+                                          itemLabel=""/>
+                            <f:selectItems var="item" 
+                                           value="#{cc.attrs.departamentoOption}" 
+                                           itemValue="#{item.value}" 
+                                           itemLabel="#{item.label}" 
+                                           itemDescription="#{item.description}"/>
+                        </h:selectOneMenu>
+
+                        <h:message for="departamento"/>
+                    </hsk:rowLabel>
+
+                    <hsk:rowLabel text="#{cc.attrs.municipioLabel}"
+                                  rendered="#{cc.attrs.municipioRendered}"
+                                  size="sm"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+
+                        <h:selectOneMenu id="municipio"
+                                         value="#{cc.attrs.value.municipio}"
+                                         label="#{cc.attrs.municipioLabel}"
+                                         title="#{cc.attrs.municipioLabel}"
+                                         disabled="#{cc.attrs.municipioDisabled}"
+                                         styleClass="#{cc.attrs.classInput}"
+                                         converter="hiska.faces.Param"
+                                         required="true">
+                            <f:selectItem itemValue="#{null}"
+                                          itemLabel=""/>
+                            <f:selectItems var="item" 
+                                           value="#{cc.attrs.municipioOption}" 
+                                           itemValue="#{item.value}" 
+                                           itemLabel="#{item.label}" 
+                                           itemDescription="#{item.description}"/>
+                        </h:selectOneMenu>
+
+                        <h:message for="municipio"/>
+                    </hsk:rowLabel>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <hsk:rowLabel text="#{cc.attrs.avenidaLabel}"
+                                  rendered="#{cc.attrs.avenidaRendered}"
+                                  size="sm"
+                                  classRow="col-12"
+                                  classText="col-2"
+                                  classValue="col-10">
+
+                        <h:inputText id="avenida"
+                                     value="#{cc.attrs.value.avenida}"
+                                     label="#{cc.attrs.avenidaLabel}"
+                                     title="#{cc.attrs.avenidaLabel}"
+                                     disabled="#{cc.attrs.avenidaDisabled}"
+                                     styleClass="#{cc.attrs.classInput}"
+                                     required="true"
+                                     autocomplete="off"/>
+
+                        <h:message for="avenida"/>
+                    </hsk:rowLabel>
+
+                    <hsk:rowLabel text="#{cc.attrs.callesLabel}"
+                                  rendered="#{cc.attrs.callesRendered}"
+                                  size="sm"
+                                  classRow="col-12"
+                                  classText="col-2"
+                                  classValue="col-10">
+
+                        <h:inputText id="calles"
+                                     value="#{cc.attrs.value.calles}"
+                                     label="#{cc.attrs.callesLabel}"
+                                     title="#{cc.attrs.callesLabel}"
+                                     disabled="#{cc.attrs.callesDisabled}"
+                                     styleClass="#{cc.attrs.classInput}"
+                                     required="true"
+                                     autocomplete="off"/>
+
+                        <h:message for="calles"/>
+                    </hsk:rowLabel>
+
+                    <hsk:rowLabel text="#{cc.attrs.domicilioLabel}"
+                                  rendered="#{cc.attrs.domicilioRendered}"
+                                  size="sm"
+                                  classRow="col-12"
+                                  classText="col-2"
+                                  classValue="col-10">
+
+                        <h:inputText id="domicilio"
+                                     value="#{cc.attrs.value.domicilio}"
+                                     label="#{cc.attrs.domicilioLabel}"
+                                     title="#{cc.attrs.domicilioLabel}"
+                                     disabled="#{cc.attrs.domicilioDisabled}"
+                                     styleClass="#{cc.attrs.classInput}"
+                                     required="true"
+                                     autocomplete="off"/>
+
+                        <h:message for="domicilio"/>
+                    </hsk:rowLabel>
+
+                    <hsk:rowLabel text="#{cc.attrs.edificioLabel}"
+                                  rendered="#{cc.attrs.edificioRendered}"
+                                  size="sm"
+                                  classRow="col-12"
+                                  classText="col-2"
+                                  classValue="col-10">
+
+                        <h:inputText id="edificio"
+                                     value="#{cc.attrs.value.edificio}"
+                                     label="#{cc.attrs.edificioLabel}"
+                                     title="#{cc.attrs.edificioLabel}"
+                                     disabled="#{cc.attrs.edificioDisabled}"
+                                     styleClass="#{cc.attrs.classInput}"
+                                     required="true"
+                                     autocomplete="off"/>
+
+                        <h:message for="edificio"/>
+                    </hsk:rowLabel>
+
+                    <hsk:rowLabel text="#{cc.attrs.oficinaLabel}"
+                                  rendered="#{cc.attrs.oficinaRendered}"
+                                  size="sm"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+
+                        <h:inputText id="oficina"
+                                     value="#{cc.attrs.value.oficina}"
+                                     label="#{cc.attrs.oficinaLabel}"
+                                     title="#{cc.attrs.oficinaLabel}"
+                                     disabled="#{cc.attrs.oficinaDisabled}"
+                                     styleClass="#{cc.attrs.classInput}"
+                                     required="true"
+                                     autocomplete="off"/>
+
+                        <h:message for="oficina"/>
+                    </hsk:rowLabel>
+
+                    <hsk:rowLabel text="#{cc.attrs.pisoLabel}"
+                                  rendered="#{cc.attrs.pisoRendered}"
+                                  size="sm"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+
+                        <h:inputText id="piso"
+                                     value="#{cc.attrs.value.piso}"
+                                     label="#{cc.attrs.pisoLabel}"
+                                     title="#{cc.attrs.pisoLabel}"
+                                     disabled="#{cc.attrs.pisoDisabled}"
+                                     styleClass="#{cc.attrs.classInput}"
+                                     required="true"
+                                     autocomplete="off"/>
+
+                        <h:message for="piso"/>
+                    </hsk:rowLabel>
+
+
+                    <hsk:rowLabel text="#{cc.attrs.geoReferenciaLabel}"
+                                  rendered="#{cc.attrs.geoReferenciaRendered}"
+                                  size="sm"
+                                  classRow="col-12"
+                                  classText="col-2"
+                                  classValue="col-10">
+
+                        <h:inputText id="geoReferencia"
+                                     value="#{cc.attrs.value.geoReferencia}"
+                                     label="#{cc.attrs.geoReferenciaLabel}"
+                                     title="#{cc.attrs.geoReferenciaLabel}"
+                                     disabled="#{cc.attrs.geoReferenciaDisabled}"
+                                     styleClass="#{cc.attrs.classInput}"
+                                     required="true"
+                                     autocomplete="off"/>
+
+                        <h:message for="geoReferencia"/>
+                    </hsk:rowLabel>
+
+                    <hsk:rowLabel text="#{cc.attrs.referenciaLabel}"
+                                  rendered="#{cc.attrs.referenciaRendered}"
+                                  size="sm"
+                                  classRow="col-12"
+                                  classText="col-2"
+                                  classValue="col-10">
+
+                        <h:inputTextarea id="referencia"
+                                         value="#{cc.attrs.value.referencia}"
+                                         label="#{cc.attrs.referenciaLabel}"
+                                         title="#{cc.attrs.referenciaLabel}"
+                                         disabled="#{cc.attrs.referenciaDisabled}"
+                                         styleClass="#{cc.attrs.classInput}"
+                                         required="true"
+                                         cols="50"
+                                         rows="2"/>
+
+                        <h:message for="referencia"/>
+                    </hsk:rowLabel> 
+
+                </div>
+            </div>
+        </fieldset>
+
+
+    </cc:implementation>
+</div>

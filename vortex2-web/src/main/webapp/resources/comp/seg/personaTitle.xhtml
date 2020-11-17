@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.SegPersona"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="size" default="sm"/>
+        <cc:attribute name="classOutput" default="form-control form-control-#{cc.attrs.size}"/>
+        <!-- attribute handler -->
+
+        <!-- nombres -->
+        <cc:attribute name="nombreCompletoLabel" default="#{LBL.PERSONA.NOMBRE_COMPLETO}"/>
+        <cc:attribute name="nombreCompletoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- documentoIdentidad -->
+        <cc:attribute name="documentoIdentidadLabel" default="#{LBL.PERSONA.DOCUMENTO_IDENTIDAD}"/>
+        <cc:attribute name="documentoIdentidadRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- genero -->
+        <cc:attribute name="generoLabel" default="#{LBL.PERSONA.GENERO}"/>
+        <cc:attribute name="generoRendered" default="true" type="java.lang.Boolean"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-view #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.nombreCompletoLabel}"
+                          rendered="#{cc.attrs.nombreCompletoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:outputText value="#{cc.attrs.value.nombreCompleto}"
+                              title="#{cc.attrs.nombreCompletoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.generoLabel}"
+                          rendered="#{cc.attrs.generoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.genero.label}"
+                              title="#{cc.attrs.generoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+            
+
+            <hsk:rowLabel text="#{cc.attrs.documentoIdentidadLabel}"
+                          rendered="#{cc.attrs.documentoIdentidadRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.documentoIdentidad}"
+                              title="#{cc.attrs.documentoIdentidadLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+        </div>
+    </cc:implementation>
+</div>

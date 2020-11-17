@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" rws="_15994834405272" Pws="_15994834405272" cws="_15994834405272" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_15994834405271">
+    <entity compositePrimaryKeyClass="CliEmpDocumentoPK" abs="false" class="CliEmpDocumento" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599484383525286">
+        <ath>yracnet</ath>
+        <removedAttributes>
+            <i>attribute</i>
+        </removedAttributes>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipo" pname="attribute" id="_1599484600082289">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="numero" pname="attribute" id="_1599484604738290">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estado" pname="attribute" id="_1599484614490291">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaVerificacion" pname="attribute" id="_1599484707977293">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="codigoVerificacion" pname="attribute" id="_1599485589811326">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="documentRespaldo" pname="attribute" id="_1599506370838685">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="observaciones" pname="attribute" id="_1599516440721118">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" name="id" id="_1599484383526287">
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="CliEmpDocumento.findAll">
+            <query>Select e from CliEmpDocumento e</query>
+        </nq>
+        <nq e="false" name="CliEmpDocumento.findByTipo">
+            <query>Select s from CliEmpDocumento s where s.tipo=:tipo</query>
+        </nq>
+        <nq e="false" name="CliEmpDocumento.findByNumero">
+            <query>Select s from CliEmpDocumento s where s.numero=:numero</query>
+        </nq>
+        <nq e="false" name="CliEmpDocumento.findByEstado">
+            <query>Select s from CliEmpDocumento s where s.estado=:estado</query>
+        </nq>
+        <nq e="false" name="CliEmpDocumento.findByDescripcion">
+            <query>Select s from CliEmpDocumento s where s.descripcion=:descripcion</query>
+        </nq>
+        <nq e="false" name="CliEmpDocumento.findByFechaVerificacion">
+            <query>Select s from CliEmpDocumento s where s.fechaVerificacion=:fechaVerificacion</query>
+        </nq>
+        <nq e="false" name="CliEmpDocumento.findByCodigoVerificacion">
+            <query>Select s from CliEmpDocumento s where s.codigoVerificacion=:codigoVerificacion</query>
+        </nq>
+        <nq e="false" name="CliEmpDocumento.findByDocumentRespaldo">
+            <query>Select s from CliEmpDocumento s where s.documentRespaldo=:documentRespaldo</query>
+        </nq>
+        <nq e="false" name="CliEmpDocumento.findByObservaciones">
+            <query>Select s from CliEmpDocumento s where s.observaciones=:observaciones</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="CliEmpContactoPK" abs="false" class="CliEmpContacto" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599484754117294">
+        <ath>yracnet</ath>
+        <removedAttributes>
+            <i>attribute</i>
+        </removedAttributes>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipo" pname="attribute" id="_1599484785801297">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="nombre" pname="attribute" id="_1599485644739327">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="valor" pname="attribute" id="_1599484789393298">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="descripcion" pname="attribute" id="_1599484802289300">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estado" pname="attribute" id="_1599484797345299">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaVerficacion" pname="attribute" id="_1599484807457301">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" name="id" id="_1599484754117295">
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="CliEmpContacto.findAll">
+            <query>Select e from CliEmpContacto e</query>
+        </nq>
+        <nq e="false" name="CliEmpContacto.findByTipo">
+            <query>Select s from CliEmpContacto s where s.tipo=:tipo</query>
+        </nq>
+        <nq e="false" name="CliEmpContacto.findByValor">
+            <query>Select s from CliEmpContacto s where s.valor=:valor</query>
+        </nq>
+        <nq e="false" name="CliEmpContacto.findByEstado">
+            <query>Select s from CliEmpContacto s where s.estado=:estado</query>
+        </nq>
+        <nq e="false" name="CliEmpContacto.findByDescripcion">
+            <query>Select s from CliEmpContacto s where s.descripcion=:descripcion</query>
+        </nq>
+        <nq e="false" name="CliEmpContacto.findByFechaVerficacion">
+            <query>Select s from CliEmpContacto s where s.fechaVerficacion=:fechaVerficacion</query>
+        </nq>
+        <nq e="false" name="CliEmpContacto.findByNombre">
+            <query>Select s from CliEmpContacto s where s.nombre=:nombre</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="CliEmpresaPK" abs="false" class="CliEmpresa" pclass="Empresa" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599485559591302">
+        <removedAttributes>
+            <i>codigoCertificacionNit</i>
+            <i>matriculaFundempresa</i>
+            <i>latitud</i>
+            <i>anioIncioOperaciones</i>
+            <i>siruDocumentoes</i>
+            <i>estadoNit</i>
+            <i>historical</i>
+            <i>carrito</i>
+            <i>numeroRegistroOea</i>
+            <i>operadorEconomicoAutorizado</i>
+            <i>longitud</i>
+            <i>sitioWeb</i>
+            <i>siruAutorizacions</i>
+            <i>observaciones</i>
+            <i>anioFundacion</i>
+            <i>siruRegistroes</i>
+            <i>datosTemporales</i>
+            <i>correoElectronico</i>
+        </removedAttributes>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipo" pname="attribute" id="_1599485559591304">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="nit" id="_1599485559591305">
+                <xwm/>
+                <xm/>
+                <column name="nit" unique="false" nullable="true" insertable="true" updatable="true" table="empresa"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="razonSocial" pname="nombreRazonSocial" id="_1599485559591306">
+                <xwm/>
+                <xm/>
+                <column name="nombre_razon_social" unique="false" nullable="true" insertable="true" updatable="true" table="empresa" length="200"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="nombreComercial" pname="nombreComercial" id="_1599485559591307">
+                <xwm/>
+                <xm/>
+                <column name="nombre_comercial" unique="false" nullable="true" insertable="true" updatable="true" table="empresa" length="200"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="descripcion" pname="descripcionEmpresa" id="_1599485559591308">
+                <xwm/>
+                <xm/>
+                <column name="descripcion_empresa" unique="false" nullable="true" insertable="true" updatable="true" table="empresa" length="2147483647"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="estado" id="_1599485559591310">
+                <xwm/>
+                <xm/>
+                <column name="estado" unique="false" nullable="true" insertable="true" updatable="true" table="empresa" length="50"/>
+            </basic>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599484383525286" v="true" xvt="" name="cliDocumentoList" pname="siruDocumentoes" id="_1599485851451331">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599484754117294" v="true" xvt="" name="cliContactoList" pname="siruContactoes" id="_1599485877355333">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599485941865334" v="true" xvt="" name="cliDireccionList" pname="siruDireccions" id="_1599486533879366">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599498653402453" v="true" xvt="" name="cliCategoriaList" pname="siruEmpresaEsts" id="_1599498863411484">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599503373083598" v="true" xvt="" name="conPagoList" pname="siruPagoes" id="_1599503400996602">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599498235747431" v="true" xvt="" name="perAutorizacionList" pname="siruAutorizacions" id="_1599499805309532">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599499704153515" v="true" xvt="" name="regRegistroList" pname="siruRegistroes" id="_1599499757356528">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" name="id" id="_1599485559591303">
+                <column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="empresa"/>
+            </id>
+        </attributes>
+        <nq e="false" name="CliEmpresa.findByTipo">
+            <query>Select e from CliEmpresa e where e.tipo=:tipo</query>
+        </nq>
+        <table name="siru_empresa"/>
+    </entity>
+    <entity compositePrimaryKeyClass="CliEmpDireccionPK" abs="false" class="CliEmpDireccion" pclass="Direccion" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599485941865334">
+        <removedAttributes>
+            <i>estado</i>
+            <i>nombreCalleAvPlazaOtro</i>
+            <i>deptoOficinaLocal</i>
+            <i>idUsuario</i>
+            <i>historical</i>
+            <i>nombreZonaBarrioOtro</i>
+            <i>direccionDescriptiva</i>
+            <i>telefonoFijo</i>
+            <i>telefonoCelular</i>
+            <i>zonaBarrioOtro</i>
+            <i>usuario</i>
+            <i>idEmpresa</i>
+            <i>numDeptoOficinaLocal</i>
+            <i>telefonoFax</i>
+        </removedAttributes>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombre" pname="attribute" id="_1599487077009367">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="tipo" pname="attribute" id="_1599485990954359">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="departamento" pname="idDepartamento" id="_1599485941865346">
+                <xwm/>
+                <xm/>
+                <column name="id_departamento" unique="false" nullable="true" insertable="true" updatable="true" table="direccion"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="municipio" pname="idMunicipio" id="_1599485941865347">
+                <xwm/>
+                <xm/>
+                <column name="id_municipio" unique="false" nullable="true" insertable="true" updatable="true" table="direccion"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="avenida" pname="idMunicipio" id="_1599486097059360">
+                <xwm/>
+                <xm/>
+                <column name="id_municipio" unique="false" nullable="true" insertable="true" updatable="true" table="direccion"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="calles" pname="calleAvPlazaOtro" id="_1599486114331361">
+                <xwm/>
+                <xm/>
+                <column name="calle_av_plaza_otro" unique="false" nullable="true" insertable="true" updatable="true" table="direccion" length="200"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="edificio" pname="nombreEdificio" id="_1599485941865340">
+                <xwm/>
+                <xm/>
+                <column name="nombre_edificio" unique="false" nullable="true" insertable="true" updatable="true" table="direccion" length="200"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="piso" id="_1599485941865341">
+                <xwm/>
+                <xm/>
+                <column name="piso" unique="false" nullable="true" insertable="true" updatable="true" table="direccion"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="oficina" pname="numDeptoOficinaLocal" id="_1599486163059362">
+                <xwm/>
+                <xm/>
+                <column name="num_depto_oficina_local" unique="false" nullable="true" insertable="true" updatable="true" table="direccion" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="domicilio" pname="numDomicilio" id="_1599485941865339">
+                <xwm/>
+                <xm/>
+                <column name="num_domicilio" unique="false" nullable="true" insertable="true" updatable="true" table="direccion" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="referencia" pname="calleAvPlazaOtro" id="_1599485941865337">
+                <xwm/>
+                <xm/>
+                <column name="calle_av_plaza_otro" unique="false" nullable="true" insertable="true" updatable="true" table="direccion" length="200"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="geoReferencia" pname="descripcionEmpresa" id="_1599498707582482">
+                <xwm/>
+                <xm/>
+                <column name="descripcion_empresa" unique="false" nullable="true" insertable="true" updatable="true" table="empresa" length="2147483647"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" v="true" xvt="" name="fechaInicio" pname="fecha" id="_1599485941865353">
+                <xwm/>
+                <xm/>
+                <temporal>DATE</temporal>
+                <column name="fecha" unique="false" nullable="true" insertable="true" updatable="true" table="direccion"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" v="true" xvt="" name="fechaFin" pname="fecha" id="_1599486318490364">
+                <xwm/>
+                <xm/>
+                <temporal>DATE</temporal>
+                <column name="fecha" unique="false" nullable="true" insertable="true" updatable="true" table="direccion"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="estado" id="_1599485941865354">
+                <xwm/>
+                <xm/>
+                <column name="estado" unique="false" nullable="true" insertable="true" updatable="true" table="direccion" length="50"/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" pname="idDireccion" id="_1599485941865335">
+                <xwm/>
+                <xm/>
+                <column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="direccion"/>
+                <generated-value/>
+            </id>
+        </attributes>
+        <nq e="false" name="CliEmpDireccion.findByNombre">
+            <query>Select s from CliEmpDireccion s where s.nombre=:nombre</query>
+        </nq>
+        <table name="direccion"/>
+    </entity>
+    <entity compositePrimaryKeyClass="PerUsuarioPK" abs="false" class="PerUsuario" pclass="Usuario" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599497765456368">
+        <removedAttributes>
+            <i>apellidoPaterno</i>
+            <i>siruAutorizacion</i>
+            <i>fechaNacimiento</i>
+            <i>idRbacUser</i>
+            <i>siruPersonae</i>
+            <i>historical</i>
+            <i>segSessions</i>
+            <i>nombres</i>
+            <i>tipoDocumento</i>
+            <i>siruAutorizacions</i>
+            <i>siruPersona</i>
+            <i>complementoDocumento</i>
+            <i>genero</i>
+            <i>expedicionDocumento</i>
+            <i>numeroDocumento</i>
+            <i>cargo</i>
+            <i>apellidoMeterno</i>
+        </removedAttributes>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipo" pname="attribute" id="_1599499143919486">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="email" pname="correoElectronico" id="_1599497765456371">
+                <xwm/>
+                <xm/>
+                <column name="correo_electronico" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="200"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="estado" id="_1599497765456382">
+                <xwm/>
+                <xm/>
+                <column name="estado" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="50"/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_1599497788087389" v="true" xvt="" name="perPersona" pname="siruPersona" id="_1599500662447572">
+                <xwm/>
+                <xm/>
+            </many-to-one>
+            <one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599498235747431" v="true" xvt="" name="perOperadorList" pname="siruAutorizacions" id="_1599499780596530">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" pname="idUsuario" id="_1599497765456369">
+                <xwm/>
+                <xm/>
+                <column name="id_usuario" unique="false" nullable="false" insertable="true" updatable="true" table="usuario"/>
+            </id>
+        </attributes>
+        <nq e="false" name="PerUsuario.findByTipo">
+            <query>Select s from PerUsuario s where s.tipo=:tipo</query>
+        </nq>
+        <table name="usuario"/>
+    </entity>
+    <entity compositePrimaryKeyClass="PerPersonaPK" abs="false" class="PerPersona" pclass="Usuario" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599497788087389">
+        <removedAttributes>
+            <i>idRbacUser</i>
+            <i>siruPersonaCons</i>
+            <i>segUsuarios</i>
+            <i>historical</i>
+            <i>siruPersonaDocs</i>
+            <i>attribute</i>
+            <i>cargo</i>
+            <i>correoElectronico</i>
+        </removedAttributes>
+        <attributes>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="nombres" id="_1599497788087392">
+                <xwm/>
+                <xm/>
+                <column name="nombres" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="200"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" name="apellidoPaterno" id="_1599497788087393">
+                <column name="apellido_paterno" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" name="apellidoMeterno" id="_1599497788087394">
+                <column name="apellido_meterno" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" name="genero" id="_1599497788087395">
+                <column name="genero" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" v="true" xvt="" name="fechaNacimiento" id="_1599497788087399">
+                <xwm/>
+                <xm/>
+                <temporal>DATE</temporal>
+                <column name="fecha_nacimiento" unique="false" nullable="true" insertable="true" updatable="true" table="usuario"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="tipoDocumento" pname="tipoDocumento" id="_1599497788087396">
+                <xwm/>
+                <xm/>
+                <column name="tipo_documento" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="numeroDocumento" id="_1599497788087397">
+                <xwm/>
+                <xm/>
+                <column name="numero_documento" unique="false" nullable="true" insertable="true" updatable="true" table="usuario"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="complementoDocumento" id="_1599497788087398">
+                <xwm/>
+                <xm/>
+                <column name="complemento_documento" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="expedicionDocumento" id="_1599497788087400">
+                <xwm/>
+                <xm/>
+                <column name="expedicion_documento" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="10"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="estado" id="_1599497788087402">
+                <xwm/>
+                <xm/>
+                <column name="estado" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="50"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="direccion" pname="tipoDocumento" id="_1599506769097686">
+                <xwm/>
+                <xm/>
+                <column name="tipo_documento" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="numeroCelular" pname="tipoDocumento" id="_1599506816721687">
+                <xwm/>
+                <xm/>
+                <column name="tipo_documento" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="100"/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="numeroTelefonico" pname="tipoDocumento" id="_1599506817596688">
+                <xwm/>
+                <xm/>
+                <column name="tipo_documento" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="100"/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" pname="idUsuario" id="_1599497788087390">
+                <xwm/>
+                <xm/>
+                <column name="id_usuario" unique="false" nullable="false" insertable="true" updatable="true" table="usuario"/>
+            </id>
+        </attributes>
+        <table name="usuario"/>
+    </entity>
+    <entity compositePrimaryKeyClass="PerOperadorPK" abs="false" class="PerOperador" pclass="UsuarioEmpresa" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599498235747431">
+        <removedAttributes>
+            <i>fechaRegistro</i>
+            <i>idUsuario</i>
+            <i>segUsuarios</i>
+            <i>historical</i>
+            <i>idEmpresa</i>
+            <i>idParametricaRol</i>
+            <i>siruEmpresa</i>
+            <i>segUsuario</i>
+        </removedAttributes>
+        <attributes>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="cargo" pname="usuarioRegistrador" id="_1599498235747434">
+                <xwm/>
+                <xm/>
+                <column name="usuario_registrador" unique="false" nullable="true" insertable="true" updatable="true" table="usuario_empresa"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="estado" id="_1599498235747433">
+                <xwm/>
+                <xm/>
+                <column name="estado" unique="false" nullable="true" insertable="true" updatable="true" table="usuario_empresa"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaSolicitud" pname="attribute" id="_1599506261324683">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaRespuesta" pname="attribute" id="_1599506270033684">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaDesde" pname="attribute" id="_1599498570515451">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaHasta" pname="attribute1" id="_1599498575786452">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" pname="idUsuarioEmpresa" id="_1599498235747432">
+                <xwm/>
+                <xm/>
+                <column name="id_usuario_empresa" unique="false" nullable="false" insertable="true" updatable="true" table="usuario_empresa"/>
+            </id>
+        </attributes>
+        <nq e="false" name="PerOperador.findByFechaDesde">
+            <query>Select s from PerOperador s where s.fechaDesde=:fechaDesde</query>
+        </nq>
+        <nq e="false" name="PerOperador.findByFechaHasta">
+            <query>Select s from PerOperador s where s.fechaHasta=:fechaHasta</query>
+        </nq>
+        <nq e="false" name="PerOperador.findByFechaSolicitud">
+            <query>Select s from PerOperador s where s.fechaSolicitud=:fechaSolicitud</query>
+        </nq>
+        <nq e="false" name="PerOperador.findByFechaRespuesta">
+            <query>Select s from PerOperador s where s.fechaRespuesta=:fechaRespuesta</query>
+        </nq>
+        <table name="usuario_empresa"/>
+    </entity>
+    <entity compositePrimaryKeyClass="CliEmpCategoriaPK" abs="false" class="CliEmpCategoria" pclass="Empresa" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599498653402453">
+        <removedAttributes>
+            <i>nombreRazonSocial</i>
+            <i>codigoCertificacionNit</i>
+            <i>matriculaFundempresa</i>
+            <i>latitud</i>
+            <i>anioIncioOperaciones</i>
+            <i>estadoNit</i>
+            <i>historical</i>
+            <i>carrito</i>
+            <i>numeroRegistroOea</i>
+            <i>operadorEconomicoAutorizado</i>
+            <i>longitud</i>
+            <i>sitioWeb</i>
+            <i>nit</i>
+            <i>observaciones</i>
+            <i>nombreComercial</i>
+            <i>anioFundacion</i>
+            <i>datosTemporales</i>
+            <i>descripcionEmpresa</i>
+            <i>correoElectronico</i>
+        </removedAttributes>
+        <attributes>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="estado" id="_1599498653402470">
+                <xwm/>
+                <xm/>
+                <column name="estado" unique="false" nullable="true" insertable="true" updatable="true" table="empresa" length="50"/>
+            </basic>
+            <basic optional="true" attribute-type="java.util.Date" v="true" xvt="" name="fecha" pname="fecha" id="_1599498871628485">
+                <xwm/>
+                <xm/>
+                <temporal>DATE</temporal>
+                <column name="fecha" unique="false" nullable="true" insertable="true" updatable="true" table="direccion"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="nroEmpleados" pname="longitud" id="_1599498653402463">
+                <xwm/>
+                <xm/>
+                <column name="longitud" unique="false" nullable="true" insertable="true" updatable="true" table="empresa"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="activosUFV" pname="longitud" id="_1599507762197689">
+                <xwm/>
+                <xm/>
+                <column name="longitud" unique="false" nullable="true" insertable="true" updatable="true" table="empresa"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="ventasUFV" pname="longitud" id="_1599507762526690">
+                <xwm/>
+                <xm/>
+                <column name="longitud" unique="false" nullable="true" insertable="true" updatable="true" table="empresa"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="exportacionesUFV" pname="longitud" id="_1599507762728691">
+                <xwm/>
+                <xm/>
+                <column name="longitud" unique="false" nullable="true" insertable="true" updatable="true" table="empresa"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="exportacionesRubros" pname="longitud" id="_1599508000844694">
+                <xwm/>
+                <xm/>
+                <column name="longitud" unique="false" nullable="true" insertable="true" updatable="true" table="empresa"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="importacionesUFV" pname="longitud" id="_1599507762869692">
+                <xwm/>
+                <xm/>
+                <column name="longitud" unique="false" nullable="true" insertable="true" updatable="true" table="empresa"/>
+            </basic>
+            <basic optional="true" attribute-type="java.math.BigInteger" v="true" xvt="" name="importacionesRubros" pname="longitud" id="_1599508021810695">
+                <xwm/>
+                <xm/>
+                <column name="longitud" unique="false" nullable="true" insertable="true" updatable="true" table="empresa"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="categoria" pname="attribute" id="_1599508125387696">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" name="id" id="_1599498653402454">
+                <column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="empresa"/>
+            </id>
+        </attributes>
+        <nq e="false" name="CliEmpCategoria.findByCategoria">
+            <query>Select s from CliEmpCategoria s where s.categoria=:categoria</query>
+        </nq>
+        <table name="empresa"/>
+    </entity>
+    <entity compositePrimaryKeyClass="RegRUEXPK" abs="false" class="RegRUEX" pclass="Entity_1" superclassId="_1599499704153515" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599499683652512">
+        <ath>yracnet</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="codigoRuex" pname="attribute" id="_1599500120313546">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="RegRUEX.findAll">
+            <query>Select e from RegRUEX e</query>
+        </nq>
+        <nq e="false" name="RegRUEX.findByCodigoRuex">
+            <query>Select s from RegRUEX s where s.codigoRuex=:codigoRuex</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="RegRegistroPK" abs="true" class="RegRegistro" pclass="Entity_2" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599499704153515">
+        <ath>yracnet</ath>
+        <removedAttributes>
+            <i>siruEmpresa</i>
+        </removedAttributes>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipo" pname="attribute" id="_1599500094601543">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="estado" id="_1599499712271518">
+                <xwm/>
+                <xm/>
+                <column name="estado" unique="false" nullable="true" insertable="true" updatable="true" table="solicitud" length="50"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="descripcion" pname="attribute" id="_1599500072313542">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaEmision" pname="attribute" id="_1599500105209544">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaVencimiento" pname="attribute" id="_1599500110537545">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599499724376519" v="true" xvt="" name="regValorList" pname="siruValors" id="_1599500185345549">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1599499704161516">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="RegRegistro.findAll">
+            <query>Select e from RegRegistro e</query>
+        </nq>
+        <nq e="false" name="RegRegistro.findByDescripcion">
+            <query>Select s from RegRegistro s where s.descripcion=:descripcion</query>
+        </nq>
+        <nq e="false" name="RegRegistro.findByTipo">
+            <query>Select s from RegRegistro s where s.tipo=:tipo</query>
+        </nq>
+        <nq e="false" name="RegRegistro.findByFechaEmision">
+            <query>Select s from RegRegistro s where s.fechaEmision=:fechaEmision</query>
+        </nq>
+        <nq e="false" name="RegRegistro.findByFechaVencimiento">
+            <query>Select s from RegRegistro s where s.fechaVencimiento=:fechaVencimiento</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="RegValorPK" abs="true" class="RegValor" pclass="Entity_2" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599499724376519">
+        <ath>yracnet</ath>
+        <attributes>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="estado" id="_1599499724376521">
+                <xwm/>
+                <xm/>
+                <column name="estado" unique="false" nullable="true" insertable="true" updatable="true" table="solicitud" length="50"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="tipo" pname="attribute" id="_1599500206324550">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="descripcion" pname="attribute" id="_1599500209324551">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaEmision" pname="attribute" id="_1599500212179552">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaVencimiento" pname="attribute" id="_1599500215427553">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" name="id" id="_1599499724376520">
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="RegValor.findAll">
+            <query>Select e from RegValor e</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="RegRUIPK" abs="false" class="RegRUI" pclass="Entity_1" superclassId="_1599499704153515" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599499862294538">
+        <ath>yracnet</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="codigoRui" pname="attribute" id="_1599500136833547">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="RegRUI.findAll">
+            <query>Select e from RegRUI e</query>
+        </nq>
+        <nq e="false" name="RegRUI.findByCodigoRui">
+            <query>Select s from RegRUI s where s.codigoRui=:codigoRui</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="RegDeclaracionPK" abs="false" class="RegDeclaracion" pclass="Entity_1" superclassId="_1599499724376519" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599500235862554">
+        <ath>yracnet</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="codigoDJ" pname="attribute" id="_1599500521433565">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="RegDeclaracion.findAll">
+            <query>Select e from RegDeclaracion e</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="RegCertificadoPK" abs="false" class="RegCertificado" pclass="Entity_2" superclassId="_1599499724376519" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599500239528557">
+        <ath>yracnet</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="codigoCert" pname="attribute" id="_1599500530401566">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="RegCertificado.findAll">
+            <query>Select e from RegCertificado e</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="ParValorPK" abs="false" class="ParValor" pclass="Entity_3" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599500262998562">
+        <ath>yracnet</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="orden" pname="attribute" id="_1599504557611656">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="valor" pname="attribute1" id="_1599504557891657">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="etiqueta" pname="attribute2" id="_1599504558123658">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="descripcion" pname="attribute3" id="_1599504558522659">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estado" pname="attribute" id="_1599504583362660">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" name="id" id="_1599500263021563">
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="ParValor.findAll">
+            <query>Select e from ParValor e</query>
+        </nq>
+        <nq e="false" name="ParValor.findByOrden">
+            <query>Select p from ParValor p where p.orden=:orden</query>
+        </nq>
+        <nq e="false" name="ParValor.findByValor">
+            <query>Select p from ParValor p where p.valor=:valor</query>
+        </nq>
+        <nq e="false" name="ParValor.findByEtiqueta">
+            <query>Select p from ParValor p where p.etiqueta=:etiqueta</query>
+        </nq>
+        <nq e="false" name="ParValor.findByDescripcion">
+            <query>Select p from ParValor p where p.descripcion=:descripcion</query>
+        </nq>
+        <nq e="false" name="ParValor.findByEstado">
+            <query>Select p from ParValor p where p.estado=:estado</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="ConDepositoPK" abs="false" class="ConDeposito" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599500867027573">
+        <ath>yracnet</ath>
+        <removedAttributes>
+            <i>attribute</i>
+        </removedAttributes>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="cuenta" pname="attribute1" id="_1599503543985611">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="comprobante" pname="attribute2" id="_1599503544217612">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="monto" pname="attribute3" id="_1599503544433613">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="documento" pname="attribute" id="_1599504635234661">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="descripcion" pname="attribute" id="_1599503596548615">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estado" pname="attribute" id="_1599503586044614">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="observaciones" pname="attribute" id="_1599503605777616">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" name="id" id="_1599500867048574">
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="ConDeposito.findAll">
+            <query>Select e from ConDeposito e</query>
+        </nq>
+        <nq e="false" name="ConDeposito.findByEntidad">
+            <query>Select s from ConDeposito s where s.entidad=:entidad</query>
+        </nq>
+        <nq e="false" name="ConDeposito.findByCuenta">
+            <query>Select s from ConDeposito s where s.cuenta=:cuenta</query>
+        </nq>
+        <nq e="false" name="ConDeposito.findByComprobante">
+            <query>Select s from ConDeposito s where s.comprobante=:comprobante</query>
+        </nq>
+        <nq e="false" name="ConDeposito.findByMonto">
+            <query>Select s from ConDeposito s where s.monto=:monto</query>
+        </nq>
+        <nq e="false" name="ConDeposito.findByObservaciones">
+            <query>Select s from ConDeposito s where s.observaciones=:observaciones</query>
+        </nq>
+        <nq e="false" name="ConDeposito.findByDocumento">
+            <query>Select s from ConDeposito s where s.documento=:documento</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="DocSeguimientoPK" abs="false" class="DocSeguimiento" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599502576241576">
+        <ath>yracnet</ath>
+        <removedAttributes>
+            <i>segUsuarios</i>
+        </removedAttributes>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipo" pname="attribute" id="_1599502798712583">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="referencia" pname="attribute" id="_1599504853380665">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="idReferencia" pname="attribute" id="_1599502804438584">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic optional="true" attribute-type="String" v="true" xvt="" name="estado" id="_1599502831039585">
+                <xwm/>
+                <xm/>
+                <column name="estado" unique="false" nullable="true" insertable="true" updatable="true" table="usuario" length="50"/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_1599497765456368" v="true" name="perUsuario" pname="segUsuario" id="_1599502792824582"/>
+            <id attribute-type="Long" v="true" name="id" id="_1599502576262577">
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="DocSeguimiento.findAll">
+            <query>Select e from DocSeguimiento e</query>
+        </nq>
+        <nq e="false" name="DocSeguimiento.findByTipo">
+            <query>Select s from DocSeguimiento s where s.tipo=:tipo</query>
+        </nq>
+        <nq e="false" name="DocSeguimiento.findByIdReferencia">
+            <query>Select s from DocSeguimiento s where s.idReferencia=:idReferencia</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="LogSessionPK" abs="false" class="LogSession" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599502869074586">
+        <ath>yracnet</ath>
+        <removedAttributes>
+            <i>segUsuarios</i>
+            <i>segUsuario</i>
+        </removedAttributes>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="estado" pname="attribute" id="_1599504406716646">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaLogin" pname="attribute" id="_1599503105964596">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaLogout" pname="attribute1" id="_1599503107124597">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_1599497765456368" v="true" xvt="" name="perUsuario" pname="segUsuario" id="_1599503098597595">
+                <xwm/>
+                <xm/>
+            </many-to-one>
+            <one-to-many collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599505144308666" connected-attribute-id="_1599505252263679" v="true" xvt="" name="logAuditoriaList" pname="logAuditorias" id="_1599505252264680">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1599502869103587">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="LogSession.findAll">
+            <query>Select e from LogSession e</query>
+        </nq>
+        <nq e="false" name="LogSession.findByFechaLogin">
+            <query>Select s from LogSession s where s.fechaLogin=:fechaLogin</query>
+        </nq>
+        <nq e="false" name="LogSession.findByFechaLogout">
+            <query>Select s from LogSession s where s.fechaLogout=:fechaLogout</query>
+        </nq>
+        <nq e="false" name="LogSession.findByEstado">
+            <query>Select s from LogSession s where s.estado=:estado</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="ConPagoPK" abs="false" class="ConPago" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599503373083598">
+        <ath>yracnet</ath>
+        <removedAttributes>
+            <i>attribute</i>
+        </removedAttributes>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="descripcion" pname="attribute" id="_1599503426210603">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="monto" pname="attribute" id="_1599503439178604">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estado" pname="attribute" id="_1599503445266605">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" name="fechaRegistro" pname="attribute" id="_1599503452482606"/>
+            <basic attribute-type="String" v="true" name="fechaPago" pname="attribute" id="_1599503470082607"/>
+            <basic attribute-type="String" v="true" xvt="" name="tipo" pname="attribute" id="_1599504744777662">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="referencia" pname="attribute" id="_1599504841649664">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="idReferencia" pname="attribute" id="_1599504749121663">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599500867027573" v="true" xvt="" name="conDepositoList" pname="siruDepositoes" id="_1599503529691609">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" name="id" id="_1599503373117599">
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="ConPago.findAll">
+            <query>Select e from ConPago e</query>
+        </nq>
+        <nq e="false" name="ConPago.findByDescripcion">
+            <query>Select s from ConPago s where s.descripcion=:descripcion</query>
+        </nq>
+        <nq e="false" name="ConPago.findByMonto">
+            <query>Select s from ConPago s where s.monto=:monto</query>
+        </nq>
+        <nq e="false" name="ConPago.findByEstado">
+            <query>Select s from ConPago s where s.estado=:estado</query>
+        </nq>
+        <nq e="false" name="ConPago.findByFechaRegistro">
+            <query>Select s from ConPago s where s.fechaRegistro=:fechaRegistro</query>
+        </nq>
+        <nq e="false" name="ConPago.findByFechaPago">
+            <query>Select s from ConPago s where s.fechaPago=:fechaPago</query>
+        </nq>
+        <nq e="false" name="ConPago.findByTipo">
+            <query>Select s from ConPago s where s.tipo=:tipo</query>
+        </nq>
+        <nq e="false" name="ConPago.findByTipo">
+            <query>Select s from ConPago s where s.tipo=:tipo</query>
+        </nq>
+        <nq e="false" name="ConPago.findByIdReferencia">
+            <query>Select s from ConPago s where s.idReferencia=:idReferencia</query>
+        </nq>
+        <nq e="false" name="ConPago.findByReferencia">
+            <query>Select s from ConPago s where s.referencia=:referencia</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="ParDominioPK" abs="false" class="ParDominio" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599504477468647">
+        <ath>yracnet</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="codigo" pname="attribute" id="_1599504495291650">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="tabla" pname="attribute1" id="_1599504495691651">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="campo" pname="attribute2" id="_1599504496707652">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estado" pname="attribute" id="_1599504532387653">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599500262998562" v="true" xvt="" name="parValorList" pname="parValors" id="_1599504546828655">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" name="id" id="_1599504477486648">
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="ParDominio.findAll">
+            <query>Select e from ParDominio e</query>
+        </nq>
+        <nq e="false" name="ParDominio.findByCodigo">
+            <query>Select p from ParDominio p where p.codigo=:codigo</query>
+        </nq>
+        <nq e="false" name="ParDominio.findByTabla">
+            <query>Select p from ParDominio p where p.tabla=:tabla</query>
+        </nq>
+        <nq e="false" name="ParDominio.findByCampo">
+            <query>Select p from ParDominio p where p.campo=:campo</query>
+        </nq>
+        <nq e="false" name="ParDominio.findByEstado">
+            <query>Select p from ParDominio p where p.estado=:estado</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="LogAuditoriaPK" abs="false" class="LogAuditoria" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599505144308666">
+        <ath>yracnet</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="fecha" pname="attribute" id="_1599505291053681">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="operacion" pname="attribute1" id="_1599505291518682">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-one primaryKey="false" connected-entity-id="_1599502869074586" connected-attribute-id="_1599505252264680" v="true" name="logSession" pname="segSession" id="_1599505252263679"/>
+            <one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1599505150493669" v="true" xvt="" name="logCambioList" pname="entity_2s" id="_1599505168007673">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" name="id" id="_1599505144325667">
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="LogAuditoria.findAll">
+            <query>Select e from LogAuditoria e</query>
+        </nq>
+        <nq e="false" name="LogAuditoria.findByFecha">
+            <query>Select l from LogAuditoria l where l.fecha=:fecha</query>
+        </nq>
+        <nq e="false" name="LogAuditoria.findByOperacion">
+            <query>Select l from LogAuditoria l where l.operacion=:operacion</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="LogCambioPK" abs="false" class="LogCambio" pclass="Entity_2" v="true" xre="false" m="false" rootElement="_15994834405271" id="_1599505150493669">
+        <ath>yracnet</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tabla" pname="attribute" id="_1599505195406674">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="columna" pname="attribute1" id="_1599505196094675">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="valor" pname="attribute2" id="_1599505196358676">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="nuevoValor" pname="attribute3" id="_1599505196990677">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" name="id" id="_1599505150510670">
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="LogCambio.findAll">
+            <query>Select e from LogCambio e</query>
+        </nq>
+        <nq e="false" name="LogCambio.findByTabla">
+            <query>Select l from LogCambio l where l.tabla=:tabla</query>
+        </nq>
+        <nq e="false" name="LogCambio.findByColumna">
+            <query>Select l from LogCambio l where l.columna=:columna</query>
+        </nq>
+        <nq e="false" name="LogCambio.findByValor">
+            <query>Select l from LogCambio l where l.valor=:valor</query>
+        </nq>
+        <nq e="false" name="LogCambio.findByNuevoValor">
+            <query>Select l from LogCambio l where l.nuevoValor=:nuevoValor</query>
+        </nq>
+    </entity>
+    <c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+        <cit>java.util.ArrayList</cit>
+        <cit>java.util.LinkedList</cit>
+        <cit>java.util.HashSet</cit>
+        <cit>java.util.TreeSet</cit>
+        <cit>java.util.HashMap</cit>
+    </c>
+    <wsl>
+        <ws n="Main" id="_15994834405272">
+            <i ref="_1599500239528557" x="1240" y="1012"/>
+            <i ref="_1599499683652512" x="708" y="758"/>
+            <i ref="_1599500235862554" x="967" y="1012"/>
+            <i ref="_1599502869074586" x="1646" y="476"/>
+            <i ref="_1599505150493669" x="2042" y="903"/>
+            <i ref="_1599485941865334" x="49" y="387"/>
+            <i ref="_1599498653402453" x="284" y="387"/>
+            <i ref="_1599498235747431" x="946" y="89"/>
+            <i ref="_1599500867027573" x="633" y="1039"/>
+            <i ref="_1599499704153515" x="810" y="466"/>
+            <i ref="_1599500262998562" x="1549" y="1013"/>
+            <i ref="_1599485559591302" x="634" y="89"/>
+            <i ref="_1599497788087389" x="1646" y="12"/>
+            <i ref="_1599499724376519" x="1133" y="758"/>
+            <i ref="_1599484754117294" x="51" y="24"/>
+            <i ref="_1599504477468647" x="1425" y="758"/>
+            <i ref="_1599505144308666" x="1903" y="664"/>
+            <i ref="_1599503373083598" x="451" y="708"/>
+            <i ref="_1599499862294538" x="934" y="767"/>
+            <i ref="_1599502576241576" x="1389" y="-3"/>
+            <i ref="_1599497765456368" x="1284" y="278"/>
+            <i ref="_1599484383525286" x="330" y="24"/>
+        </ws>
+    </wsl>
+</entity-mappings>

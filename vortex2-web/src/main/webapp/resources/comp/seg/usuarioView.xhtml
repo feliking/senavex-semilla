@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <div xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:f="http://xmlns.jcp.org/jsf/core"
+             xmlns:cc="http://java.sun.com/jsf/composite"
+             xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+             xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+            <cc:interface>
+                <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.SegUsuario"/>
+                <cc:attribute name="styleClass" default="row"/>
+                <cc:attribute name="size" default="sm"/>
+                <cc:attribute name="classOutput" default="form-control form-control-#{cc.attrs.size}"/>
+                <!-- attribute handler -->
+                
+                <!-- correoElectronico -->
+                <cc:attribute name="correoElectronicoLabel" default="#{LBL.USUARIO.CORREO_ELECTRONICO}"/>
+                <cc:attribute name="correoElectronicoRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- tipo -->
+                <cc:attribute name="tipoLabel" default="#{LBL.USUARIO.TIPO}"/>
+                <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- estado -->
+                <cc:attribute name="estadoLabel" default="#{LBL.USUARIO.ESTADO}"/>
+                <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+                
+            </cc:interface>
+            <cc:implementation>
+                <div id="#{cc.clientId}" class="row row-view #{cc.attrs.styleClass}">
+                    
+                    <hsk:rowLabel text="#{cc.attrs.correoElectronicoLabel}"
+                                  rendered="#{cc.attrs.correoElectronicoRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-12"
+                                  classText="col-2"
+                                  classValue="col-10">
+                        
+                        <h:outputText value="#{cc.attrs.value.correoElectronico}"
+                                      title="#{cc.attrs.correoElectronicoLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"/>
+                        
+                    </hsk:rowLabel>
+                    
+                    <hsk:rowLabel text="#{cc.attrs.tipoLabel}"
+                                  rendered="#{cc.attrs.tipoRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+                        
+                        <h:outputText value="#{cc.attrs.value.tipo.label}"
+                                      title="#{cc.attrs.tipoLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"/>
+                        
+                    </hsk:rowLabel>
+                    
+                    <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                                  rendered="#{cc.attrs.estadoRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+                        
+                        <h:outputText value="#{cc.attrs.value.estado.label}"
+                                      title="#{cc.attrs.estadoLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"/>
+                        
+                    </hsk:rowLabel>
+                    
+                </div>
+            </cc:implementation>
+        </div>

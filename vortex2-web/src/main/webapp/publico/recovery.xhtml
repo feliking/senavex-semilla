@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition template="#{_config.templateOut}"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                xmlns:util="http://xmlns.jcp.org/jsf/composite/util"
+                xmlns:seg="http://xmlns.jcp.org/jsf/composite/comp/seg">
+    <ui:define name="title">
+        <i class="fa fa-check"></i>
+        Recuperar Acceso al Sistema
+    </ui:define>
+    <ui:define name="content">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2>#{PAGE.RECOVERY_TITLE}</h2>
+            </div>
+            <div class="card-body text-center">
+                <p>#{PAGE.RECOVERY_DETAIL}</p>
+                <h:form styleClass="col-6 m-auto">
+                    <div class="row-form row">
+                        <util:prepend icon="at"
+                                         styleClass="col-12">
+                            <h:inputText id="correoElectronico"
+                                         value="#{_recovery.correoElectronico}"
+                                         label="#{LBL.USUARIO.CORREO_ELECTRONICO}"
+                                         title="#{LBL.USUARIO.CORREO_ELECTRONICO}"
+                                         pt:placeholder="#{LBL.USUARIO.CORREO_ELECTRONICO}"
+                                         styleClass="form-control"
+                                         autocomplete="off"
+                                         required="true"/>
+                            <h:message for="correoElectronico"/>
+                        </util:prepend>
+                        <util:panelCaptcha value="#{_acceso.captcha.value}" styleClass="col-12"/>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <h:commandButton value="#{BTN.RECOVERY_SEND}"
+                                             action="#{_recovery.recoveryAction()}"
+                                             styleClass="btn btn-primary"/>
+                        </div>
+                        <div class="col-6 text-right">
+
+                            <h:commandButton value="#{BTN.CANCEL}"
+                                             action="login"
+                                             styleClass="btn btn-danger"
+                                             immediate="true"/>
+                        </div>
+                    </div>
+                </h:form>
+            </div>
+
+
+        </div>
+    </ui:define>
+</ui:composition>

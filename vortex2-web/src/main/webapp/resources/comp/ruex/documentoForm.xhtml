@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.CliDocumento"/>
+        <cc:attribute name="disabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="classInput" default="form-control form-control-sm"/>
+        <!-- attribute handler -->
+
+        <!-- nombre -->
+        <cc:attribute name="nombreLabel" default="#{LBL.DOCUMENTO.NOMBRE}"/>
+        <cc:attribute name="nombreDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- numero -->
+        <cc:attribute name="numeroLabel" default="#{LBL.DOCUMENTO.NUMERO}"/>
+        <cc:attribute name="numeroDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroRequired" default="false" type="java.lang.Boolean"/>
+
+        <!-- docRespaldo -->
+        <cc:attribute name="docRespaldoLabel" default="#{LBL.DOCUMENTO.DOC_RESPALDO}"/>
+        <cc:attribute name="docRespaldoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="docRespaldoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- vigenciaDesde -->
+        <cc:attribute name="vigenciaDesdeLabel" default="#{LBL.DOCUMENTO.VIGENCIA_DESDE}"/>
+        <cc:attribute name="vigenciaDesdeDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="vigenciaDesdeRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="vigenciaDesdeRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- vigenciaHasta -->
+        <cc:attribute name="vigenciaHastaLabel" default="#{LBL.DOCUMENTO.VIGENCIA_HASTA}"/>
+        <cc:attribute name="vigenciaHastaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="vigenciaHastaRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="vigenciaHastaRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- documentoRespaldo -->
+        <cc:attribute name="documentoRespaldoLabel" default="#{LBL.DOCUMENTO.DOCUMENTO_RESPALDO}"/>
+        <cc:attribute name="documentoRespaldoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="documentoRespaldoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="documentoRespaldoRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- observacion -->
+        <cc:attribute name="observacionLabel" default="#{LBL.DOCUMENTO.OBSERVACION}"/>
+        <cc:attribute name="observacionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="observacionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="observacionRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- descripcion -->
+        <cc:attribute name="descripcionLabel" default="#{LBL.DOCUMENTO.DESCRIPCION}"/>
+        <cc:attribute name="descripcionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="descripcionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="descripcionRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- tipo -->
+        <cc:attribute name="tipoLabel" default="#{LBL.DOCUMENTO.TIPO}"/>
+        <cc:attribute name="tipoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoOption" default="#{_option.cliDocumentoTipoOption}" type="java.util.List"/>
+
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.DOCUMENTO.ESTADO}"/>
+        <cc:attribute name="estadoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoOption" default="#{_option.cliDocumentoEstadoOption}" type="java.util.List"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.tipoLabel}"
+                          rendered="#{cc.attrs.tipoRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="tipo"
+                                 value="#{cc.attrs.value.tipo}"
+                                 label="#{cc.attrs.tipoLabel}"
+                                 title="#{cc.attrs.tipoLabel}"
+                                 disabled="#{cc.attrs.tipoDisabled}"
+                                 required="#{not cc.attrs.tipoDisabled and cc.attrs.tipoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.tipoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="tipo"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:selectOneMenu id="estado"
+                                 value="#{cc.attrs.value.estado}"
+                                 label="#{cc.attrs.estadoLabel}"
+                                 title="#{cc.attrs.estadoLabel}"
+                                 disabled="#{cc.attrs.estadoDisabled}"
+                                 required="#{not cc.attrs.estadoDisabled and cc.attrs.estadoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.estadoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="estado"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.nombreLabel}"
+                          rendered="#{cc.attrs.nombreRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="nombre"
+                             value="#{cc.attrs.value.nombre}"
+                             label="#{cc.attrs.nombreLabel}"
+                             title="#{cc.attrs.nombreLabel}"
+                             disabled="#{cc.attrs.nombreDisabled}"
+                             required="#{not cc.attrs.nombreDisabled and cc.attrs.nombreRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="nombre"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.numeroLabel}"
+                          rendered="#{cc.attrs.numeroRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="numero"
+                             value="#{cc.attrs.value.numero}"
+                             label="#{cc.attrs.numeroLabel}"
+                             title="#{cc.attrs.numeroLabel}"
+                             disabled="#{cc.attrs.numeroDisabled}"
+                             required="#{not cc.attrs.numeroDisabled and cc.attrs.numeroRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="numero"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.docRespaldoLabel}"
+                          rendered="#{cc.attrs.docRespaldoRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <label class="input-group m-0">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-upload"></i>
+                        </span>
+                    </div>
+                    <h:inputFile id="docRespaldo"
+                                 value="#{cc.attrs.value.docRespaldoPart}"
+                                 label="#{cc.attrs.docRespaldoLabel}"
+                                 title="#{cc.attrs.docRespaldoLabel}"
+                                 disabled="#{cc.attrs.docRespaldoDisabled}"
+                                 required="#{not cc.attrs.value.esRequerido and attrs.value.esRequerido}"
+                                 styleClass="#{cc.attrs.classInput}">
+                        <f:passThroughAttribute name="accept" value="application/pdf" />
+                    </h:inputFile>
+                </label>
+                <h:message for="docRespaldo"/>
+            </hsk:rowLabel>
+
+
+            <hsk:rowLabel text="#{cc.attrs.vigenciaDesdeLabel}"
+                          rendered="#{cc.attrs.vigenciaDesdeRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="vigenciaDesde"
+                             value="#{cc.attrs.value.vigenciaDesde}"
+                             label="#{cc.attrs.vigenciaDesdeLabel}"
+                             title="#{cc.attrs.vigenciaDesdeLabel}"
+                             disabled="#{cc.attrs.vigenciaDesdeDisabled}"
+                             required="#{not cc.attrs.vigenciaDesdeDisabled and cc.attrs.vigenciaDesdeRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="vigenciaDesde"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.vigenciaHastaLabel}"
+                          rendered="#{cc.attrs.vigenciaHastaRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="vigenciaHasta"
+                             value="#{cc.attrs.value.vigenciaHasta}"
+                             label="#{cc.attrs.vigenciaHastaLabel}"
+                             title="#{cc.attrs.vigenciaHastaLabel}"
+                             disabled="#{cc.attrs.vigenciaHastaDisabled}"
+                             required="#{not cc.attrs.vigenciaHastaDisabled and cc.attrs.vigenciaHastaRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="vigenciaHasta"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.descripcionLabel}"
+                          rendered="#{cc.attrs.descripcionRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:inputTextarea id="descripcion"
+                                 value="#{cc.attrs.value.descripcion}"
+                                 label="#{cc.attrs.descripcionLabel}"
+                                 title="#{cc.attrs.descripcionLabel}"
+                                 disabled="#{cc.attrs.descripcionDisabled}"
+                                 required="#{not cc.attrs.descripcionDisabled and cc.attrs.descripcionRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 cols="50"
+                                 rows="1"/>
+
+                <h:message for="descripcion"/>
+            </hsk:rowLabel>
+
+
+            <hsk:rowLabel text="#{cc.attrs.observacionLabel}"
+                          rendered="#{cc.attrs.observacionRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:inputTextarea id="observacion"
+                                 value="#{cc.attrs.value.observacion}"
+                                 label="#{cc.attrs.observacionLabel}"
+                                 title="#{cc.attrs.observacionLabel}"
+                                 disabled="#{cc.attrs.observacionDisabled}"
+                                 required="#{not cc.attrs.observacionDisabled and cc.attrs.observacionRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 cols="50"
+                                 rows="1"/>
+
+                <h:message for="observacion"/>
+            </hsk:rowLabel>
+
+        </div>
+    </cc:implementation>
+</div>

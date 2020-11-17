@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="java.util.List"/>
+        <cc:attribute name="select" type="java.lang.Object"/>
+        <cc:attribute name="pagination" type="com.hiska.result.Pagination"/>
+        <cc:attribute name="sortListener" method-signature="void m()"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="styleClass" default="table table-bordered table-sm"/>
+        <!-- attribute handler -->
+
+        <!-- idDireccion -->
+        <cc:attribute name="idDireccionLabel" default="#{LBL.DIRECCION.KEY}"/>
+        <cc:attribute name="idDireccionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:facet name="idDireccionColumn"/>
+
+        <!-- nombre -->
+        <cc:attribute name="nombreLabel" default="#{LBL.DIRECCION.NOMBRE}"/>
+        <cc:attribute name="nombreRendered" default="true" type="java.lang.Boolean"/>
+        <cc:facet name="nombreColumn"/>
+
+
+        <!-- fechaRegistro -->
+        <cc:attribute name="fechaRegistroLabel" default="#{LBL.DIRECCION.FECHA_REGISTRO}"/>
+        <cc:attribute name="fechaRegistroRendered" default="false" type="java.lang.Boolean"/>
+        <cc:facet name="fechaRegistroColumn"/>
+
+        <!-- tipo -->
+        <cc:attribute name="tipoLabel" default="#{LBL.DIRECCION.TIPO}"/>
+        <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:facet name="tipoColumn"/>
+
+        <!-- departamento -->
+        <cc:attribute name="departamentoLabel" default="#{LBL.DIRECCION.DEPARTAMENTO}"/>
+        <cc:attribute name="departamentoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:facet name="departamentoColumn"/>
+
+        <!-- municipio -->
+        <cc:attribute name="municipioLabel" default="#{LBL.DIRECCION.MUNICIPIO}"/>
+        <cc:attribute name="municipioRendered" default="true" type="java.lang.Boolean"/>
+        <cc:facet name="municipioColumn"/>
+
+        <!-- direccion -->
+        <cc:attribute name="resumenLabel" default="#{LBL.DIRECCION.RESUMEN}"/>
+        <cc:attribute name="resumenRendered" default="true" type="java.lang.Boolean"/>
+        <cc:facet name="resumenColumn"/>
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.DIRECCION.ESTADO}"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:facet name="estadoColumn"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}">
+            <h:dataTable var="row"
+                         value="#{cc.attrs.value}"
+                         styleClass="#{cc.attrs.styleClass}">
+
+                <h:column rendered="#{cc.attrs.idDireccionRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="idDireccion" 
+                                      value="#{cc.attrs.idDireccionLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.idDireccion}"
+                                  title="#{cc.attrs.idDireccionLabel}: #{row.idDireccion}"
+                                  rendered="#{empty cc.facets.idDireccionColumn}"/>
+                    <cc:renderFacet name="idDireccionColumn"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.tipoRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="tipo" 
+                                      value="#{cc.attrs.tipoLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.tipo.label}"
+                                  title="#{cc.attrs.tipoLabel}: #{row.tipo.label}"
+                                  rendered="#{empty cc.facets.tipoColumn}"/>
+                    <cc:renderFacet name="tipoColumn"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.nombreRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="nombre" 
+                                      value="#{cc.attrs.nombreLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.nombre}"
+                                  title="#{cc.attrs.nombreLabel}: #{row.nombre}"
+                                  rendered="#{empty cc.facets.nombreColumn}"/>
+                    <cc:renderFacet name="nombreColumn"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.departamentoRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="departamento" 
+                                      value="#{cc.attrs.departamentoLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.departamento.label}"
+                                  title="#{cc.attrs.departamentoLabel}: #{row.departamento.label}"
+                                  rendered="#{empty cc.facets.departamentoColumn}"/>
+                    <cc:renderFacet name="departamentoColumn"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.municipioRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="municipio" 
+                                      value="#{cc.attrs.municipioLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.municipio.label}"
+                                  title="#{cc.attrs.municipioLabel}: #{row.municipio.label}"
+                                  rendered="#{empty cc.facets.municipioColumn}"/>
+                    <cc:renderFacet name="municipioColumn"/>
+                </h:column>
+                
+                <h:column rendered="#{cc.attrs.resumenRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="XXX" 
+                                      value="#{cc.attrs.resumenLabel}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.avenida}/#{row.calles}/#{row.edificio}/#{row.oficina}/#{row.piso}"
+                                  rendered="#{empty cc.facets.resumenColumn}"/>
+                    <h:outputText value="#{row.referencia}"
+                                  rendered="#{empty cc.facets.resumenColumn}"/>
+                    <h:outputText value="#{row.domicilio}"
+                                  rendered="#{empty cc.facets.resumenColumn}"/>
+                    <cc:renderFacet name="resumenColumn"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.fechaRegistroRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="fechaRegistro" 
+                                      value="#{cc.attrs.fechaRegistroLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.fechaRegistro}"
+                                  title="#{cc.attrs.fechaRegistroLabel}: #{row.fechaRegistro}"
+                                  rendered="#{empty cc.facets.fechaRegistroColumn}"/>
+                    <cc:renderFacet name="fechaRegistroColumn"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.estadoRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="estado" 
+                                      value="#{cc.attrs.estadoLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.estado.label}"
+                                  title="#{cc.attrs.estadoLabel}: #{row.estado.label}"
+                                  rendered="#{empty cc.facets.estadoColumn}"/>
+                    <cc:renderFacet name="estadoColumn"/>
+                </h:column>
+
+                <cc:insertChildren/>
+            </h:dataTable>
+        </div>
+    </cc:implementation>
+</div>

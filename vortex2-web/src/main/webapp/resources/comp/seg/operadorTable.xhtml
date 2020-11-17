@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="java.util.List"/>
+        <cc:attribute name="select" type="java.lang.Object"/>
+        <cc:attribute name="pagination" type="com.hiska.result.Pagination"/>
+        <cc:attribute name="sortListener" method-signature="void m()"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="styleClass" default="table table-bordered table-sm"/>
+        <!-- attribute handler -->
+
+        <!-- empresaKey -->
+        <cc:attribute name="empresaKeyLabel" default="#{LBL.EMPRESA.REF_KEY}"/>
+        <cc:attribute name="empresaKeyRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- empresaName -->
+        <cc:attribute name="empresaNameLabel" default="#{LBL.EMPRESA.REF_NAME}"/>
+        <cc:attribute name="empresaNameRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- segPersonaNombreCompleto -->
+        <cc:attribute name="nombreCompletoLabel" default="#{LBL.PERSONA.NOMBRE_COMPLETO}"/>
+        <cc:attribute name="nombreCompletoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- nombreCargo -->
+        <cc:attribute name="nombreCargoLabel" default="#{LBL.OPERADOR.NOMBRE_CARGO}"/>
+        <cc:attribute name="nombreCargoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- correoElectronico -->
+        <cc:attribute name="correoElectronicoLabel" default="#{LBL.OPERADOR.CORREO_ELECTRONICO}"/>
+        <cc:attribute name="correoElectronicoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- numeroDocumento -->
+        <cc:attribute name="numeroDocumentoLabel" default="#{LBL.OPERADOR.NUMERO_DOCUMENTO}"/>
+        <cc:attribute name="numeroDocumentoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- perfil -->
+        <cc:attribute name="perfilLabel" default="#{LBL.OPERADOR.PERFIL}"/>
+        <cc:attribute name="perfilRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.OPERADOR.ESTADO}"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}">
+            <h:dataTable var="row"
+                         value="#{cc.attrs.value}"
+                         styleClass="#{cc.attrs.styleClass}">
+
+                <h:column rendered="#{cc.attrs.empresaKeyRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="cliEmpresa.refKey" 
+                                      value="#{cc.attrs.empresaKeyLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.cliEmpresa.refKey}"
+                                  title="#{cc.attrs.empresaKeyLabel}: #{row.cliEmpresa.refKey}"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.empresaNameRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="cliEmpresa.refName" 
+                                      value="#{cc.attrs.empresaNameLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.cliEmpresa.refName}"
+                                  title="#{cc.attrs.empresaNameLabel}: #{row.cliEmpresa.refName}"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.numeroDocumentoRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="numeroDocumento" 
+                                      value="#{cc.attrs.numeroDocumentoLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.numeroDocumentoReal}"
+                                  title="#{cc.attrs.numeroDocumentoLabel}: #{row.numeroDocumentoReal}"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.nombreCompletoRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="segUsuario.segPersona.nombres" 
+                                      value="#{cc.attrs.nombreCompletoLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.segPersonaNombreCompleto}"
+                                  title="#{cc.attrs.nombreCompletoLabel}: #{row.segPersonaNombreCompleto}"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.correoElectronicoRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="correoElectronico" 
+                                      value="#{cc.attrs.correoElectronicoLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.correoElectronicoReal}"
+                                  title="#{cc.attrs.correoElectronicoLabel}: #{row.correoElectronicoReal}"
+                                  rendered="#{empty cc.facets.correoElectronicoColumn}"/>
+                    <cc:renderFacet name="correoElectronicoColumn"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.nombreCargoRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="nombreCargo" 
+                                      value="#{cc.attrs.nombreCargoLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.nombreCargo}"
+                                  title="#{cc.attrs.nombreCargoLabel}: #{row.nombreCargo}"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.perfilRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="perfil" 
+                                      value="#{cc.attrs.perfilLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.perfil.label}"
+                                  title="#{cc.attrs.perfilLabel}: #{row.perfil.label}"/>
+                </h:column>
+
+                <h:column rendered="#{cc.attrs.estadoRendered}">
+                    <f:facet name="header">
+                        <hsk:sortText name="estado" 
+                                      value="#{cc.attrs.estadoLabel}"
+                                      update="#{cc.attrs.update}"
+                                      pagination="#{cc.attrs.pagination}"
+                                      sortListener="#{cc.attrs.sortListener}"/>
+                    </f:facet>
+                    <h:outputText value="#{row.estado.label}"
+                                  title="#{cc.attrs.estadoLabel}: #{row.estado.label}"/>
+                </h:column>
+
+                <cc:insertChildren/>
+            </h:dataTable>
+        </div>
+    </cc:implementation>
+</div>

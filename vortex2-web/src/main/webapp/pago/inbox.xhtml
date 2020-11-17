@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                        xmlns:h="http://java.sun.com/jsf/html"
+                        xmlns:f="http://xmlns.jcp.org/jsf/core"
+                        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                        xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                        xmlns:cta="http://xmlns.jcp.org/jsf/composite/comp/cta"
+                        template="#{_config.template}">
+            <ui:define name="title">
+                <span  class="text-primary">
+                    <i class="fa fa-list"/>
+                    #{TXT.PAGO.TITLE} - #{TXT.PAGO.PAGE_INBOX}
+                </span>
+            </ui:define>
+            <ui:define name="content">
+                <h:form id="list">
+                    <hsk:panelFilter pagination="#{_ctaPago.ctaPagoFilter.pagination}"
+                                    applyListener="#{_ctaPago.ctaPagoFilterApplyListener}"
+                                    cleanListener="#{_ctaPago.ctaPagoFilterCleanListener}">
+                        <f:facet name="header">
+                            #{TXT.PAGO.TITLE_SEARCH}
+                        </f:facet>
+                        <f:facet name="filter">
+                            <cta:pagoFilter value="#{_ctaPago.ctaPagoFilter}"/>
+                        </f:facet>
+                        <cta:pagoTable value="#{_ctaPago.ctaPagoList}"
+                                                  select="#{_ctaPago.ctaPago}"
+                                                  pagination="#{_ctaPago.ctaPagoFilter.pagination}"
+                                                  sortListener="#{_ctaPago.ctaPagoFilterApplyListener}">
+                            <h:column class="row-action">
+                                <f:facet name="header">
+                                    #{LBL.ROW_ACTION}
+                                </f:facet>
+                                <h:commandLink action="#{_ctaPago.navegationAction(row, 'resumen')}" 
+                                               styleClass="mr-1 btn btn-sm text-secundary ml-1">
+                                    <i class="fa fa-eye"/>
+                                    #{BTN.VIEW}
+                                </h:commandLink>
+                            </h:column>
+                        </cta:pagoTable>
+                    </hsk:panelFilter>
+                </h:form>
+            </ui:define>
+        </ui:composition>

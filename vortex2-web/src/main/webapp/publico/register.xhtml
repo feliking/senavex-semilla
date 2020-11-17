@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition template="#{_config.templateOut}"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                xmlns:util="http://xmlns.jcp.org/jsf/composite/util"
+                xmlns:seg="http://xmlns.jcp.org/jsf/composite/comp/seg">
+    <f:metadata>
+        <f:viewAction action="#{_register.activeInitAction(param.id)}" />
+    </f:metadata>
+    <ui:define name="title">
+        <i class="fa fa-check"></i>
+        Registro en el Sistema
+    </ui:define>
+    <ui:define name="content">
+        <h:form enctype="multipart/form-data">
+            <hsk:cardForm styleClass="col-12 col-xl-8 center">
+                <f:facet name="header">
+                    <h2>
+                        <i class="fa fa-address-card"/>
+                        #{PAGE.REGISTER_TITLE}
+                    </h2>
+                    <h:graphicImage name="assets/images/senavex-color-150.png" styleClass="app-logo2"/>
+                </f:facet>
+                <h5 class="card-title">
+                    <i class="fa fa-user"/>
+                    #{PAGE.REGISTER_PERSONA}
+                </h5>
+                <seg:personaForm value="#{_register.persona}"/>
+                <h5 class="card-title">
+                    <i class="fa fa-envelope"/>
+                    #{PAGE.REGISTER_USUARIO}
+                </h5>
+                <seg:usuarioForm value="#{_register.usuario}"/>
+                <f:facet name="footer">
+                    <div class="row">
+                        <div class="col-3">
+                            <h:commandLink   action="login"
+                                             styleClass="btn btn-danger"
+                                             immediate="true">
+                                <i class="fa fa-times-circle"/>
+                                #{BTN.CANCEL}
+                            </h:commandLink>
+                        </div>
+                        <div class="col-9  text-right">
+                            <util:panelCaptcha value="#{_register.captcha.value}">
+                                <h:commandLink   action="#{_register.registerAction()}"
+                                                 styleClass="btn btn-success">
+                                    #{BTN.REGISTER_SAVE}
+                                    <i class="fa fa-check-circle"/>
+                                    <f:ajax render="@form" execute="@all"/>
+                                </h:commandLink>
+                            </util:panelCaptcha>
+                        </div>
+                    </div>
+                </f:facet>
+            </hsk:cardForm>
+        </h:form>
+    </ui:define>
+</ui:composition>

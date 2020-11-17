@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                xmlns:ruex="http://xmlns.jcp.org/jsf/composite/comp/ruex"
+                xmlns:util="http://xmlns.jcp.org/jsf/composite/util"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                template="#{_config.template}">
+    <ui:define name="title">
+        <span  class="text-primary">
+            <i class="fa fa-plus-circle"/>
+            #{TXT.REGISTRO.TITLE} - #{TXT.REGISTRO.PAGE_CREATE}
+        </span>
+    </ui:define>
+    <ui:define name="content">
+        <h:form enctype="multipart/form-data">
+            <h:commandLink action="#{_regRuex.verificarDocumentosAction()}"
+                           immediate="true"
+                           styleClass="btn btn-sm btn-danger ml-1">
+                VERIFICAR IMMEDIATE
+            </h:commandLink>
+            <h:commandLink action="#{_regRuex.fastTestAction()}"
+                           immediate="true"
+                           styleClass="btn btn-sm btn-danger ml-1">
+                FAST TEST IMMEDIATE
+            </h:commandLink>
+            <h:commandLink action="#{_regRuex.fastTestAction()}"
+                           styleClass="btn btn-sm btn-danger ml-1">
+                FAST TEST SUBMIT
+            </h:commandLink>
+            <util:panelTabs tabs="#{_regRuex.wizard.limit}"
+                            current="#{_regRuex.wizard.index}"
+                            disabled="false">
+                <f:facet name="header">
+                    <h4>
+                        <i class="fa fa-building"/>
+                        <b>FORMULARIO RUEX</b>
+                        <sub>v1.0</sub>
+                    </h4>
+                </f:facet>
+                <f:facet name="T1">
+                    <i class="fa fa-address-card"/>
+                    DOCUMENTOS
+                </f:facet>
+                <f:facet name="T2">
+                    <i class="fa fa-align-justify"/>
+                    DATOS
+                </f:facet>
+                <f:facet name="T3">
+                    <i class="fa fa-chart-pie"/>
+                    CATEGORIZACIÓN
+                </f:facet>
+                <f:facet name="T4">
+                    <i class="fa fa-map-marked-alt"/>
+                    DIRECCIONES
+                </f:facet>
+                <f:facet name="T5">
+                    <i class="fa fa-phone-alt"/>
+                    CONTACTOS
+                </f:facet>
+                <f:facet name="T6">
+                    <i class="fa fa-user"/>
+                    REPRESENTANTE
+                </f:facet>
+                <f:facet name="T7">
+                    <i class="fa fa-users"/>
+                    OPERADORES AUTORIZADOS
+                </f:facet>
+
+                <h:panelGroup rendered="#{_regRuex.wizard.index == 1}">
+                    <ruex:documentoForm value="#{_regRuex.wrap.nit}"
+                                        docRespaldo="#{_regRuex.wrap.nitFile}"
+                                        nombreLabel="Razon Social"
+                                        numeroLabel="NIT"/>
+                    <ruex:documentoForm value="#{_regRuex.wrap.fun}"
+                                        docRespaldo="#{_regRuex.wrap.funFile}"
+                                        nombreLabel="Nombre Comercial"
+                                        numeroLabel="Codigo"/>
+                    <ruex:documentoForm value="#{_regRuex.wrap.oea}"
+                                        docRespaldo="#{_regRuex.wrap.oeaFile}"
+                                        nombreLabel="Nombre Registrado"
+                                        numeroLabel="Codigo OEA"/>
+                    <div class="row">
+                        <util:panelCaptcha value="#{_regRuex.captcha.value}"
+                                           styleClass="mt-3 center"/>
+                    </div>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{_regRuex.wizard.index == 2}">
+                    <ruex:empresaForm value="#{_regRuex.wrap.empresa}"
+                                      estadoRendered="false"/>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{_regRuex.wizard.index == 3}">
+                    <ruex:categoriaForm value="#{_regRuex.wrap.categoria}"
+                                        importacionesRubrosRendered="false"
+                                        categoriaRendered="false"
+                                        fechaRendered="false"
+                                        estadoRendered="false"
+                                        nroEmpleadosRequired="true"
+                                        activosUfvRequired="true"
+                                        ventasUfvRequired="true"
+                                        exportacionesUfvRequired="true"/>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{_regRuex.wizard.index == 4}">
+                    <c:forEach items="#{_regRuex.wrap.direccionList}"
+                               var="cliDireccion">
+                        <ruex:direccionForm value="#{cliDireccion}"/>
+                    </c:forEach>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{_regRuex.wizard.index == 5}">
+                    <c:forEach items="#{_regRuex.wrap.contactoList}"
+                               var="cliContacto">
+                        <ruex:contactoForm value="#{cliContacto}"
+                                           nombreRequired="#{cliContacto.esRequerido}"
+                                           valorRequired="#{cliContacto.esRequerido}"
+                                           descripcionRequired="#{cliContacto.esRequerido}"/>
+                    </c:forEach>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{_regRuex.wizard.index == 6}">
+                    <ruex:operadorForm value="#{_regRuex.wrap.representante}"
+                                       perfilDisabled="true"
+                                       perfilRequired="false"
+                                       fechaDesdeRendered="false"
+                                       fechaHastaRendered="false"
+                                       numeroDocumentoRendered="false"
+                                       correoElectronicoRendered="false"/>
+                    <ruex:personaView value="#{_regRuex.wrap.persona}"/>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{_regRuex.wizard.index == 7}">
+                    <hsk:cardForm styleClass="center col-12 col-xl-8"
+                                  rendered="#{_regRuex.wrap.partForm}">
+                        <f:facet name="header">
+                            Enviar Invitacion de Representacion
+                        </f:facet>
+                        <ruex:operadorForm value="#{_regRuex.wrap.operador}"/>
+                        <f:facet name="footer">
+                            <h:commandLink action="#{_regRuex.wrap.openPartList()}"
+                                           styleClass="btn btn-sm btn-secondary ml-1"
+                                           immediate="true">
+                                <i class="fa fa-arrow-left"/>
+                                #{BTN.CANCEL}
+                            </h:commandLink>
+                            <h:commandLink styleClass="btn btn-sm btn-primary"
+                                           action="#{_regRuex.addOperador()}">
+                                <i class="fa fa-check"/>
+                                Adicionar
+                            </h:commandLink>
+                        </f:facet>
+                    </hsk:cardForm>
+                    <ruex:operadorTable value="#{_regRuex.wrap.operadorList}"
+                                        rendered="#{_regRuex.wrap.partList}">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:commandLink action="#{_regRuex.wrap.openPartForm()}"
+                                               styleClass="btn btn-sm btn-primary"
+                                               immediate="true">
+                                    <i class="fa fa-check"/>
+                                    Adicionar
+                                </h:commandLink>
+                            </f:facet>
+                            <h:commandLink styleClass="btn btn-sm btn-danger"
+                                           action="#{_regRuex.wrap.removeOperador(row)}"
+                                           immediate="true">
+                                <i class="fa fa-minus"/>
+                                Quitar
+                            </h:commandLink>
+                        </h:column>
+                    </ruex:operadorTable>
+                </h:panelGroup>
+
+                <f:facet name="footer">
+                    <div class="row">
+                        <span class="col-2">
+                            <h:commandLink action="#{_regRuex.regRegistroReturnAction}"
+                                           immediate="true"
+                                           styleClass="btn btn-sm btn-secondary ml-1">
+                                <i class="fa fa-arrow-left"/>
+                                #{BTN.CANCEL}
+                            </h:commandLink>
+                        </span>
+                        <span class="col-2">
+                            <h:commandLink action="#{_regRuex.wizard.back()}"
+                                           rendered="#{!_regRuex.wizard.start}"
+                                           styleClass="btn btn-sm btn-danger ml-1">
+                                <i class="fa fa-arrow-left"/>
+                                ATRAS
+                                <f:ajax render="@form"/>
+                            </h:commandLink>
+                        </span>
+                        <span class="col-4">
+                        </span>
+                        <span class="col-2 text-right">
+
+                            <h:commandLink action="#{_regRuex.verificarDocumentosAction()}"
+                                           rendered="#{_regRuex.wizard.start}"
+                                           styleClass="btn btn-sm btn-primary ml-1">
+                                VERIFICAR
+                                <i class="fa fa-arrow-right"/>
+                                <f:ajax render="@form" execute="@form" immediate="false"/>
+                            </h:commandLink>
+
+
+                            <h:commandLink action="#{_regRuex.wizard.next()}"
+                                           rendered="#{!_regRuex.wizard.start and !_regRuex.wizard.end}"
+                                           styleClass="btn btn-sm btn-primary ml-1">
+                                SIGUIENTE
+                                <i class="fa fa-arrow-right"/>
+                                <f:ajax render="@form" execute="@form" immediate="false"/>
+                            </h:commandLink>
+                        </span>
+                        <span class="col-2 text-right">
+                            <h:commandLink action="#{_regRuex.regRegistroRUEXPersistAction}"
+                                           rendered="#{_regRuex.wizard.end}"
+                                           immediate="true"
+                                           styleClass="btn btn-sm btn-primary ml-1">
+                                <i class="fa fa-archive"/>
+                                #{BTN.PERSIST}
+                            </h:commandLink>
+                        </span>
+                    </div>
+                </f:facet>
+            </util:panelTabs>
+
+        </h:form>
+    </ui:define>
+</ui:composition>

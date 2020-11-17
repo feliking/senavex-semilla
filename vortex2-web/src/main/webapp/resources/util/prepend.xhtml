@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+     xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <cc:interface>
+        <cc:attribute name="styleClass"/>
+        <cc:attribute name="size"/>
+        <cc:attribute name="icon"/>
+        <cc:attribute name="text"/>
+    </cc:interface>
+
+    <cc:implementation>
+        <div class="#{cc.attrs.styleClass}">
+            <div class="input-group input-group-#{cc.attrs.size} mb-1">
+                <div class="input-group-prepend">
+                    <h:panelGroup styleClass="input-group-text" rendered="#{cc.attrs.icon!=null}">
+                        <span class="fa fa-#{cc.attrs.icon}"></span>
+                    </h:panelGroup>
+                    <h:panelGroup styleClass="input-group-text" rendered="#{cc.attrs.text!=null}">
+                        #{cc.attrs.text}
+                    </h:panelGroup>
+                </div>
+                <cc:insertChildren/>
+            </div>
+        </div>
+    </cc:implementation>
+</div>

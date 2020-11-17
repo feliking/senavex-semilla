@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.CliCategoria"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="classInput" default="form-control form-control-sm"/>
+        <!-- attribute handler -->
+
+
+        <!-- fecha -->
+        <cc:attribute name="fechaRegistroLabel" default="#{LBL.CATEGORIA.FECHA_REGISTRO}"/>
+        <cc:attribute name="fechaRegistroRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- nroEmpleados -->
+        <cc:attribute name="nroEmpleadosLabel" default="#{LBL.CATEGORIA.NRO_EMPLEADOS}"/>
+        <cc:attribute name="nroEmpleadosRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- activosUfv -->
+        <cc:attribute name="activosUfvLabel" default="#{LBL.CATEGORIA.ACTIVOS_UFV}"/>
+        <cc:attribute name="activosUfvRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- ventasUfv -->
+        <cc:attribute name="ventasUfvLabel" default="#{LBL.CATEGORIA.VENTAS_UFV}"/>
+        <cc:attribute name="ventasUfvRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- exportacionesUfv -->
+        <cc:attribute name="exportacionesUfvLabel" default="#{LBL.CATEGORIA.EXPORTACIONES_UFV}"/>
+        <cc:attribute name="exportacionesUfvRendered" default="true" type="java.lang.Boolean"/>/>
+
+
+        <!-- importacionesUfv -->
+        <cc:attribute name="importacionesUfvLabel" default="#{LBL.CATEGORIA.IMPORTACIONES_UFV}"/>
+        <cc:attribute name="importacionesUfvRendered" default="false" type="java.lang.Boolean"/>/>
+
+
+        <!-- exportacionesRubros -->
+        <cc:attribute name="exportacionesRubrosLabel" default="#{LBL.CATEGORIA.EXPORTACIONES_RUBROS}"/>
+        <cc:attribute name="exportacionesRubrosRendered" default="true" type="java.lang.Boolean"/>java.util.List"/>
+
+
+        <!-- importacionesRubros -->
+        <cc:attribute name="importacionesRubrosLabel" default="#{LBL.CATEGORIA.IMPORTACIONES_RUBROS}"/>
+        <cc:attribute name="importacionesRubrosRendered" default="true" type="java.lang.Boolean"/>java.util.List"/>
+
+        <!-- categoria -->
+        <cc:attribute name="categoriaLabel" default="#{LBL.CATEGORIA.CATEGORIA}"/>
+        <cc:attribute name="categoriaRendered" default="true" type="java.lang.Boolean"/>
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.CATEGORIA.ESTADO}"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+
+
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.categoriaLabel}"
+                          rendered="#{cc.attrs.categoriaRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:outputText id="categoria"
+                              value="#{cc.attrs.value.categoria}"
+                              title="#{cc.attrs.categoriaLabel}"
+                              styleClass="#{cc.attrs.classInput}"
+                              converter="hiska.faces.Param">
+                </h:outputText>
+
+            </hsk:rowLabel>
+
+
+            <hsk:rowLabel text="#{cc.attrs.fechaRegistroLabel}"
+                          rendered="#{cc.attrs.fechaRegistroRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText id="fechaRegistro"
+                              value="#{cc.attrs.value.fechaRegistro}"
+                              title="#{cc.attrs.fechaRegistroLabel}"
+                              styleClass="#{cc.attrs.classInput}">
+                    <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss"/>  
+                </h:outputText>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText id="estado"
+                              value="#{cc.attrs.value.estado}"
+                              title="#{cc.attrs.estadoLabel}"
+                              styleClass="#{cc.attrs.classInput}"
+                              converter="hiska.faces.Param">
+                </h:outputText>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.nroEmpleadosLabel}"
+                          rendered="#{cc.attrs.nroEmpleadosRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText id="nroEmpleados"
+                              value="#{cc.attrs.value.nroEmpleados}"
+                              title="#{cc.attrs.nroEmpleadosLabel}"
+                              styleClass="#{cc.attrs.classInput}"
+                              converter="hiska.faces.Param">
+                </h:outputText>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.activosUfvLabel}"
+                          rendered="#{cc.attrs.activosUfvRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+
+                <h:outputText id="activosUfv"
+                              value="#{cc.attrs.value.activosUfv}"
+                              title="#{cc.attrs.activosUfvLabel}"
+                              styleClass="#{cc.attrs.classInput}"
+                              converter="hiska.faces.Param">
+                </h:outputText>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.ventasUfvLabel}"
+                          rendered="#{cc.attrs.ventasUfvRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText id="ventasUfv"
+                              value="#{cc.attrs.value.ventasUfv}"
+                              title="#{cc.attrs.ventasUfvLabel}"
+                              styleClass="#{cc.attrs.classInput}"
+                              converter="hiska.faces.Param">
+                </h:outputText>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.exportacionesUfvLabel}"
+                          rendered="#{cc.attrs.exportacionesUfvRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+
+                <h:outputText id="exportacionesUfv"
+                              value="#{cc.attrs.value.exportacionesUfv}"
+                              title="#{cc.attrs.exportacionesUfvLabel}"
+                              styleClass="#{cc.attrs.classInput}"
+                              converter="hiska.faces.Param">
+                </h:outputText>
+
+            </hsk:rowLabel>
+
+
+
+
+
+
+            <hsk:rowLabel text="#{cc.attrs.importacionesUfvLabel}"
+                          rendered="#{cc.attrs.importacionesUfvRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText id="importacionesUfv"
+                              value="#{cc.attrs.value.importacionesUfv}"
+                              title="#{cc.attrs.importacionesUfvLabel}"
+                              styleClass="#{cc.attrs.classInput}"
+                              converter="hiska.faces.Param">
+                </h:outputText>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.exportacionesRubrosLabel}"
+                          rendered="#{cc.attrs.exportacionesRubrosRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <div class="overflow-auto">
+                    <c:forEach var="it" items="#{cc.attrs.value.exportacionesRubros}">
+                        <h:outputText value="#{it}" 
+                                      title="#{cc.attrs.exportacionesRubrosLabel}"
+                                      styleClass="#{cc.attrs.classInput}"
+                                      converter="hiska.faces.Param"/>
+                    </c:forEach>
+                </div>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.importacionesRubrosLabel}"
+                          rendered="#{cc.attrs.importacionesRubrosRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <div class="overflow-auto">
+                    <c:forEach var="it" items="#{cc.attrs.value.importacionesRubros}">
+                        <h:outputText value="#{it}" 
+                                      title="#{cc.attrs.importacionesRubrosLabel}"
+                                      styleClass="#{cc.attrs.classInput}"
+                                      converter="hiska.faces.Param"/>
+                    </c:forEach>
+                </div>
+            </hsk:rowLabel>
+
+        </div>
+    </cc:implementation>
+</div>

@@ -1,0 +1,116 @@
+# Lineamientos del modelado
+
+## Parametrizacion
+
+La parametrizacion de codigo es delegada a las tablas PAR_DOMINIO y PAR_VALOR
+
+* *PAR_DOMINIO* define las tablas y columnas parametrizables
+
+* *PAR_VALOR* define el conjunto de valores permitidos
+
+Se hace uso de un objeto intermedio para representar el CODIGO-DESCRIPCION de una colunma parametrizable.
+
+[source,java]
+----
+
+@Entity
+@Table(name = "CLI_EMPRESA")
+public class CliEmpresa extends AuditorAbstract implements Cloneable, Serializable {
+   // Llave Primaria
+   // -----------
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column(name = "ID_EMPRESA")
+   private Long idEmpresa;
+
+   // Columnas Basicas
+   // -----------
+   @Column(name = "DESCRIPCION", length = 300, nullable = false)
+   @Size(message = "{CliEmpresa.descripcion.Size.message}", min = 5, max = 300)
+   @NotNull(message = "{CliEmpresa.descripcion.NotNull.message}")
+   private String descripcion;
+   
+   // Param CODIGO-DESCRIPCION
+   // -----------
+   @Column(name = "VD_TIPO", length = 30, nullable = false)
+   @Convert(converter = ParamConverter.class)
+   // Marcado de una columna Parametrizable
+   @ParamElement 
+   @NotNull(message = "{CliEmpresa.tipo.NotNull.message}")
+   private Param tipo;
+   
+   // RELACIONES ONE-TO-MANY
+   // -----------
+   @OneToMany(mappedBy = "cliEmpresa")
+   private List<CliDireccion> cliDireccionList;
+
+}
+----
+
+## Auditoria
+
+Las columnas de auditoria estan definidas en la Clase *AuditorAbstract*
+
+[source,java]
+----
+@MappedSuperclass
+@EntityListeners({AuditorListener.class, ParamListener.class})
+public abstract class AuditorAbstract {
+   @Basic
+   @Column(name = "AUD_UPDATED_AT", nullable = false)
+   @Temporal(TemporalType.TIMESTAMP)
+   private Date updatedAt;
+   @Basic
+   @Column(name = "AUD_UPDATED_BY", length = 50, nullable = false)
+   private String updatedBy;
+   @Version
+   @Column(name = "AUD_VERSION", nullable = false)
+   private Long version;
+}
+----
+
+## Filtrado
+
+Para realizar las tareas de Filtrado en las pantallas INBOX, se hace uso de un utilitario que compone la consulta dinamicamente.
+
+
+[source,java]
+----
+
+package bo.gob.senavex.vortex2.filter;
+
+public class CliCategoriaFilter extends FilterAbstract {
+   @FilterElement
+   private Filter<Long> idCategoria;
+   @FilterElement(name = "cliEmpresa.idEmpresa")
+   private Filter<Long> idEmpresa;
+   @FilterElement
+   private Filter<Date> fecha;
+   @FilterElement(param = true)
+   private Filter<String> activosUfv;
+}
+----
+
+La clase *Filter* contiene la estructura de un clausula WHERE, soporta las operaciones: 
+
+*WHERE o.<name> <expr> :<param>*
+
+[source,java]
+----
+
+   public static enum Expr {
+      none,    // Ninguno
+      eq,      // Igual
+      neq,     // No igual
+      lt,      // <
+      lte,     // <=
+      gt,      // >
+      gte,     // >=
+      like,    // like
+      isNull,  //Is Null
+      notNull; //Is Not Null
+
+   }
+---
+
+

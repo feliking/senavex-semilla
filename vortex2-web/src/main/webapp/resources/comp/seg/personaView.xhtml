@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.SegPersona"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="size" default="sm"/>
+        <cc:attribute name="classOutput" default="form-control form-control-#{cc.attrs.size}"/>
+        <!-- attribute handler -->
+
+        <!-- nombres -->
+        <cc:attribute name="nombreCompletoLabel" default="#{LBL.PERSONA.NOMBRE_COMPLETO}"/>
+        <cc:attribute name="nombreCompletoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- fechaNacimiento -->
+        <cc:attribute name="fechaNacimientoLabel" default="#{LBL.PERSONA.FECHA_NACIMIENTO}"/>
+        <cc:attribute name="fechaNacimientoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- documentoIdentidad -->
+        <cc:attribute name="documentoIdentidadLabel" default="#{LBL.PERSONA.NUMERO_DOCUMENTO}"/>
+        <cc:attribute name="documentoIdentidadRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- direccion -->
+        <cc:attribute name="direccionLabel" default="#{LBL.PERSONA.DIRECCION}"/>
+        <cc:attribute name="direccionRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- numeroCelular -->
+        <cc:attribute name="numeroCelularLabel" default="#{LBL.PERSONA.NUMERO_CELULAR}"/>
+        <cc:attribute name="numeroCelularRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- numeroTelefonico -->
+        <cc:attribute name="numeroTelefonicoLabel" default="#{LBL.PERSONA.NUMERO_TELEFONICO}"/>
+        <cc:attribute name="numeroTelefonicoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- genero -->
+        <cc:attribute name="generoLabel" default="#{LBL.PERSONA.GENERO}"/>
+        <cc:attribute name="generoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- pais -->
+        <cc:attribute name="paisLabel" default="#{LBL.PERSONA.PAIS}"/>
+        <cc:attribute name="paisRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.PERSONA.ESTADO}"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-view #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.nombreCompletoLabel}"
+                          rendered="#{cc.attrs.nombreCompletoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:outputText value="#{cc.attrs.value.nombreCompleto}"
+                              title="#{cc.attrs.nombreCompletoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaNacimientoLabel}"
+                          rendered="#{cc.attrs.fechaNacimientoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.fechaNacimiento}"
+                              title="#{cc.attrs.fechaNacimientoLabel}"
+                              styleClass="#{cc.attrs.classOutput}">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:outputText>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.generoLabel}"
+                          rendered="#{cc.attrs.generoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.genero.label}"
+                              title="#{cc.attrs.generoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            <hsk:rowLabel text="#{cc.attrs.documentoIdentidadLabel}"
+                          rendered="#{cc.attrs.documentoIdentidadRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.documentoIdentidad}"
+                              title="#{cc.attrs.documentoIdentidadLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.numeroCelularLabel}"
+                          rendered="#{cc.attrs.numeroCelularRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.numeroCelular}"
+                              title="#{cc.attrs.numeroCelularLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.numeroTelefonicoLabel}"
+                          rendered="#{cc.attrs.numeroTelefonicoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.numeroTelefonico}"
+                              title="#{cc.attrs.numeroTelefonicoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+            
+
+            <hsk:rowLabel text="#{cc.attrs.direccionLabel}"
+                          rendered="#{cc.attrs.direccionRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:outputText value="#{cc.attrs.value.direccion}"
+                              title="#{cc.attrs.direccionLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.paisLabel}"
+                          rendered="#{cc.attrs.paisRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.pais.label}"
+                              title="#{cc.attrs.paisLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.estado.label}"
+                              title="#{cc.attrs.estadoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+        </div>
+    </cc:implementation>
+</div>

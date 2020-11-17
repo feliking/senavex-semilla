@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.SegPersona"/>
+        <cc:attribute name="disabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="size" default="sm"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="classInput" default="form-control form-control-#{cc.attrs.size}"/>
+        <!-- attribute handler -->
+
+        <!-- idPersona -->
+        <cc:attribute name="idPersonaLabel" default="#{LBL.PERSONA.ID_PERSONA}"/>
+        <cc:attribute name="idPersonaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="idPersonaRendered" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="idPersonaRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- nombres -->
+        <cc:attribute name="nombresLabel" default="#{LBL.PERSONA.NOMBRES}"/>
+        <cc:attribute name="nombresDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="nombresRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="nombresRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- primerApellido -->
+        <cc:attribute name="primerApellidoLabel" default="#{LBL.PERSONA.PRIMER_APELLIDO}"/>
+        <cc:attribute name="primerApellidoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="primerApellidoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="primerApellidoRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- segundoApellido -->
+        <cc:attribute name="segundoApellidoLabel" default="#{LBL.PERSONA.SEGUNDO_APELLIDO}"/>
+        <cc:attribute name="segundoApellidoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="segundoApellidoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="segundoApellidoRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- fechaNacimiento -->
+        <cc:attribute name="fechaNacimientoLabel" default="#{LBL.PERSONA.FECHA_NACIMIENTO}"/>
+        <cc:attribute name="fechaNacimientoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaNacimientoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaNacimientoRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- numeroDocumento -->
+        <cc:attribute name="numeroDocumentoLabel" default="#{LBL.PERSONA.NUMERO_DOCUMENTO}"/>
+        <cc:attribute name="numeroDocumentoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroDocumentoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroDocumentoRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- complementoDocumento -->
+        <cc:attribute name="complementoDocumentoLabel" default="#{LBL.PERSONA.COMPLEMENTO_DOCUMENTO}"/>
+        <cc:attribute name="complementoDocumentoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="complementoDocumentoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="complementoDocumentoRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- direccion -->
+        <cc:attribute name="direccionLabel" default="#{LBL.PERSONA.DIRECCION}"/>
+        <cc:attribute name="direccionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="direccionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="direccionRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- numeroCelular -->
+        <cc:attribute name="numeroCelularLabel" default="#{LBL.PERSONA.NUMERO_CELULAR}"/>
+        <cc:attribute name="numeroCelularDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroCelularRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroCelularRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- numeroTelefonico -->
+        <cc:attribute name="numeroTelefonicoLabel" default="#{LBL.PERSONA.NUMERO_TELEFONICO}"/>
+        <cc:attribute name="numeroTelefonicoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroTelefonicoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="numeroTelefonicoRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- genero -->
+        <cc:attribute name="generoLabel" default="#{LBL.PERSONA.GENERO}"/>
+        <cc:attribute name="generoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="generoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="generoRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="generoOption" default="#{_option.segPersonaGeneroOption}" type="java.util.List"/>
+
+
+        <!-- tipoDocumento -->
+        <cc:attribute name="tipoDocumentoLabel" default="#{LBL.PERSONA.TIPO_DOCUMENTO}"/>
+        <cc:attribute name="tipoDocumentoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoDocumentoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoDocumentoRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoDocumentoOption" default="#{_option.segPersonaTipoDocumentoOption}" type="java.util.List"/>
+
+
+        <!-- expedicionDocumento -->
+        <cc:attribute name="expedicionDocumentoLabel" default="#{LBL.PERSONA.EXPEDICION_DOCUMENTO}"/>
+        <cc:attribute name="expedicionDocumentoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="expedicionDocumentoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="expedicionDocumentoRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="expedicionDocumentoOption" default="#{_option.segPersonaExpedicionDocumentoOption}" type="java.util.List"/>
+
+
+        <!-- pais -->
+        <cc:attribute name="paisLabel" default="#{LBL.PERSONA.PAIS}"/>
+        <cc:attribute name="paisDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="paisRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="paisRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="paisOption" default="#{_option.segPersonaPaisOption}" type="java.util.List"/>
+
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.PERSONA.ESTADO}"/>
+        <cc:attribute name="estadoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRendered" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoOption" default="#{_option.segPersonaEstadoOption}" type="java.util.List"/>
+
+        <!-- docRespaldo -->
+        <cc:attribute name="docRespaldoLabel" default="#{LBL.PERSONA.DOC_RESPALDO}"/>
+        <cc:attribute name="docRespaldoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="docRespaldoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="docRespaldoRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- docFirma -->
+        <cc:attribute name="docFirmaLabel" default="#{LBL.PERSONA.DOC_FIRMA}"/>
+        <cc:attribute name="docFirmaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="docFirmaRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="docFirmaRequired" default="true" type="java.lang.Boolean"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
+            <hsk:rowLabel text="#{cc.attrs.idPersonaLabel}"
+                          rendered="#{cc.attrs.idPersonaRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:inputText id="idPersona"
+                             value="#{cc.attrs.value.idPersona}"
+                             label="#{cc.attrs.idPersonaLabel}"
+                             title="#{cc.attrs.idPersonaLabel}"
+                             disabled="#{cc.attrs.idPersonaDisabled}"
+                             required="#{cc.attrs.idPersonaRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+                <h:message for="idPersona"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:selectOneMenu id="estado"
+                                 value="#{cc.attrs.value.estado}"
+                                 label="#{cc.attrs.estadoLabel}"
+                                 title="#{cc.attrs.estadoLabel}"
+                                 disabled="#{cc.attrs.estadoDisabled}"
+                                 required="#{cc.attrs.estadoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.estadoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+                <h:message for="estado"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.nombresLabel}"
+                          rendered="#{cc.attrs.nombresRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <h:inputText id="nombres"
+                             value="#{cc.attrs.value.nombres}"
+                             label="#{cc.attrs.nombresLabel}"
+                             title="#{cc.attrs.nombresLabel}"
+                             disabled="#{cc.attrs.nombresDisabled}"
+                             required="#{cc.attrs.nombresRequired}"
+                             styleClass="#{cc.attrs.classInput}"/>
+                <h:message for="nombres"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.primerApellidoLabel}"
+                          rendered="#{cc.attrs.primerApellidoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:inputText id="primerApellido"
+                             value="#{cc.attrs.value.primerApellido}"
+                             label="#{cc.attrs.primerApellidoLabel}"
+                             title="#{cc.attrs.primerApellidoLabel}"
+                             disabled="#{cc.attrs.primerApellidoDisabled}"
+                             required="#{cc.attrs.primerApellidoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+                <h:message for="primerApellido"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.segundoApellidoLabel}"
+                          rendered="#{cc.attrs.segundoApellidoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:inputText id="segundoApellido"
+                             value="#{cc.attrs.value.segundoApellido}"
+                             label="#{cc.attrs.segundoApellidoLabel}"
+                             title="#{cc.attrs.segundoApellidoLabel}"
+                             disabled="#{cc.attrs.segundoApellidoDisabled}"
+                             required="#{cc.attrs.segundoApellidoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+                <h:message for="segundoApellido"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.generoLabel}"
+                          rendered="#{cc.attrs.generoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:selectOneMenu id="genero"
+                                 value="#{cc.attrs.value.genero}"
+                                 label="#{cc.attrs.generoLabel}"
+                                 title="#{cc.attrs.generoLabel}"
+                                 disabled="#{cc.attrs.generoDisabled}"
+                                 required="#{cc.attrs.generoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.generoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+                <h:message for="genero"/>
+            </hsk:rowLabel>
+
+
+            <hsk:rowLabel text="#{cc.attrs.fechaNacimientoLabel}"
+                          rendered="#{cc.attrs.fechaNacimientoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <h:inputText id="fechaNacimiento"
+                             value="#{cc.attrs.value.fechaNacimiento}"
+                             label="#{cc.attrs.fechaNacimientoLabel}"
+                             title="#{cc.attrs.fechaNacimientoLabel}"
+                             disabled="#{cc.attrs.fechaNacimientoDisabled}"
+                             required="#{cc.attrs.fechaNacimientoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>  
+                </h:inputText>
+                <h:message for="fechaNacimiento"/>
+            </hsk:rowLabel>
+
+
+            <hsk:rowLabel text="#{cc.attrs.tipoDocumentoLabel}"
+                          rendered="#{cc.attrs.tipoDocumentoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <h:selectOneMenu id="tipoDocumento"
+                                 value="#{cc.attrs.value.tipoDocumento}"
+                                 label="#{cc.attrs.tipoDocumentoLabel}"
+                                 title="#{cc.attrs.tipoDocumentoLabel}"
+                                 disabled="#{cc.attrs.tipoDocumentoDisabled}"
+                                 required="#{cc.attrs.tipoDocumentoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.tipoDocumentoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+                <h:message for="tipoDocumento"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.numeroDocumentoLabel}"
+                          rendered="#{cc.attrs.numeroDocumentoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <h:inputText id="numeroDocumento"
+                             value="#{cc.attrs.value.numeroDocumento}"
+                             label="#{cc.attrs.numeroDocumentoLabel}"
+                             title="#{cc.attrs.numeroDocumentoLabel}"
+                             disabled="#{cc.attrs.numeroDocumentoDisabled}"
+                             required="#{cc.attrs.numeroDocumentoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+                <h:message for="numeroDocumento"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.complementoDocumentoLabel}"
+                          rendered="#{cc.attrs.complementoDocumentoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <h:inputText id="complementoDocumento"
+                             value="#{cc.attrs.value.complementoDocumento}"
+                             label="#{cc.attrs.complementoDocumentoLabel}"
+                             title="#{cc.attrs.complementoDocumentoLabel}"
+                             disabled="#{cc.attrs.complementoDocumentoDisabled}"
+                             required="#{cc.attrs.complementoDocumentoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+                <h:message for="complementoDocumento"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.expedicionDocumentoLabel}"
+                          rendered="#{cc.attrs.expedicionDocumentoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <h:selectOneMenu id="expedicionDocumento"
+                                 value="#{cc.attrs.value.expedicionDocumento}"
+                                 label="#{cc.attrs.expedicionDocumentoLabel}"
+                                 title="#{cc.attrs.expedicionDocumentoLabel}"
+                                 disabled="#{cc.attrs.expedicionDocumentoDisabled}"
+                                 required="#{cc.attrs.expedicionDocumentoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.expedicionDocumentoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+                <h:message for="expedicionDocumento"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.docRespaldoLabel}"
+                          rendered="#{cc.attrs.docRespaldoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <label class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-upload"></i>
+                        </span>
+                    </div>
+                    <h:inputFile id="docRespaldo"
+                                 value="#{cc.attrs.value.docRespaldoPart}"
+                                 label="#{cc.attrs.docRespaldoLabel}"
+                                 title="#{cc.attrs.docRespaldoLabel}"
+                                 disabled="#{cc.attrs.docRespaldoDisabled}"
+                                 required="#{cc.attrs.docRespaldoRequired}"
+                                 styleClass="#{cc.attrs.classInput}">
+                        <f:passThroughAttribute name="accept" value="application/pdf" />
+                    </h:inputFile>
+                </label>
+                <h:message for="docRespaldo"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.docFirmaLabel}"
+                          rendered="#{cc.attrs.docFirmaRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <label class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-upload"></i>
+                        </span>
+                    </div>
+                    <h:inputFile id="docFirma"
+                                 value="#{cc.attrs.value.docFirmaPart}"
+                                 label="#{cc.attrs.docFirmaLabel}"
+                                 title="#{cc.attrs.docFirmaLabel}"
+                                 disabled="#{cc.attrs.docFirmaDisabled}"
+                                 required="#{cc.attrs.docFirmaRequired}"
+                                 styleClass="#{cc.attrs.classInput}">
+                        <f:passThroughAttribute name="accept" value="application/pdf" />
+                    </h:inputFile>
+                </label>
+                <h:message for="docFirma"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.numeroCelularLabel}"
+                          rendered="#{cc.attrs.numeroCelularRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <h:inputText id="numeroCelular"
+                             value="#{cc.attrs.value.numeroCelular}"
+                             label="#{cc.attrs.numeroCelularLabel}"
+                             title="#{cc.attrs.numeroCelularLabel}"
+                             disabled="#{cc.attrs.numeroCelularDisabled}"
+                             required="#{cc.attrs.numeroCelularRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+                <h:message for="numeroCelular"/> 
+            </hsk:rowLabel>
+
+
+            <hsk:rowLabel text="#{cc.attrs.numeroTelefonicoLabel}"
+                          rendered="#{cc.attrs.numeroTelefonicoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <h:inputText id="numeroTelefonico"
+                             value="#{cc.attrs.value.numeroTelefonico}"
+                             label="#{cc.attrs.numeroTelefonicoLabel}"
+                             title="#{cc.attrs.numeroTelefonicoLabel}"
+                             disabled="#{cc.attrs.numeroTelefonicoDisabled}"
+                             required="#{cc.attrs.numeroTelefonicoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+                <h:message for="numeroTelefonico"/>
+            </hsk:rowLabel>
+
+
+
+            <hsk:rowLabel text="#{cc.attrs.paisLabel}"
+                          rendered="#{cc.attrs.paisRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-12"
+                          classText="col-12 col-md-2"
+                          classValue="col-12 col-md-10">
+                <h:selectOneMenu id="pais"
+                                 value="#{cc.attrs.value.pais}"
+                                 label="#{cc.attrs.paisLabel}"
+                                 title="#{cc.attrs.paisLabel}"
+                                 disabled="#{cc.attrs.paisDisabled}"
+                                 required="#{cc.attrs.paisRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.paisOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+                <h:message for="pais"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.direccionLabel}"
+                          rendered="#{cc.attrs.direccionRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-12"
+                          classText="col-12 col-md-2"
+                          classValue="col-12 col-md-10">
+                <h:inputTextarea id="direccion"
+                                 value="#{cc.attrs.value.direccion}"
+                                 label="#{cc.attrs.direccionLabel}"
+                                 title="#{cc.attrs.direccionLabel}"
+                                 disabled="#{cc.attrs.direccionDisabled}"
+                                 required="#{cc.attrs.direccionRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 rows="1"/>
+                <h:message for="direccion"/>
+            </hsk:rowLabel>
+        </div>
+    </cc:implementation>
+</div>

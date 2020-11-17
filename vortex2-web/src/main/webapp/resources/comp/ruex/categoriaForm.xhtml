@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.CliCategoria"/>
+        <cc:attribute name="disabled" default="#{cc.attrs.value == null}"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="classInput" default="form-control form-control-sm"/>
+        <!-- attribute handler -->
+
+
+        <!-- fecha -->
+        <cc:attribute name="fechaLabel" default="#{LBL.CATEGORIA.FECHA}"/>
+        <cc:attribute name="fechaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- nroEmpleados -->
+        <cc:attribute name="nroEmpleadosLabel" default="#{LBL.CATEGORIA.NRO_EMPLEADOS}"/>
+        <cc:attribute name="nroEmpleadosDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="nroEmpleadosRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="nroEmpleadosRequired" default="false" type="java.lang.Boolean"/>
+
+        <cc:attribute name="nroEmpleadosOption" default="#{_option.cliCategoriaNroEmpleadosOption}" type="java.util.List"/>
+
+
+        <!-- activosUfv -->
+        <cc:attribute name="activosUfvLabel" default="#{LBL.CATEGORIA.ACTIVOS_UFV}"/>
+        <cc:attribute name="activosUfvDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="activosUfvRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="activosUfvRequired" default="false" type="java.lang.Boolean"/>
+
+        <cc:attribute name="activosUfvOption" default="#{_option.cliCategoriaActivosUfvOption}" type="java.util.List"/>
+
+
+        <!-- ventasUfv -->
+        <cc:attribute name="ventasUfvLabel" default="#{LBL.CATEGORIA.VENTAS_UFV}"/>
+        <cc:attribute name="ventasUfvDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="ventasUfvRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="ventasUfvRequired" default="false" type="java.lang.Boolean"/>
+
+        <cc:attribute name="ventasUfvOption" default="#{_option.cliCategoriaVentasUfvOption}" type="java.util.List"/>
+
+
+        <!-- exportacionesUfv -->
+        <cc:attribute name="exportacionesUfvLabel" default="#{LBL.CATEGORIA.EXPORTACIONES_UFV}"/>
+        <cc:attribute name="exportacionesUfvDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="exportacionesUfvRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="exportacionesUfvRequired" default="false" type="java.lang.Boolean"/>
+
+        <cc:attribute name="exportacionesUfvOption" default="#{_option.cliCategoriaExportacionesUfvOption}" type="java.util.List"/>
+
+
+        <!-- importacionesUfv -->
+        <cc:attribute name="importacionesUfvLabel" default="#{LBL.CATEGORIA.IMPORTACIONES_UFV}"/>
+        <cc:attribute name="importacionesUfvDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="importacionesUfvRendered" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="importacionesUfvRequired" default="false" type="java.lang.Boolean"/>
+
+        <cc:attribute name="importacionesUfvOption" default="#{_option.cliCategoriaImportacionesUfvOption}" type="java.util.List"/>
+
+
+        <!-- exportacionesRubros -->
+        <cc:attribute name="exportacionesRubrosLabel" default="#{LBL.CATEGORIA.EXPORTACIONES_RUBROS}"/>
+        <cc:attribute name="exportacionesRubrosDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="exportacionesRubrosRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="exportacionesRubrosRequired" default="false" type="java.lang.Boolean"/>
+
+        <cc:attribute name="exportacionesRubrosOption" default="#{_option.cliCategoriaExportacionesRubrosOption}" type="java.util.List"/>
+
+
+        <!-- importacionesRubros -->
+        <cc:attribute name="importacionesRubrosLabel" default="#{LBL.CATEGORIA.IMPORTACIONES_RUBROS}"/>
+        <cc:attribute name="importacionesRubrosDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="importacionesRubrosRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="importacionesRubrosRequired" default="false" type="java.lang.Boolean"/>
+
+        <cc:attribute name="importacionesRubrosOption" default="#{_option.cliCategoriaImportacionesRubrosOption}" type="java.util.List"/>
+
+        <!-- categoria -->
+        <cc:attribute name="categoriaLabel" default="#{LBL.CATEGORIA.CATEGORIA}"/>
+        <cc:attribute name="categoriaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="categoriaRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="categoriaRequired" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="categoriaOption" default="#{_option.cliCategoriaCategoriaOption}" type="java.util.List"/>
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.CATEGORIA.ESTADO}"/>
+        <cc:attribute name="estadoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRequired" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="estadoOption" default="#{_option.cliCategoriaEstadoOption}" type="java.util.List"/>
+
+
+
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.categoriaLabel}"
+                          rendered="#{cc.attrs.categoriaRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:selectOneMenu id="categoria"
+                                 value="#{cc.attrs.value.categoria}"
+                                 label="#{cc.attrs.categoriaLabel}"
+                                 title="#{cc.attrs.categoriaLabel}"
+                                 disabled="#{cc.attrs.categoriaDisabled}"
+                                 required="#{cc.attrs.categoriaRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.categoriaOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="categoria"/>
+            </hsk:rowLabel>
+
+
+            <hsk:rowLabel text="#{cc.attrs.fechaLabel}"
+                          rendered="#{cc.attrs.fechaRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="fecha"
+                             value="#{cc.attrs.value.fecha}"
+                             label="#{cc.attrs.fechaLabel}"
+                             title="#{cc.attrs.fechaLabel}"
+                             disabled="#{cc.attrs.fechaDisabled}"
+                             required="#{cc.attrs.fechaRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off">
+                    <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss"/>  
+                </h:inputText>
+
+                <h:message for="fecha"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="estado"
+                                 value="#{cc.attrs.value.estado}"
+                                 label="#{cc.attrs.estadoLabel}"
+                                 title="#{cc.attrs.estadoLabel}"
+                                 disabled="#{cc.attrs.estadoDisabled}"
+                                 required="#{cc.attrs.estadoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.estadoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="estado"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.nroEmpleadosLabel}"
+                          rendered="#{cc.attrs.nroEmpleadosRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="nroEmpleados"
+                                 value="#{cc.attrs.value.nroEmpleados}"
+                                 label="#{cc.attrs.nroEmpleadosLabel}"
+                                 title="#{cc.attrs.nroEmpleadosLabel}"
+                                 disabled="#{cc.attrs.nroEmpleadosDisabled}"
+                                 required="#{cc.attrs.nroEmpleadosRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.nroEmpleadosOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="nroEmpleados"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.activosUfvLabel}"
+                          rendered="#{cc.attrs.activosUfvRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+
+                <h:selectOneMenu id="activosUfv"
+                                 value="#{cc.attrs.value.activosUfv}"
+                                 label="#{cc.attrs.activosUfvLabel}"
+                                 title="#{cc.attrs.activosUfvLabel}"
+                                 disabled="#{cc.attrs.activosUfvDisabled}"
+                                 required="#{cc.attrs.activosUfvRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.activosUfvOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="activosUfv"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.ventasUfvLabel}"
+                          rendered="#{cc.attrs.ventasUfvRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="ventasUfv"
+                                 value="#{cc.attrs.value.ventasUfv}"
+                                 label="#{cc.attrs.ventasUfvLabel}"
+                                 title="#{cc.attrs.ventasUfvLabel}"
+                                 disabled="#{cc.attrs.ventasUfvDisabled}"
+                                 required="#{cc.attrs.ventasUfvRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.ventasUfvOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="ventasUfv"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.exportacionesUfvLabel}"
+                          rendered="#{cc.attrs.exportacionesUfvRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+
+                <h:selectOneMenu id="exportacionesUfv"
+                                 value="#{cc.attrs.value.exportacionesUfv}"
+                                 label="#{cc.attrs.exportacionesUfvLabel}"
+                                 title="#{cc.attrs.exportacionesUfvLabel}"
+                                 disabled="#{cc.attrs.exportacionesUfvDisabled}"
+                                 required="#{cc.attrs.exportacionesUfvRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.exportacionesUfvOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="exportacionesUfv"/>
+            </hsk:rowLabel>
+
+
+
+
+
+
+            <hsk:rowLabel text="#{cc.attrs.importacionesUfvLabel}"
+                          rendered="#{cc.attrs.importacionesUfvRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="importacionesUfv"
+                                 value="#{cc.attrs.value.importacionesUfv}"
+                                 label="#{cc.attrs.importacionesUfvLabel}"
+                                 title="#{cc.attrs.importacionesUfvLabel}"
+                                 disabled="#{cc.attrs.importacionesUfvDisabled}"
+                                 required="#{cc.attrs.importacionesUfvRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}" 
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.importacionesUfvOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="importacionesUfv"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.exportacionesRubrosLabel}"
+                          rendered="#{cc.attrs.exportacionesRubrosRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <div class="overflow-auto" style="height: 250px">
+
+                    <h:selectManyCheckbox id="exportacionesRubros"
+                                          value="#{cc.attrs.value.exportacionesRubros}"
+                                          label="#{cc.attrs.exportacionesRubrosLabel}"
+                                          title="#{cc.attrs.exportacionesRubrosLabel}"
+                                          disabled="#{cc.attrs.exportacionesRubrosDisabled}"
+                                          required="#{cc.attrs.exportacionesRubrosRequired}"
+                                          styleClass="table-checkbox"
+                                          converter="hiska.faces.Param"
+                                          layout="pageDirection">
+                        <f:selectItems var="item" 
+                                       value="#{cc.attrs.exportacionesRubrosOption}" 
+                                       itemValue="#{item.value}" 
+                                       itemLabel="#{item.label}" 
+                                       itemDescription="#{item.description}"/>
+                    </h:selectManyCheckbox>
+                </div>
+                <h:message for="exportacionesRubros"/>
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.importacionesRubrosLabel}"
+                          rendered="#{cc.attrs.importacionesRubrosRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <div class="overflow-auto" style="height: 250px">
+                    <h:selectManyCheckbox id="importacionesRubros"
+                                          value="#{cc.attrs.value.importacionesRubros}"
+                                          label="#{cc.attrs.importacionesRubrosLabel}"
+                                          title="#{cc.attrs.importacionesRubrosLabel}"
+                                          disabled="#{cc.attrs.importacionesRubrosDisabled}"
+                                          required="#{cc.attrs.importacionesRubrosRequired}"
+                                          styleClass="#{cc.attrs.classInput}"
+                                          converter="hiska.faces.Param"
+                                          layout="pageDirection">
+                        <f:selectItems var="item" 
+                                       value="#{cc.attrs.importacionesRubrosOption}" 
+                                       itemValue="#{item.value}" 
+                                       itemLabel="#{item.label}" 
+                                       itemDescription="#{item.description}"/>
+                    </h:selectManyCheckbox>
+                </div>
+                <h:message for="importacionesRubros"/>
+            </hsk:rowLabel>
+
+        </div>
+    </cc:implementation>
+</div>

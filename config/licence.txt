@@ -1,0 +1,8 @@
+  ____                                  
+ / ___|  ___ _ __   __ ___   _______  __
+ \___ \ / _ \ '_ \ / _` \ \ / / _ \ \/ /
+  ___) |  __/ | | | (_| |\ V /  __/>  < 
+ |____/ \___|_| |_|\__,_| \_/ \___/_/\_\
+
+ Copyright © ${project.inceptionYear}
+ http://www.senavex.gob.bo/licenses/LICENSE-1.0

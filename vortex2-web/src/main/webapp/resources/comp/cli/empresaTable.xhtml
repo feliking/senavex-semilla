@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <div xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:f="http://xmlns.jcp.org/jsf/core"
+             xmlns:cc="http://java.sun.com/jsf/composite"
+             xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+            <cc:interface>
+                <cc:attribute name="value" required="true" type="java.util.List"/>
+                <cc:attribute name="select" type="java.lang.Object"/>
+                <cc:attribute name="pagination" type="com.hiska.result.Pagination"/>
+                <cc:attribute name="sortListener" method-signature="void m()"/>
+                <cc:attribute name="update" default="#{cc.clientId}"/>
+                <cc:attribute name="styleClass" default="table table-bordered table-sm"/>
+                <!-- attribute handler -->
+                
+                <!-- tipo -->
+                <cc:attribute name="tipoLabel" default="#{LBL.EMPRESA.TIPO}"/>
+                <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- refKey -->
+                <cc:attribute name="refKeyLabel" default="#{LBL.EMPRESA.REF_KEY}"/>
+                <cc:attribute name="refKeyRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- refName -->
+                <cc:attribute name="refNameLabel" default="#{LBL.EMPRESA.REF_NAME}"/>
+                <cc:attribute name="refNameRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- descripcion -->
+                <cc:attribute name="descripcionLabel" default="#{LBL.EMPRESA.DESCRIPCION}"/>
+                <cc:attribute name="descripcionRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- estado -->
+                <cc:attribute name="estadoLabel" default="#{LBL.EMPRESA.ESTADO}"/>
+                <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+                
+            </cc:interface>
+            <cc:implementation>
+                <div id="#{cc.clientId}">
+                    <h:dataTable var="row"
+                                 value="#{cc.attrs.value}"
+                                 styleClass="#{cc.attrs.styleClass}">
+                        
+                        <h:column rendered="#{cc.attrs.tipoRendered}">
+                            <f:facet name="header">
+                                <hsk:sortText name="tipo" 
+                                              value="#{cc.attrs.tipoLabel}"
+                                              update="#{cc.attrs.update}"
+                                              pagination="#{cc.attrs.pagination}"
+                                              sortListener="#{cc.attrs.sortListener}"/>
+                            </f:facet>
+                            <h:outputText value="#{row.tipo.label}"
+                                          title="#{cc.attrs.tipoLabel}: #{row.tipo.label}"/>
+                        </h:column>
+                        
+                        <h:column rendered="#{cc.attrs.refKeyRendered}">
+                            <f:facet name="header">
+                                <hsk:sortText name="refKey" 
+                                              value="#{cc.attrs.refKeyLabel}"
+                                              update="#{cc.attrs.update}"
+                                              pagination="#{cc.attrs.pagination}"
+                                              sortListener="#{cc.attrs.sortListener}"/>
+                            </f:facet>
+                            <h:outputText value="#{row.refKey}"
+                                          title="#{cc.attrs.refKeyLabel}: #{row.refKey}"/>
+                        </h:column>
+                        
+                        <h:column rendered="#{cc.attrs.refNameRendered}">
+                            <f:facet name="header">
+                                <hsk:sortText name="refName" 
+                                              value="#{cc.attrs.refNameLabel}"
+                                              update="#{cc.attrs.update}"
+                                              pagination="#{cc.attrs.pagination}"
+                                              sortListener="#{cc.attrs.sortListener}"/>
+                            </f:facet>
+                            <h:outputText value="#{row.refName}"
+                                          title="#{cc.attrs.refNameLabel}: #{row.refName}"/>
+                        </h:column>
+                        
+                        <h:column rendered="#{cc.attrs.descripcionRendered}">
+                            <f:facet name="header">
+                                <hsk:sortText name="descripcion" 
+                                              value="#{cc.attrs.descripcionLabel}"
+                                              update="#{cc.attrs.update}"
+                                              pagination="#{cc.attrs.pagination}"
+                                              sortListener="#{cc.attrs.sortListener}"/>
+                            </f:facet>
+                            <h:outputText value="#{row.descripcion}"
+                                          title="#{cc.attrs.descripcionLabel}: #{row.descripcion}"/>
+                        </h:column>
+                        
+                        <h:column rendered="#{cc.attrs.estadoRendered}">
+                            <f:facet name="header">
+                                <hsk:sortText name="estado" 
+                                              value="#{cc.attrs.estadoLabel}"
+                                              update="#{cc.attrs.update}"
+                                              pagination="#{cc.attrs.pagination}"
+                                              sortListener="#{cc.attrs.sortListener}"/>
+                            </f:facet>
+                            <h:outputText value="#{row.estado.label}"
+                                          title="#{cc.attrs.estadoLabel}: #{row.estado.label}"/>
+                        </h:column>
+                        
+                        <cc:insertChildren/>
+                    </h:dataTable>
+                </div>
+            </cc:implementation>
+        </div>

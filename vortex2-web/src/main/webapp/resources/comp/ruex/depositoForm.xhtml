@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.CtaDeposito"/>
+        <cc:attribute name="disabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="size" default="sm"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="classInput" default="form-control form-control-#{cc.attrs.size}"/>
+        <!-- attribute handler -->
+
+        <!-- idDeposito -->
+        <cc:attribute name="idDepositoLabel" default="#{LBL.DEPOSITO.ID_DEPOSITO}"/>
+        <cc:attribute name="idDepositoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="idDepositoRendered" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="idDepositoRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- comprobante -->
+        <cc:attribute name="comprobanteLabel" default="#{LBL.DEPOSITO.COMPROBANTE}"/>
+        <cc:attribute name="comprobanteDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="comprobanteRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="comprobanteRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- monto -->
+        <cc:attribute name="montoLabel" default="#{LBL.DEPOSITO.MONTO}"/>
+        <cc:attribute name="montoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="montoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="montoRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- docComprobante -->
+        <cc:attribute name="docComprobanteLabel" default="#{LBL.DEPOSITO.DOC_COMPROBANTE}"/>
+        <cc:attribute name="docComprobanteDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="docComprobanteRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="docComprobanteRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- fechaDeposito -->
+        <cc:attribute name="fechaDepositoLabel" default="#{LBL.DEPOSITO.FECHA_DEPOSITO}"/>
+        <cc:attribute name="fechaDepositoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaDepositoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaDepositoRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- fechaRegistro -->
+        <cc:attribute name="fechaRegistroLabel" default="#{LBL.DEPOSITO.FECHA_REGISTRO}"/>
+        <cc:attribute name="fechaRegistroDisabled" default="#{cc.attrs.disabled or true}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaRegistroRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaRegistroRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- fechaVerificacion -->
+        <cc:attribute name="fechaVerificacionLabel" default="#{LBL.DEPOSITO.FECHA_VERIFICACION}"/>
+        <cc:attribute name="fechaVerificacionDisabled" default="#{cc.attrs.disabled or true}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaVerificacionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaVerificacionRequired" default="false" type="java.lang.Boolean"/>
+
+
+        <!-- descripcion -->
+        <cc:attribute name="descripcionLabel" default="#{LBL.DEPOSITO.DESCRIPCION}"/>
+        <cc:attribute name="descripcionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="descripcionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="descripcionRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- cuenta -->
+        <cc:attribute name="cuentaLabel" default="#{LBL.DEPOSITO.CUENTA}"/>
+        <cc:attribute name="cuentaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="cuentaRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="cuentaRequired" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="cuentaOption" default="#{_option.ctaDepositoCuentaOption}" type="java.util.List"/>
+
+
+        <!-- moneda -->
+        <cc:attribute name="monedaLabel" default="#{LBL.DEPOSITO.MONEDA}"/>
+        <cc:attribute name="monedaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="monedaRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="monedaRequired" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="monedaOption" default="#{_option.ctaDepositoMonedaOption}" type="java.util.List"/>
+
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.DEPOSITO.ESTADO}"/>
+        <cc:attribute name="estadoDisabled" default="#{cc.attrs.disabled or true}" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRequired" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="estadoOption" default="#{_option.ctaDepositoEstadoOption}" type="java.util.List"/>
+
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.idDepositoLabel}"
+                          rendered="#{cc.attrs.idDepositoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="idDeposito"
+                             value="#{cc.attrs.value.idDeposito}"
+                             label="#{cc.attrs.idDepositoLabel}"
+                             title="#{cc.attrs.idDepositoLabel}"
+                             disabled="#{cc.attrs.idDepositoDisabled}"
+                             required="#{cc.attrs.idDepositoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="idDeposito"/>
+
+            </hsk:rowLabel>
+
+
+            <hsk:rowLabel text="#{cc.attrs.cuentaLabel}"
+                          rendered="#{cc.attrs.cuentaRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="cuenta"
+                                 value="#{cc.attrs.value.cuenta}"
+                                 label="#{cc.attrs.cuentaLabel}"
+                                 title="#{cc.attrs.cuentaLabel}"
+                                 disabled="#{cc.attrs.cuentaDisabled}"
+                                 required="#{cc.attrs.cuentaRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.cuentaOption}" 
+                                   itemValue="#{item}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="cuenta"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="estado"
+                                 value="#{cc.attrs.value.estado}"
+                                 label="#{cc.attrs.estadoLabel}"
+                                 title="#{cc.attrs.estadoLabel}"
+                                 disabled="#{cc.attrs.estadoDisabled}"
+                                 required="#{cc.attrs.estadoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.estadoOption}" 
+                                   itemValue="#{item}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="estado"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.montoLabel}"
+                          rendered="#{cc.attrs.montoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="monto"
+                             value="#{cc.attrs.value.monto}"
+                             label="#{cc.attrs.montoLabel}"
+                             title="#{cc.attrs.montoLabel}"
+                             disabled="#{cc.attrs.montoDisabled}"
+                             required="#{cc.attrs.montoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="monto"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.monedaLabel}"
+                          rendered="#{cc.attrs.monedaRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="moneda"
+                                 value="#{cc.attrs.value.moneda}"
+                                 label="#{cc.attrs.monedaLabel}"
+                                 title="#{cc.attrs.monedaLabel}"
+                                 disabled="#{cc.attrs.monedaDisabled}"
+                                 required="#{cc.attrs.monedaRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.monedaOption}" 
+                                   itemValue="#{item}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="moneda"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.comprobanteLabel}"
+                          rendered="#{cc.attrs.comprobanteRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="comprobante"
+                             value="#{cc.attrs.value.comprobante}"
+                             label="#{cc.attrs.comprobanteLabel}"
+                             title="#{cc.attrs.comprobanteLabel}"
+                             disabled="#{cc.attrs.comprobanteDisabled}"
+                             required="#{cc.attrs.comprobanteRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+
+                <h:message for="comprobante"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaDepositoLabel}"
+                          rendered="#{cc.attrs.fechaDepositoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="fechaDeposito"
+                             value="#{cc.attrs.value.fechaDeposito}"
+                             label="#{cc.attrs.fechaDepositoLabel}"
+                             title="#{cc.attrs.fechaDepositoLabel}"
+                             disabled="#{cc.attrs.fechaDepositoDisabled}"
+                             required="#{cc.attrs.fechaDepositoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:inputText>
+
+                <h:message for="fechaDeposito"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.docComprobanteLabel}"
+                          rendered="#{cc.attrs.docComprobanteRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:inputFile id="docComprobante"
+                             value="#{cc.attrs.value.docComprobantePart}"
+                             label="#{cc.attrs.docComprobanteLabel}"
+                             title="#{cc.attrs.docComprobanteLabel}"
+                             disabled="#{cc.attrs.docComprobanteDisabled}"
+                             required="#{cc.attrs.docComprobanteRequired}"
+                             styleClass="#{cc.attrs.classInput}"/>
+
+                <h:message for="docComprobante"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaRegistroLabel}"
+                          rendered="#{cc.attrs.fechaRegistroRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="fechaRegistro"
+                             value="#{cc.attrs.value.fechaRegistro}"
+                             label="#{cc.attrs.fechaRegistroLabel}"
+                             title="#{cc.attrs.fechaRegistroLabel}"
+                             disabled="#{cc.attrs.fechaRegistroDisabled}"
+                             required="#{cc.attrs.fechaRegistroRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:inputText>
+
+                <h:message for="fechaRegistro"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaVerificacionLabel}"
+                          rendered="#{cc.attrs.fechaVerificacionRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:inputText id="fechaVerificacion"
+                             value="#{cc.attrs.value.fechaVerificacion}"
+                             label="#{cc.attrs.fechaVerificacionLabel}"
+                             title="#{cc.attrs.fechaVerificacionLabel}"
+                             disabled="#{cc.attrs.fechaVerificacionDisabled}"
+                             required="#{cc.attrs.fechaVerificacionRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:inputText>
+
+                <h:message for="fechaVerificacion"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.descripcionLabel}"
+                          rendered="#{cc.attrs.descripcionRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:inputTextarea id="descripcion"
+                                 value="#{cc.attrs.value.descripcion}"
+                                 label="#{cc.attrs.descripcionLabel}"
+                                 title="#{cc.attrs.descripcionLabel}"
+                                 disabled="#{cc.attrs.descripcionDisabled}"
+                                 required="#{cc.attrs.descripcionRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 rows="1"/>
+
+                <h:message for="descripcion"/>
+
+            </hsk:rowLabel>
+
+        </div>
+    </cc:implementation>
+</div>

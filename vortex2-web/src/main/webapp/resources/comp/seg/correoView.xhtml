@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.SegCorreo"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="size" default="sm"/>
+        <cc:attribute name="classOutput" default="form-control form-control-#{cc.attrs.size}"/>
+        <!-- attribute handler -->
+
+        <!-- correoDestino -->
+        <cc:attribute name="correoDestinoLabel" default="#{LBL.CORREO.CORREO_DESTINO}"/>
+        <cc:attribute name="correoDestinoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- correoCopia -->
+        <cc:attribute name="correoCopiaLabel" default="#{LBL.CORREO.CORREO_COPIA}"/>
+        <cc:attribute name="correoCopiaRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- fechaSolicitud -->
+        <cc:attribute name="fechaSolicitudLabel" default="#{LBL.CORREO.FECHA_SOLICITUD}"/>
+        <cc:attribute name="fechaSolicitudRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- fechaUso -->
+        <cc:attribute name="fechaUsoLabel" default="#{LBL.CORREO.FECHA_USO}"/>
+        <cc:attribute name="fechaUsoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- fechaVigencia -->
+        <cc:attribute name="fechaVigenciaLabel" default="#{LBL.CORREO.FECHA_VIGENCIA}"/>
+        <cc:attribute name="fechaVigenciaRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- fechaVigencia -->
+        <cc:attribute name="updatedAtLabel" default="#{LBL.UPDATED_AT}"/>
+        <cc:attribute name="updatedAtRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- plantilla -->
+        <cc:attribute name="plantillaLabel" default="#{LBL.CORREO.PLANTILLA}"/>
+        <cc:attribute name="plantillaRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.CORREO.ESTADO}"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-view #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.correoDestinoLabel}"
+                          rendered="#{cc.attrs.correoDestinoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:outputText value="#{cc.attrs.value.correoDestino}"
+                              title="#{cc.attrs.correoDestinoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.correoCopiaLabel}"
+                          rendered="#{cc.attrs.correoCopiaRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:outputText value="#{cc.attrs.value.correoCopia}"
+                              title="#{cc.attrs.correoCopiaLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.plantillaLabel}"
+                          rendered="#{cc.attrs.plantillaRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.plantilla}"
+                              title="#{cc.attrs.plantillaLabel}"
+                              styleClass="#{cc.attrs.classOutput}"
+                              converter="hiska.faces.Param"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.estado}"
+                              title="#{cc.attrs.estadoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"
+                              converter="hiska.faces.Param"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaSolicitudLabel}"
+                          rendered="#{cc.attrs.fechaSolicitudRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.fechaSolicitud}"
+                              title="#{cc.attrs.fechaSolicitudLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaUsoLabel}"
+                          rendered="#{cc.attrs.fechaUsoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.fechaUso}"
+                              title="#{cc.attrs.fechaUsoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaVigenciaLabel}"
+                          rendered="#{cc.attrs.fechaVigenciaRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.fechaVigencia}"
+                              title="#{cc.attrs.fechaVigenciaLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.updatedAtLabel}"
+                          rendered="#{cc.attrs.updatedAtRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:outputText value="#{cc.attrs.value.updatedAt}"
+                              title="#{cc.attrs.updatedAtLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+
+            </hsk:rowLabel>
+
+        </div>
+    </cc:implementation>
+</div>

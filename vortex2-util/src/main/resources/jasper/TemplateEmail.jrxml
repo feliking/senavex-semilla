@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Email3360" pageWidth="820" pageHeight="540" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="780" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Error" uuid="8c9c92d7-a407-480d-83d0-a090314c23ba">
+	<property name="net.sf.jasperreports.export.html.header" value=""/>
+	<property name="net.sf.jasperreports.export.html.footer" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<template><![CDATA[$P{P_REPORT_STYLE}]]></template>
+	<parameter name="P_PATH" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["."]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_REPORT_STYLE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{P_PATH} + "/ReportStyle.jrtx"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_REPORT_LOGO" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{P_PATH} + "/banner.png"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_ID" class="java.lang.Long" isForPrompting="false">
+		<defaultValueExpression><![CDATA[0L]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_TITLE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Correo Ejemplo"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_MESSAGE_START" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Texto ejemplo \n-Nueva linea \n-Nueva linea \n-Nueva linea \n-Nueva linea \n-Nueva linea \n-Nueva linea"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_MESSAGE_END" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Sin Mensaje"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_CODE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Sin Mensaje"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_LINK" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["http://aaaa"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="106" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle" isLazy="true">
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="0" y="0" width="780" height="60" backcolor="#0B3335" uuid="b362aa5d-68ac-4d10-b010-405e498f5bd8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{P_REPORT_LOGO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement style="H2" positionType="Float" x="0" y="70" width="780" height="25" forecolor="#003366" uuid="1487d782-ad6d-4e92-9229-f46c72bab37c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFCFC"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_TITLE}.replace("\n","<br/>")]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="143" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="D3" positionType="Float" x="0" y="0" width="780" height="30" forecolor="#003366" uuid="bae466a4-04a1-4801-a779-956b1bc10b6d">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_MESSAGE_START}.replace("\n","<br/>")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="H3" positionType="Float" x="0" y="35" width="780" height="30" forecolor="#F79E20" uuid="51e51319-4f00-4f96-adff-41ad423acd05">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_CODE}.replace("\n","<br/>")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="D3" positionType="Float" x="0" y="70" width="780" height="30" forecolor="#003366" uuid="16b949c1-2e9f-4929-9fa8-89a1cd554827"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_MESSAGE_END}.replace("\n","<br/>")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true" hyperlinkTarget="Blank">
+				<reportElement style="D4" positionType="Float" x="0" y="107" width="780" height="30" forecolor="#3CA5CF" uuid="e0f57b1c-8710-4ef7-bde4-1fb00b09df65"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_LINK}.replace("\n","<br/>")]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA[$P{P_LINK}]]></hyperlinkReferenceExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="10">
+			<textField>
+				<reportElement style="H5" positionType="Float" x="631" y="0" width="150" height="10" uuid="c7c4b954-37da-432a-bd0c-3408f92efb5b">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" markup="html"/>
+				<textFieldExpression><![CDATA["Ref: "+$P{P_ID}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMM d, yyyy h:mm:ss a">
+				<reportElement style="H5" x="0" y="0" width="150" height="10" uuid="2f44d925-99d3-400f-b147-24cebc103b29">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

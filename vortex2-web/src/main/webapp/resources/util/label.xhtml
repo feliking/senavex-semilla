@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+     xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <cc:interface>
+        <cc:attribute name="styleClass"/>
+        <cc:attribute name="text"/>
+        <cc:attribute name="size"/>
+        <cc:attribute name="labelCol" default="col-12  col-md-2 "/>
+        <cc:attribute name="inputCol" default="col-12  col-md-10"/>
+    </cc:interface>
+
+    <cc:implementation>
+        <div class="mb-2 #{cc.attrs.styleClass}">
+            <div class="row">
+                <div class="col #{cc.attrs.labelCol}">
+                    <label class="col-form-label">
+                        #{cc.attrs.text}
+                    </label>
+                </div>
+                <div class="col #{cc.attrs.inputCol}">
+                    <cc:insertChildren/>
+                </div>
+            </div>
+        </div>
+    </cc:implementation>
+</div>

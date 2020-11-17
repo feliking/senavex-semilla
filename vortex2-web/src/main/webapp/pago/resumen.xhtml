@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                xmlns:ruex="http://xmlns.jcp.org/jsf/composite/comp/ruex"
+                xmlns:cta="http://xmlns.jcp.org/jsf/composite/comp/cta"
+                xmlns:cli="http://xmlns.jcp.org/jsf/composite/comp/cli"
+                template="#{_config.template}">
+    <ui:define name="title">
+        <span  class="text-primary">
+            <i class="fa fa-eye"/>
+            #{TXT.PAGO.TITLE} - #{TXT.PAGO.PAGE_DETAIL}
+        </span>
+    </ui:define>
+    <ui:define name="content">
+        <h:form>
+            <hsk:note rendered="#{_ctaPago.ctaPago == null}">
+                #{TXT.ERROR_STATE}
+                <h:commandLink value="#{BTN.PAGE_RETURN}"
+                               action="inbox"
+                               immediate="true"
+                               styleClass="text-danger"/>
+            </hsk:note>
+            <hsk:cardForm rendered="#{_ctaPago.ctaPago != null}"
+                          styleClass="col-12 col-xl-10 center">
+                <f:facet name="header">
+                    #{TXT.PAGO.TITLE_VIEW}
+                    <i class="fa fa-key"/>
+                    #{_ctaPago.ctaPago.idPago}
+                </f:facet>
+                <h5 class="card-title">Empresa</h5>
+                <cli:empresaTitle value="#{_ctaPago.ctaPago.cliEmpresa}"/>
+                <h5 class="card-title">Pago</h5>
+                <cta:pagoView value="#{_ctaPago.ctaPago}"/>
+                <cta:depositoTable value="#{_ctaPago.ctaPago.ctaDepositoList}"/>
+
+                <f:facet name="footer">
+                    <h:commandLink action="#{_ctaPago.navegationAction(null, 'inbox')}"
+                                   immediate="true"
+                                   styleClass="btn btn-sm btn-secondary ml-1">
+                        <i class="fa fa-arrow-left"/>
+                        #{BTN.CANCEL}
+                    </h:commandLink>
+                </f:facet>
+            </hsk:cardForm>
+        </h:form>
+    </ui:define>
+</ui:composition>

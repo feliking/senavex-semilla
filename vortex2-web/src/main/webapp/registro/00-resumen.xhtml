@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                xmlns:util="http://xmlns.jcp.org/jsf/composite/util"
+                xmlns:ruex="http://xmlns.jcp.org/jsf/composite/comp/ruex"
+                template="#{_config.template}">
+    <ui:define name="title">
+        <span  class="text-primary">
+            <i class="fa fa-eye"/>
+            #{TXT.REGISTRO.TITLE} - #{TXT.REGISTRO.PAGE_DETAIL}
+        </span>
+    </ui:define>
+    <ui:define name="content">
+        <h:form>
+            <hsk:note rendered="#{_regRegistro.regRegistro == null}">
+                #{TXT.ERROR_STATE}
+                <h:commandLink value="#{BTN.PAGE_RETURN}"
+                               action="inbox"
+                               immediate="true"
+                               styleClass="text-danger"/>
+            </hsk:note>
+            <h:panelGroup rendered="#{_regRegistro.regRegistro != null}">
+                <hsk:cardForm styleClass="center col-10">
+                    <f:facet name="header">
+                        #{TXT.REGISTRO.TITLE_VIEW}
+                        <i class="fa fa-key"/>
+                        #{_regRegistro.regRegistro.idRegistro}
+                    </f:facet>
+                    <util:panelTabs tabs="8" progress="false">
+
+                        <f:facet name="T1">Registro</f:facet>
+                        <f:facet name="C1">
+                            <ruex:registroView value="#{_regRegistro.regRegistro}"/>
+                        </f:facet>
+
+                        <f:facet name="T2">Empresa</f:facet>
+                        <f:facet name="C2">
+                            <ruex:empresaView value="#{_regRegistro.regRegistro.cliEmpresa}"/>
+                        </f:facet>
+
+                        <f:facet name="T3">Documentos</f:facet>
+                        <f:facet name="C3">
+                            <ruex:documentoTable value="#{_regRegistro.regRegistro.cliEmpresa.cliDocumentoList}"
+                                                descripcionRendered="false">
+                                <h:column>
+                                    <f:facet name="header">
+                                        Archivo
+                                    </f:facet>
+                                    <h:commandLink action="#{_regRegistro.descargarArchivoAction(row.docRespaldo)}"
+                                                   styleClass="btn btn-sm btn-secundary"
+                                                   immediate="true"
+                                                   target="_new" 
+                                                   disabled="#{row.docRespaldo.nombre == null}">
+                                        <i class="fa fa-download"/>
+                                        #{row.docRespaldo.nombre}
+                                    </h:commandLink>
+                                </h:column>
+                            </ruex:documentoTable>
+                        </f:facet>
+
+                        <f:facet name="T4">Categorizacion</f:facet>
+                        <f:facet name="C4">
+                            <ruex:categoriaView value="#{_regRegistro.regRegistro.cliEmpresa.cliCategoriaList[0]}"
+                                                importacionesRubrosRendered="false"
+                                                categoriaRendered="false"
+                                                fechaRegistroRendered="false"
+                                                estadoRendered="false"/>
+
+                        </f:facet>
+
+                        <f:facet name="T5">Direcciones</f:facet>
+                        <f:facet name="C5">
+                            <ruex:direccionTable value="#{_regRegistro.regRegistro.cliEmpresa.cliDireccionList}">
+                            </ruex:direccionTable>
+                        </f:facet>
+
+                        <f:facet name="T6">Contactos</f:facet>
+                        <f:facet name="C6">
+                            <ruex:contactoTable value="#{_regRegistro.regRegistro.cliEmpresa.cliContactoList}">
+                            </ruex:contactoTable>
+                        </f:facet>
+
+                        <f:facet name="T7">Representante</f:facet>
+                        <f:facet name="C7">
+                            <ruex:operadorTable value="#{_regRegistro.regRegistro.cliEmpresa.segOperadorList}">
+                            </ruex:operadorTable>
+                        </f:facet>
+
+                        <f:facet name="T8">Pago</f:facet>
+                        <f:facet name="C8">
+                            <hsk:note rendered="#{_regRegistro.regRegistro.ctaPago == null}" level="info">
+                                Sin Pago
+                            </hsk:note>
+                            <h:panelGroup rendered="#{_regRegistro.regRegistro.ctaPago != null}">
+                                <ruex:pagoForm value="#{_regRegistro.regRegistro.ctaPago}"
+                                               disabled="true">
+
+                                </ruex:pagoForm>
+                                <ruex:depositoTable value="#{_regRegistro.regRegistro.ctaPago.ctaDepositoList}">
+                                    
+                                </ruex:depositoTable>
+                                
+                            </h:panelGroup>
+                        </f:facet>
+                    </util:panelTabs>
+                    <f:facet name="footer">
+                        <h:commandLink action="#{_regRegistro.retornarAction}"
+                                       immediate="true"
+                                       styleClass="btn btn-sm btn-secondary ml-1">
+                            <i class="fa fa-arrow-left"/>
+                            #{BTN.CANCEL}
+                        </h:commandLink>
+                    </f:facet>
+                </hsk:cardForm>
+            </h:panelGroup>
+        </h:form>
+    </ui:define>
+</ui:composition>

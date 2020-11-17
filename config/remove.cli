@@ -1,0 +1,10 @@
+# ./jboss-cli.sh --file=/store/work/dev/senavex-01/siporta/config/remove.cli -c
+
+/subsystem=security/security-domain=app-realm:remove
+
+/subsystem=datasources/data-source=senavex-dev\/jdbc\/app-store/:remove
+
+/subsystem=datasources/jdbc-driver=jdbc-postgresql/:remove
+
+
+:reload

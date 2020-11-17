@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.CliContacto"/>
+        <cc:attribute name="disabled" default="#{cc.attrs.value == null}"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="classInput" default="form-control form-control-sm"/>
+        <!-- attribute handler -->
+
+        <!-- nombre -->
+        <cc:attribute name="nombreLabel" default="#{LBL.CONTACTO.NOMBRE}"/>
+        <cc:attribute name="nombreDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- valor -->
+        <cc:attribute name="valorLabel" default="#{LBL.CONTACTO.VALOR}"/>
+        <cc:attribute name="valorDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="valorRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="valorRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- descripcion -->
+        <cc:attribute name="descripcionLabel" default="#{LBL.CONTACTO.DESCRIPCION}"/>
+        <cc:attribute name="descripcionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="descripcionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="descripcionRequired" default="true" type="java.lang.Boolean"/>
+
+
+    </cc:interface>
+    <cc:implementation>
+
+        <fieldset id="#{cc.clientId}" class="card m-0">
+            <legend class="h6 p-1">
+                #{cc.attrs.value.tipo.label}
+            </legend>
+            <div class="card-body pt-0 pb-0">
+
+
+                <div class="row row-form #{cc.attrs.styleClass}">
+
+
+
+                    <hsk:rowLabel text="#{cc.attrs.nombreLabel}"
+                                  rendered="#{cc.attrs.nombreRendered}"
+                                  size="sm"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+
+                        <h:inputText id="nombre"
+                                     value="#{cc.attrs.value.nombre}"
+                                     label="#{cc.attrs.nombreLabel}"
+                                     title="#{cc.attrs.nombreLabel}"
+                                     disabled="#{cc.attrs.nombreDisabled}"
+                                     required="#{cc.attrs.nombreRequired}"
+                                     styleClass="#{cc.attrs.classInput}"
+                                     autocomplete="off"/>
+
+                        <h:message for="nombre"/>
+                    </hsk:rowLabel>
+
+
+                    <hsk:rowLabel text="#{cc.attrs.valorLabel}"
+                                  rendered="#{cc.attrs.valorRendered}"
+                                  size="sm"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+
+                        <h:inputText id="valor"
+                                     value="#{cc.attrs.value.valor}"
+                                     label="#{cc.attrs.valorLabel}"
+                                     title="#{cc.attrs.valorLabel}"
+                                     disabled="#{cc.attrs.valorDisabled}"
+                                     required="#{cc.attrs.valorRequired}"
+                                     styleClass="#{cc.attrs.classInput}"
+                                     autocomplete="off"/>
+
+                        <h:message for="valor"/>
+                    </hsk:rowLabel>
+
+                    <hsk:rowLabel text="#{cc.attrs.descripcionLabel}"
+                                  rendered="#{cc.attrs.descripcionRendered}"
+                                  size="sm"
+                                  classRow="col-12"
+                                  classText="col-2"
+                                  classValue="col-10">
+
+                        <h:inputTextarea id="descripcion"
+                                         value="#{cc.attrs.value.descripcion}"
+                                         label="#{cc.attrs.descripcionLabel}"
+                                         title="#{cc.attrs.descripcionLabel}"
+                                         disabled="#{cc.attrs.descripcionDisabled}"
+                                         required="#{cc.attrs.descripcionRequired}"
+                                         styleClass="#{cc.attrs.classInput}"
+                                         cols="50"
+                                         rows="1"/>
+
+                        <h:message for="descripcion"/>
+                    </hsk:rowLabel>
+
+                </div>
+            </div>
+        </fieldset>
+    </cc:implementation>
+</div>

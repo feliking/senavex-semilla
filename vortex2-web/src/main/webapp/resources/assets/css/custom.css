@@ -1,0 +1,240 @@
+.senavex-bg{
+    background: url("#{resource['assets/images/bg-02.jpg']}") no-repeat;
+    background-size: cover;
+}
+.app-logo{
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.app-logo2{
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    left: auto;
+}
+.captcha img{
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px 0 0 4px;
+}
+.captcha .item{
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    width: 110px;
+    height: 38px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.captcha img{
+    cursor: pointer
+}
+.captcha .invalid-feedback {
+    width: auto;
+}
+.center{
+    margin: 0 auto;
+}
+.loading{
+    background-color: #012f50;
+    margin: 10% auto;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(92,92,92,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(92,92,92,1);
+    box-shadow: 10px 10px 5px 0px rgba(92,92,92,1);
+}
+.loading div{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 10px;
+    width: 100%;
+    color: white;
+}
+.loading .bar{
+    margin-bottom: 10px;
+}
+
+.form-control,
+.form-control:focus{
+    color: black;
+}
+.form-control:focus{
+    font-weight: bold;
+}
+
+span.form-control{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-width: 0px;
+    border-radius: 0;
+}
+.table-sm > thead > tr > th,
+.table-sm > thead > tr > th *{
+    font-size: 0.765625rem;
+    font-weight: bold;
+}
+.table-sm > tbody > tr > td,
+.table-sm > tbody > tr > td *{
+    font-size: 0.765625rem;
+}
+
+body.bg-x {
+    background-image: url(../images/bg-02.jpg);
+    background-size: cover;
+}
+
+
+table.table-radio,
+table.table-checkbox {
+    margin-top: 10px;
+}
+
+table.table-radio td,
+table.table-radio label,
+table.table-radio input,
+table.table-checkbox td,
+table.table-checkbox label,
+table.table-checkbox input{
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    vertical-align: top;
+}
+
+
+table.table-radio td,
+table.table-checkbox td{
+    position: relative;
+    width: 100%;
+    padding-bottom: 5px;
+}
+table.table-radio input,
+table.table-checkbox input{
+    position: absolute;
+}
+table.table-radio label,
+table.table-checkbox label{
+    display: block;
+    margin-left: 20px;
+}
+.card-tabs{
+    margin-bottom: 0px;
+}
+.card-nav{
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.card-nav .nav-item.active,
+.card-nav .nav-item.active{
+    padding-bottom: 0;
+    border: 1px solid #043e60;
+    border-bottom: none;
+}
+.card-nav .nav-item,
+.card-nav .nav-item{
+    border-bottom: 1px solid #043e60;
+}
+.card-progress{
+    border-radius: 0;
+    height: 4px;
+}
+.card-title{
+    margin-top: 10px;
+    border-bottom: 2px solid #d8dbe0;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+
+fieldset.card{
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+fieldset.card legend{
+    margin-left: 10px;
+    width: auto;
+}
+
+fieldset.card .card-body{
+}
+
+th hr,
+td hr {
+    margin: 0;
+}
+
+.c-sidebar-nav .c-active{
+    border-right: 6px solid white;
+    border-radius: 0;
+}
+
+table.table th > span > a {
+    position: relative;
+    margin-left: 10px;
+}
+
+table.table th > span > a > span{
+    position: absolute;
+    top: 1px;
+    left: -10px;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.xx-reload{
+    font-size: 10px;
+    width: auto;
+    background-color: transparent;
+    margin: 0;
+    margin-left: 5px;
+    padding: 4px;
+    border-radius: 16px;
+    border-style: none;
+    border:1px solid black;
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .c-header-brand{
+        display: none;
+    }
+
+}
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    .c-header-brand{
+        display: none;
+    }
+    .card-title,
+    .row-label,
+    .row-label > .row,
+    .row-label > .row > .col{
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        padding-right: 0;
+    }
+}
+
+
+.xx-externo h4{
+}
+.xx-interno h4{
+    color: blue;
+}
+.xx-sistema h4{
+    color: red;
+}
+.xx-ignore h4{
+    color: green;
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.SegUsuario"/>
+        <cc:attribute name="disabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="size" default="sm"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="classInput" default="form-control form-control-#{cc.attrs.size}"/>
+        <!-- attribute handler -->
+
+        <!-- correoElectronico -->
+        <cc:attribute name="correoElectronicoLabel" default="#{LBL.USUARIO.CORREO_ELECTRONICO}"/>
+        <cc:attribute name="correoElectronicoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="correoElectronicoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="correoElectronicoRequired" default="true" type="java.lang.Boolean"/>
+
+        <!-- claveAcceso -->
+        <cc:attribute name="claveAccesoLabel" default="#{LBL.USUARIO.CLAVE_ACCESO}"/>
+        <cc:attribute name="claveAccesoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="claveAccesoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="claveAccesoRequired" default="true" type="java.lang.Boolean"/>
+
+        <!-- claveConfirm -->
+        <cc:attribute name="claveConfirmLabel" default="#{LBL.USUARIO.CLAVE_CONFIRM}"/>
+        <cc:attribute name="claveConfirmDisabled" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="claveConfirmRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="claveConfirmRequired" default="true" type="java.lang.Boolean"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
+            <hsk:rowLabel text="#{cc.attrs.correoElectronicoLabel}"
+                          rendered="#{cc.attrs.correoElectronicoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-12"
+                          classText="col-12 col-md-2"
+                          classValue="col-12 col-md-10">
+                <h:inputText id="correoElectronico"
+                             value="#{cc.attrs.value.correoElectronico}"
+                             label="#{cc.attrs.correoElectronicoLabel}"
+                             title="#{cc.attrs.correoElectronicoLabel}"
+                             disabled="#{cc.attrs.correoElectronicoDisabled}"
+                             required="#{cc.attrs.correoElectronicoRequired}"
+                             styleClass="#{cc.attrs.classInput}"
+                             autocomplete="off"/>
+                <h:message for="correoElectronico"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.claveAccesoLabel}"
+                          rendered="#{cc.attrs.claveAccesoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <h:inputSecret id="claveAcceso"
+                               value="#{cc.attrs.value.claveAcceso}"
+                               label="#{cc.attrs.claveAccesoLabel}"
+                               title="#{cc.attrs.claveAccesoLabel}"
+                               disabled="#{cc.attrs.claveAccesoDisabled}"
+                               required="#{cc.attrs.claveAccesoRequired}"
+                               styleClass="#{cc.attrs.classInput}"
+                               autocomplete="off"/>
+                <h:message for="claveAcceso"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.claveConfirmLabel}"
+                          rendered="#{cc.attrs.claveAccesoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12 col-md-6"
+                          classText="col-12 col-md-4"
+                          classValue="col-12 col-md-8">
+                <h:inputSecret id="claveConfirm"
+                               value="#{cc.attrs.value.claveConfirm}"
+                               label="#{cc.attrs.claveConfirmLabel}"
+                               title="#{cc.attrs.claveConfirmLabel}"
+                               disabled="#{cc.attrs.claveAccesoDisabled}"
+                               required="#{cc.attrs.claveAccesoRequired}"
+                               styleClass="#{cc.attrs.classInput}"
+                               autocomplete="off"/>
+                <h:message for="claveConfirm"/>
+            </hsk:rowLabel>
+        </div>
+    </cc:implementation>
+</div>

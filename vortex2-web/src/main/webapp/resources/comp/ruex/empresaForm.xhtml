@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.CliEmpresa"/>
+        <cc:attribute name="disabled" default="#{cc.attrs.value == null}" type="java.lang.Boolean"/>
+        <cc:attribute name="size" default="sm"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="update" default="#{cc.clientId}"/>
+        <cc:attribute name="classInput" default="form-control form-control-#{cc.attrs.size}"/>
+        <!-- attribute handler -->
+
+        <!-- refName -->
+        <cc:attribute name="refKeyLabel" default="#{LBL.EMPRESA.REF_KEY}"/>
+        <cc:attribute name="refKeyRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- refName -->
+        <cc:attribute name="refNameLabel" default="#{LBL.EMPRESA.REF_NAME}"/>
+        <cc:attribute name="refNameRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- fechaFundacion -->
+        <cc:attribute name="fechaFundacionLabel" default="#{LBL.EMPRESA.FECHA_FUNDACION}"/>
+        <cc:attribute name="fechaFundacionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaFundacionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaFundacionRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaFundacionOption" default="#{_option.cliEmpresaGestionOption}" type="java.util.List"/>
+
+
+        <!-- fechaOperacion -->
+        <cc:attribute name="fechaOperacionLabel" default="#{LBL.EMPRESA.FECHA_OPERACION}"/>
+        <cc:attribute name="fechaOperacionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaOperacionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaOperacionRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="fechaOperacionOption" default="#{_option.cliEmpresaGestionOption}" type="java.util.List"/>
+
+
+        <!-- descripcion -->
+        <cc:attribute name="descripcionLabel" default="#{LBL.EMPRESA.DESCRIPCION}"/>
+        <cc:attribute name="descripcionDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="descripcionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="descripcionRequired" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- actividad -->
+        <cc:attribute name="actividadLabel" default="#{LBL.EMPRESA.ACTIVIDAD}"/>
+        <cc:attribute name="actividadDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="actividadRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="actividadRequired" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="actividadOption" default="#{_option.cliEmpresaActividadOption}" type="java.util.List"/>
+
+
+        <!-- tipo -->
+        <cc:attribute name="tipoLabel" default="#{LBL.EMPRESA.TIPO}"/>
+        <cc:attribute name="tipoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="tipoRequired" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="tipoOption" default="#{_option.cliEmpresaTipoOption}" type="java.util.List"/>
+
+
+        <!-- afiliaciones -->
+        <cc:attribute name="afiliacionesLabel" default="#{LBL.EMPRESA.AFILIACIONES}"/>
+        <cc:attribute name="afiliacionesDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="afiliacionesRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="afiliacionesRequired" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="afiliacionesOption" default="#{_option.cliEmpresaAfiliacionesOption}" type="java.util.List"/>
+
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.EMPRESA.ESTADO}"/>
+        <cc:attribute name="estadoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="estadoRequired" default="true" type="java.lang.Boolean"/>
+
+        <cc:attribute name="estadoOption" default="#{_option.cliEmpresaEstadoOption}" type="java.util.List"/>
+
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
+
+            <hsk:rowLabel text="#{cc.attrs.actividadLabel}"
+                          rendered="#{cc.attrs.actividadRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="actividad"
+                                 value="#{cc.attrs.value.actividad}"
+                                 label="#{cc.attrs.actividadLabel}"
+                                 title="#{cc.attrs.actividadLabel}"
+                                 disabled="#{cc.attrs.actividadDisabled}"
+                                 required="#{cc.attrs.actividadRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.actividadOption}" 
+                                   itemValue="#{item}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="actividad"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="estado"
+                                 value="#{cc.attrs.value.estado}"
+                                 label="#{cc.attrs.estadoLabel}"
+                                 title="#{cc.attrs.estadoLabel}"
+                                 disabled="#{cc.attrs.estadoDisabled}"
+                                 required="#{cc.attrs.estadoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.estadoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="estado"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.refKeyLabel}"
+                          rendered="#{cc.attrs.refKeyRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:outputText value="#{cc.attrs.value.refKey}"
+                              title="#{cc.attrs.refKeyLabel}"
+                              styleClass="#{cc.attrs.classInput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.refNameLabel}"
+                          rendered="#{cc.attrs.refNameRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:outputText value="#{cc.attrs.value.refName}"
+                              title="#{cc.attrs.refNameLabel}"
+                              styleClass="#{cc.attrs.classInput}"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.tipoLabel}"
+                          rendered="#{cc.attrs.tipoRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:selectOneMenu id="tipo"
+                                 value="#{cc.attrs.value.tipo}"
+                                 label="#{cc.attrs.tipoLabel}"
+                                 title="#{cc.attrs.tipoLabel}"
+                                 disabled="#{cc.attrs.tipoDisabled}"
+                                 required="#{cc.attrs.tipoRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 converter="hiska.faces.Param">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.tipoOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="tipo"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.descripcionLabel}"
+                          rendered="#{cc.attrs.descripcionRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+
+                <h:inputTextarea id="descripcion"
+                                 value="#{cc.attrs.value.descripcion}"
+                                 label="#{cc.attrs.descripcionLabel}"
+                                 title="#{cc.attrs.descripcionLabel}"
+                                 disabled="#{cc.attrs.descripcionDisabled}"
+                                 required="#{cc.attrs.descripcionRequired}"
+                                 styleClass="#{cc.attrs.classInput}"
+                                 rows="1"/>
+
+                <h:message for="descripcion"/>
+
+            </hsk:rowLabel>
+
+
+            <hsk:rowLabel text="#{cc.attrs.fechaFundacionLabel}"
+                          rendered="#{cc.attrs.fechaFundacionRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:selectOneMenu id="fechaFundacion"
+                                 value="#{cc.attrs.value.fechaFundacion}"
+                                 label="#{cc.attrs.fechaFundacionLabel}"
+                                 title="#{cc.attrs.fechaFundacionLabel}"
+                                 disabled="#{cc.attrs.fechaFundacionDisabled}"
+                                 required="#{cc.attrs.fechaFundacionRequired}"
+                                 styleClass="#{cc.attrs.classInput}">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.fechaFundacionOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+
+                <h:message for="fechaFundacion"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.fechaOperacionLabel}"
+                          rendered="#{cc.attrs.fechaOperacionRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+
+                <h:selectOneMenu id="fechaOperacion"
+                                 value="#{cc.attrs.value.fechaOperacion}"
+                                 label="#{cc.attrs.fechaOperacionLabel}"
+                                 title="#{cc.attrs.fechaOperacionLabel}"
+                                 disabled="#{cc.attrs.fechaOperacionDisabled}"
+                                 required="#{cc.attrs.fechaOperacionRequired}"
+                                 styleClass="#{cc.attrs.classInput}">
+                    <f:selectItem itemValue="#{null}"
+                                  itemLabel=""/>
+                    <f:selectItems var="item" 
+                                   value="#{cc.attrs.fechaOperacionOption}" 
+                                   itemValue="#{item.value}" 
+                                   itemLabel="#{item.label}" 
+                                   itemDescription="#{item.description}"/>
+                </h:selectOneMenu>
+
+                <h:message for="fechaOperacion"/>
+
+            </hsk:rowLabel>
+
+            <hsk:rowLabel text="#{cc.attrs.afiliacionesLabel}"
+                          rendered="#{cc.attrs.afiliacionesRendered}"
+                          size="#{cc.attrs.size}"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <div class="overflow-auto" style="max-height: 150px">
+                    <h:selectManyCheckbox  id="afiliaciones"
+                                           value="#{cc.attrs.value.afiliaciones}"
+                                           label="#{cc.attrs.afiliacionesLabel}"
+                                           title="#{cc.attrs.afiliacionesLabel}"
+                                           disabled="#{cc.attrs.afiliacionesDisabled}"
+                                           required="#{cc.attrs.afiliacionesRequired}"
+                                           styleClass="table-checkbox"
+                                           layout="pageDirection"
+                                           converter="hiska.faces.Param">
+                        <f:selectItems var="item" 
+                                       value="#{cc.attrs.afiliacionesOption}" 
+                                       itemValue="#{item}" 
+                                       itemLabel="#{item.label}" 
+                                       itemDescription="#{item.description}"/>
+                    </h:selectManyCheckbox>
+                </div>
+                <h:message for="afiliaciones"/>
+            </hsk:rowLabel>
+
+        </div>
+    </cc:implementation>
+</div>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <div xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:f="http://xmlns.jcp.org/jsf/core"
+             xmlns:cc="http://java.sun.com/jsf/composite"
+             xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+             xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+            <cc:interface>
+                <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.CtaPago"/>
+                <cc:attribute name="styleClass" default="row"/>
+                <cc:attribute name="size" default="sm"/>
+                <cc:attribute name="classOutput" default="form-control form-control-#{cc.attrs.size}"/>
+                <!-- attribute handler -->
+                
+                <!-- fechaRegistro -->
+                <cc:attribute name="fechaRegistroLabel" default="#{LBL.PAGO.FECHA_REGISTRO}"/>
+                <cc:attribute name="fechaRegistroRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- fechaAceptacion -->
+                <cc:attribute name="fechaAceptacionLabel" default="#{LBL.PAGO.FECHA_ACEPTACION}"/>
+                <cc:attribute name="fechaAceptacionRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- monto -->
+                <cc:attribute name="montoLabel" default="#{LBL.PAGO.MONTO}"/>
+                <cc:attribute name="montoRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- observacion -->
+                <cc:attribute name="observacionLabel" default="#{LBL.PAGO.OBSERVACION}"/>
+                <cc:attribute name="observacionRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- descripcion -->
+                <cc:attribute name="descripcionLabel" default="#{LBL.PAGO.DESCRIPCION}"/>
+                <cc:attribute name="descripcionRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- tipo -->
+                <cc:attribute name="tipoLabel" default="#{LBL.PAGO.TIPO}"/>
+                <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- moneda -->
+                <cc:attribute name="monedaLabel" default="#{LBL.PAGO.MONEDA}"/>
+                <cc:attribute name="monedaRendered" default="true" type="java.lang.Boolean"/>
+                
+                <!-- estado -->
+                <cc:attribute name="estadoLabel" default="#{LBL.PAGO.ESTADO}"/>
+                <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+                
+            </cc:interface>
+            <cc:implementation>
+                <div id="#{cc.clientId}" class="row row-view #{cc.attrs.styleClass}">
+                    
+                    <hsk:rowLabel text="#{cc.attrs.tipoLabel}"
+                                  rendered="#{cc.attrs.tipoRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+                        
+                        <h:outputText value="#{cc.attrs.value.tipo}"
+                                      title="#{cc.attrs.tipoLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"
+                                      converter="hiska.faces.Param"/>
+                        
+                    </hsk:rowLabel>
+                    
+                    <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                                  rendered="#{cc.attrs.estadoRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+                        
+                        <h:outputText value="#{cc.attrs.value.estado}"
+                                      title="#{cc.attrs.estadoLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"
+                                      converter="hiska.faces.Param"/>
+                        
+                    </hsk:rowLabel>
+                    
+                    <hsk:rowLabel text="#{cc.attrs.montoLabel}"
+                                  rendered="#{cc.attrs.montoRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+                        
+                        <h:outputText value="#{cc.attrs.value.monto}"
+                                      title="#{cc.attrs.montoLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"/>
+                        
+                    </hsk:rowLabel>
+                    
+                    <hsk:rowLabel text="#{cc.attrs.monedaLabel}"
+                                  rendered="#{cc.attrs.monedaRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+                        
+                        <h:outputText value="#{cc.attrs.value.moneda}"
+                                      title="#{cc.attrs.monedaLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"
+                                      converter="hiska.faces.Param"/>
+                        
+                    </hsk:rowLabel>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <hsk:rowLabel text="#{cc.attrs.fechaRegistroLabel}"
+                                  rendered="#{cc.attrs.fechaRegistroRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+                        
+                        <h:outputText value="#{cc.attrs.value.fechaRegistro}"
+                                      title="#{cc.attrs.fechaRegistroLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"/>
+                        
+                    </hsk:rowLabel>
+                    
+                    <hsk:rowLabel text="#{cc.attrs.fechaAceptacionLabel}"
+                                  rendered="#{cc.attrs.fechaAceptacionRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-6"
+                                  classText="col-4"
+                                  classValue="col-8">
+                        
+                        <h:outputText value="#{cc.attrs.value.fechaAceptacion}"
+                                      title="#{cc.attrs.fechaAceptacionLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"/>
+                        
+                    </hsk:rowLabel>
+                    
+                    <hsk:rowLabel text="#{cc.attrs.descripcionLabel}"
+                                  rendered="#{cc.attrs.descripcionRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-12"
+                                  classText="col-2"
+                                  classValue="col-10">
+                        
+                        <h:outputText value="#{cc.attrs.value.descripcion}"
+                                      title="#{cc.attrs.descripcionLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"/>
+                        
+                    </hsk:rowLabel>
+                    
+                    <hsk:rowLabel text="#{cc.attrs.observacionLabel}"
+                                  rendered="#{cc.attrs.observacionRendered}"
+                                  size="#{cc.attrs.size}"
+                                  classRow="col-12"
+                                  classText="col-2"
+                                  classValue="col-10">
+                        
+                        <h:outputText value="#{cc.attrs.value.observacion}"
+                                      title="#{cc.attrs.observacionLabel}"
+                                      styleClass="#{cc.attrs.classOutput}"/>
+                        
+                    </hsk:rowLabel>
+                    
+                </div>
+            </cc:implementation>
+        </div>

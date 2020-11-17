@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="vortex2-store" transaction-type="RESOURCE_LOCAL">
+        <class>bo.gob.senavex.vortex2.model.CliCategoria</class>
+        <class>bo.gob.senavex.vortex2.model.CliContacto</class>
+        <class>bo.gob.senavex.vortex2.model.CliDireccion</class>
+        <class>bo.gob.senavex.vortex2.model.CliDocumento</class>
+        <class>bo.gob.senavex.vortex2.model.CliEmpresa</class>
+        <class>bo.gob.senavex.vortex2.model.CtaPago</class>
+        <class>bo.gob.senavex.vortex2.model.CtaDeposito</class>
+        <class>bo.gob.senavex.vortex2.model.LogCambio</class>
+        <class>bo.gob.senavex.vortex2.model.LogConsulta</class>
+        <class>bo.gob.senavex.vortex2.model.LogEvento</class>
+        <class>bo.gob.senavex.vortex2.model.LogSesion</class>
+        <class>bo.gob.senavex.vortex2.model.ParDominio</class>
+        <class>bo.gob.senavex.vortex2.model.ParValor</class>
+        <class>bo.gob.senavex.vortex2.model.RegRegistro</class>
+        <class>bo.gob.senavex.vortex2.model.RegSeguimiento</class>
+        <class>bo.gob.senavex.vortex2.model.SegCorreo</class>
+        <class>bo.gob.senavex.vortex2.model.SegOperador</class>
+        <class>bo.gob.senavex.vortex2.model.SegPersona</class>
+        <class>bo.gob.senavex.vortex2.model.SegUsuario</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://172.17.0.3:5432/vortex2"/>
+            <property name="javax.persistence.jdbc.user" value="admin"/>
+            <property name="javax.persistence.jdbc.password" value="admin1234"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+            <!--
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            -->
+        </properties>
+    </persistence-unit>
+</persistence>

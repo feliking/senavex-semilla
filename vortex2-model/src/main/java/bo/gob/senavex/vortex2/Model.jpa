@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ptype="MONOLITH" ppkg="bo.gob.senavex.siporta" epkg="model" v="5.4.2" rws="_15995866068952268" Pws="_15995866068952268" cws="_15995866068952268" persistenceUnitName="app-store" sm="false" xs="false" id="_15995866009792067">
+    <entity compositePrimaryKeyClass="CliDireccionPK" abs="false" class="CliDireccion" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866012182068">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nombre" jbt="false" id="_15995866014112071">
+                <xwm/>
+                <xm/>
+                <column name="NOMBRE" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="tipo" jbt="false" id="_15995866014562072">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_TIPO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="departamento" jbt="false" id="_15995866015002073">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_DEPARTAMENTO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="municipio" jbt="false" id="_15995866015002074">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_MUNICIPIO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="Integer" v="true" xvt="" am="PRIVATE" name="avenida" jbt="false" id="_15995866015012075">
+                <xwm/>
+                <xm/>
+                <column name="AVENIDA" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="calles" jbt="false" id="_15995866015012076">
+                <xwm/>
+                <xm/>
+                <column name="CALLES" unique="false" nullable="true" insertable="true" updatable="true" length="200"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="edificio" jbt="false" id="_15995866015442077">
+                <xwm/>
+                <xm/>
+                <column unique="false" nullable="true" insertable="true" updatable="true" length="200"/>
+            </basic>
+            <basic attribute-type="Integer" v="true" xvt="" am="PRIVATE" name="piso" jbt="false" id="_15995866015852078">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="oficina" jbt="false" id="_15995866015862079">
+                <xwm/>
+                <xm/>
+                <column name="OFICINA" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="domicilio" jbt="false" id="_15995866016272080">
+                <xwm/>
+                <xm/>
+                <column unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="referencia" jbt="false" id="_15995866016692081">
+                <xwm/>
+                <xm/>
+                <column name="REFERENCIA" unique="false" nullable="true" insertable="true" updatable="true" length="200"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="geoReferencia" jbt="false" id="_15995866017302082">
+                <xwm/>
+                <xm/>
+                <column name="GEO_REFERENCIA" unique="false" nullable="true" insertable="true" updatable="true" length="2147483647"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaInicio" jbt="false" id="_15995866017722083">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_INICIO" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaFin" jbt="false" id="_15995866017722084">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_FIN" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866017732085">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true" length="50"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866021632096" connected-attribute-id="_1599700456190784" v="true" xvt="" name="cliEmpresa" id="_1599700456189783">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_EMPRESA" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idDireccion" jbt="false" id="_15995866012182069">
+                <xwm/>
+                <xm/>
+                <column name="ID_DIRECCION" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614567456325">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="CLI_DIRECCION"/>
+    </entity>
+    <entity compositePrimaryKeyClass="CliDocumentoPK" abs="false" class="CliDocumento" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866018152086">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="tipo" jbt="false" id="_15995866018992089">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_TIPO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="numero" jbt="false" id="_15995866019412090">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866019822091">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaVerificacion" jbt="false" id="_15995866020252092">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_VERIFICACION" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="codigoVerificacion" jbt="false" id="_15995866020252093">
+                <xwm/>
+                <xm/>
+                <column name="CODIGO_VERIFICACION" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="documentRespaldo" jbt="false" id="_15995866020662094">
+                <xwm/>
+                <xm/>
+                <column name="DOCUMENT_RESPALDO" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="observaciones" jbt="false" id="_15995866021082095">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866021632096" connected-attribute-id="_1599700340807778" v="true" xvt="" name="cliEmpresa" id="_1599700340806777">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_EMPRESA" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idDocumento" jbt="false" id="_15995866018152087">
+                <xwm/>
+                <xm/>
+                <column name="ID_DOCUMENTO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614563121322">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="CLI_DOCUMENTO"/>
+    </entity>
+    <entity compositePrimaryKeyClass="CliEmpresaPK" abs="false" class="CliEmpresa" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866021632096">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="tipo" jbt="false" id="_15995866022072098">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_TIPO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nit" ft="false" jbt="false" id="_15995866022512099">
+                <xwm/>
+                <xm/>
+                <column unique="false" nullable="false" insertable="true" updatable="false" length="255"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="razonSocial" jbt="false" id="_15995866022512100">
+                <xwm/>
+                <xm/>
+                <column name="RAZON_SOCIAL" unique="false" nullable="true" insertable="true" updatable="true" length="200"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nombreComercial" jbt="false" id="_15995866022942101">
+                <xwm/>
+                <xm/>
+                <column name="NOMBRE_COMERCIAL" unique="false" nullable="true" insertable="true" updatable="true" length="200"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="descripcion" jbt="false" id="_15995866023672102">
+                <xwm/>
+                <xm/>
+                <column unique="false" nullable="true" insertable="true" updatable="true" length="2147483647"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866024092103">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true" length="50"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866018152086" connected-attribute-id="_1599700340806777" v="true" xvt="" name="cliDocumentoList" id="_1599700340807778">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866055602222" connected-attribute-id="_1599700445070780" v="true" xvt="" name="cliContactoList" id="_1599700445071781">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866012182068" connected-attribute-id="_1599700456189783" v="true" xvt="" name="cliDireccionList" id="_1599700456190784">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866037722149" connected-attribute-id="_1599700464757786" v="true" xvt="" name="cliCategoriaList" id="_1599700464759787">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866045542181" connected-attribute-id="_1599700693916792" v="true" xvt="" name="segOperadorList" id="_1599700693917793">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866058572231" connected-attribute-id="_1599700745963795" v="true" xvt="" name="conPagoList" id="_1599700745964796">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866066472259" connected-attribute-id="_1599700482573789" v="true" xvt="" name="regRegistroList" id="_1599700482574790">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idEmpresa" jbt="false" id="_15995866021632097">
+                <xwm/>
+                <xm/>
+                <column name="ID_EMPRESA" unique="false" nullable="false" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614564319323">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="CLI_EMPRESA"/>
+    </entity>
+    <entity compositePrimaryKeyClass="LogCambioPK" abs="false" class="LogCambio" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866024562111">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nombreTabla" jbt="false" id="_15995866025412114">
+                <xwm/>
+                <xm/>
+                <column name="NOMBRE_TABLA" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nombreColumna" jbt="false" id="_15995866025832115">
+                <xwm/>
+                <xm/>
+                <column name="NOMBRE_COLUMNA" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="valor" jbt="false" id="_15995866026382116">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nuevoValor" jbt="false" id="_15995866026792117">
+                <xwm/>
+                <xm/>
+                <column name="NUEVO_VALOR" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866046812191" connected-attribute-id="_1599700994314811" v="true" xvt="" name="logEvento" id="_1599700994313810">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_EVENTO" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idCambio" jbt="false" id="_15995866024562112">
+                <xwm/>
+                <xm/>
+                <column name="ID_CAMBIO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614616489334">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="LOG_CAMBIO"/>
+    </entity>
+    <entity compositePrimaryKeyClass="RegSeguimientoPK" abs="false" class="RegSeguimiento" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866027212118">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="tipo" jbt="false" id="_15995866028052121">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_TIPO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="referencia" jbt="false" id="_15995866028472122">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="idReferencia" jbt="false" id="_15995866028892123">
+                <xwm/>
+                <xm/>
+                <column name="ID_REFERENCIA" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866029312124">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true" length="50"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866048512199" connected-attribute-id="_1599700920155805" v="true" xvt="" name="segUsuario" id="_1599700920153804">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_USUARIO" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idSeguimiento" jbt="false" id="_15995866027212119">
+                <xwm/>
+                <xm/>
+                <column name="ID_SEGUIMIENTO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614610599332">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="REG_SEGUIMIENTO"/>
+    </entity>
+    <entity compositePrimaryKeyClass="SegPersonaPK" abs="false" class="SegPersona" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866029732125">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nombres" jbt="false" id="_15995866030152127">
+                <xwm/>
+                <xm/>
+                <column unique="false" nullable="true" insertable="true" updatable="true" length="200"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="apellidoPaterno" jbt="false" id="_15995866030682128">
+                <xwm/>
+                <xm/>
+                <column name="APELLIDO_PATERNO" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="apellidoMeterno" jbt="false" id="_15995866031112129">
+                <xwm/>
+                <xm/>
+                <column name="APELLIDO_MATERNO" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="genero" jbt="false" id="_15995866031542130">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_GENERO" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaNacimiento" jbt="false" id="_15995866031972131">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_NACIMIENTO" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="tipoDoc" jbt="false" id="_15995866031972132">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_TIPO_DOC" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="Integer" v="true" xvt="" am="PRIVATE" name="numeroDoc" jbt="false" id="_15995866032862133">
+                <xwm/>
+                <xm/>
+                <column name="NUMERO_DOC" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="complementoDoc" jbt="false" id="_15995866032862134">
+                <xwm/>
+                <xm/>
+                <column name="COMPLEMENTO_DOC" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="expedicionDoc" jbt="false" id="_15995866033302135">
+                <xwm/>
+                <xm/>
+                <column name="EXPEDICION_DOC" unique="false" nullable="true" insertable="true" updatable="true" length="10"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866033742136">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true" length="50"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="direccion" jbt="false" id="_15995866034192137">
+                <xwm/>
+                <xm/>
+                <column unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="numeroCelular" jbt="false" id="_15995866034622138">
+                <xwm/>
+                <xm/>
+                <column name="NUMERO_CELULAR" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="numeroTelefonico" jbt="false" id="_15995866035052139">
+                <xwm/>
+                <xm/>
+                <column name="NUMERO_TELEFONICO" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </basic>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866048512199" connected-attribute-id="_1599701951265871" v="true" xvt="" name="segUsuarioList" id="_1599701951268872">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idPersona" jbt="false" id="_15995866029732126">
+                <xwm/>
+                <xm/>
+                <column name="ID_PERSONA" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614584520330">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="SEG_PERSONA"/>
+    </entity>
+    <entity compositePrimaryKeyClass="CliCategoriaPK" abs="false" class="CliCategoria" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866037722149">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866038562152">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true" length="50"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fecha" jbt="false" id="_15995866038972153">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="categoria" jbt="false" id="_15995866038982154">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_CATEGORIA" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="nroEmpleados" jbt="false" id="_15995866039392155">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_NRO_EMPLEADOS" unique="false" nullable="true" insertable="true" updatable="true" precision="0"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="activosUFV" jbt="false" id="_15995866039392156">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_ACTIVOS_UFV" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="ventasUFV" jbt="false" id="_15995866039392157">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_VENTAS_UFV" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="exportacionesUFV" jbt="false" id="_15995866039402158">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_EXPORTACIONES_UFV" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="exportacionesRubros" jbt="false" id="_15995866039402159">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_EXPORTACIONES_RUBROS" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="importacionesUFV" jbt="false" id="_15995866039402160">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_IMPORTACIONES_UFV" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="importacionesRubros" jbt="false" id="_15995866039402161">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_IMPORTACIONES_RUBROS" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866021632096" connected-attribute-id="_1599700464759787" v="true" xvt="" name="cliEmpresa" id="_1599700464757786">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_EMPRESA" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idCategoria" jbt="false" id="_15995866037722150">
+                <xwm/>
+                <xm/>
+                <column name="ID_CATEGORIA" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614566367324">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="CLI_CATEGORIA"/>
+    </entity>
+    <entity compositePrimaryKeyClass="RegRUIPK" abs="false" class="RegRUI" superclassId="_15995866066472259" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866039402162">
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="codigoRui" jbt="false" id="_15995866039402163">
+                <xwm/>
+                <xm/>
+                <column name="CODIGO_RUI" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+        </attributes>
+        <discriminator-value>RUI</discriminator-value>
+    </entity>
+    <entity compositePrimaryKeyClass="RegRegistroPK" abs="true" class="RegRegistro" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866066472259">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="tipo" ft="false" jbt="false" id="_15995866067312262">
+                <xwm/>
+                <xm/>
+                <column name="VD_TIPO" unique="false" nullable="false" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866067732263">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true" length="50"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="descripcion" jbt="false" id="_15995866068152264">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaEmision" jbt="false" id="_15995866068572265">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_EMISION" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaVencimiento" jbt="false" id="_15995866068572266">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_VENCIMIENTO" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866021632096" connected-attribute-id="_1599700482574790" v="true" xvt="" name="cliEmpresa" id="_1599700482573789">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_EMPRESA" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idRegistro" jbt="false" id="_15995866066472260">
+                <xwm/>
+                <xm/>
+                <column name="ID_REGISTRO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614570655326">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="REG_REGISTRO"/>
+        <inheritance strategy="SINGLE_TABLE"/>
+        <discriminator-column name="VD_TIPO" discriminator-type="STRING" length="30"/>
+    </entity>
+    <entity compositePrimaryKeyClass="ParValorPK" abs="false" class="ParValor" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866042162173">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="orden" jbt="false" id="_15995866043302176">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="valor" jbt="false" id="_15995866043732177">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="etiqueta" jbt="false" id="_15995866044162178">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="descripcion" jbt="false" id="_15995866044582179">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866044992180">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="padre" jbt="false" id="_1599700104429711">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866062492243" connected-attribute-id="_1599699074650646" v="true" xvt="" name="parDominio" id="_1599699074649645">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_DOMINIO" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idValor" jbt="false" id="_15995866042162174">
+                <xwm/>
+                <xm/>
+                <column name="ID_VALOR" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614632335337">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="PAR_VALOR"/>
+    </entity>
+    <entity compositePrimaryKeyClass="SegOperadorPK" abs="false" class="SegOperador" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866045542181">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="cargo" jbt="false" id="_15995866046802185">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_CARGO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866046802186">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaSolicitud" jbt="false" id="_15995866046802187">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_SOLICITUD" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaRespuesta" jbt="false" id="_15995866046812188">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_RESPUESTA" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaDesde" jbt="false" id="_15995866046812189">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_DESDE" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaHasta" jbt="false" id="_15995866046812190">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_HASTA" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866021632096" connected-attribute-id="_1599700693917793" v="true" xvt="" name="cliEmpresa" id="_1599700693916792">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_EMPRESA" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866048512199" connected-attribute-id="_1599700815108799" v="true" xvt="" name="segUsuario" id="_1599700815107798">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_USUARIO" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idPerador" jbt="false" id="_15995866045542182">
+                <xwm/>
+                <xm/>
+                <column name="ID_OPERADOR" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614577767328">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="SEG_OPERADOR"/>
+    </entity>
+    <entity compositePrimaryKeyClass="LogEventoPK" abs="false" class="LogEvento" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866046812191">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fecha" jbt="false" id="_15995866047652194">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="operacion" jbt="false" id="_15995866047652195">
+                <xwm/>
+                <xm/>
+                <column name="OPERACION" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866065072252" connected-attribute-id="_1599700951642808" v="true" xvt="" name="logSesion" id="_1599700951641807">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_SESION" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866024562111" connected-attribute-id="_1599700994313810" v="true" xvt="" name="logCambioList" id="_1599700994314811">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idEvento" jbt="false" id="_15995866046812192">
+                <xwm/>
+                <xm/>
+                <column name="ID_EVENTO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614629502336">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="LOG_EVENTO"/>
+    </entity>
+    <entity compositePrimaryKeyClass="SegUsuarioPK" abs="false" class="SegUsuario" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866048512199">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="tipo" jbt="false" id="_15995866049372202">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_TIPO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="correoElectronico" jbt="false" id="_15995866049802203">
+                <xwm/>
+                <xm/>
+                <column name="CORREO_ELECTRONICO" unique="false" nullable="true" insertable="true" updatable="true" length="100"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="claveAcceso" ft="false" id="_1599746033105111">
+                <xwm/>
+                <xm/>
+                <column name="CLAVE_ACCESO" unique="false" nullable="false" insertable="true" updatable="true" length="100"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" ft="false" jbt="false" id="_15995866050392204">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="false" insertable="true" updatable="true" length="30"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866029732125" connected-attribute-id="_1599701951268872" v="true" xvt="" name="segPersona" id="_1599701951265871">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_PERSONA" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866045542181" connected-attribute-id="_1599700815107798" v="true" xvt="" name="segOperadorList" id="_1599700815108799">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866065072252" connected-attribute-id="_1599700862946801" v="true" xvt="" name="logSesionList" id="_1599700862947802">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866027212118" connected-attribute-id="_1599700920153804" v="true" xvt="" name="regSeguimientoList" id="_1599700920155805">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idUsuario" jbt="false" id="_15995866048512200">
+                <xwm/>
+                <xm/>
+                <column name="ID_USUARIO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614579927329">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <nq e="false" name="SegUsuario.findByClaveAcceso">
+            <query>Select s from SegUsuario s where s.claveAcceso=:claveAcceso</query>
+        </nq>
+        <table name="SEG_USUARIO"/>
+    </entity>
+    <entity compositePrimaryKeyClass="RegRUEXPK" abs="false" class="RegRUEX" superclassId="_15995866066472259" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866050842208">
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="codigoRuex" jbt="false" id="_15995866050852209">
+                <xwm/>
+                <xm/>
+                <column name="CODIGO_RUEX" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+        </attributes>
+        <discriminator-value>RUEX</discriminator-value>
+    </entity>
+    <entity compositePrimaryKeyClass="ConDepositoPK" abs="false" class="ConDeposito" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866051292210">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="cuenta" jbt="false" id="_15995866052512213">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_CUENTA" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="comprobante" jbt="false" id="_15995866052942214">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaDeposito" jbt="false" id="_15995866053372215">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_DEPOSITO" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaVerificacion" jbt="false" id="_15995866053372216">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_VERIFICACION" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="Double" v="true" xvt="" am="PRIVATE" name="monto" jbt="false" id="_15995866053372217">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="documento" jbt="false" id="_15995866053802218">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="descripcion" jbt="false" id="_15995866054212219">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866054632220">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="observaciones" jbt="false" id="_15995866055052221">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866058572231" connected-attribute-id="_1599701106202814" v="true" xvt="" name="conPago" id="_1599701106200813">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_PAGO" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idDeposito" jbt="false" id="_15995866051292211">
+                <xwm/>
+                <xm/>
+                <column name="ID_DEPOSITO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614613678333">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="CTA_DEPOSITO"/>
+    </entity>
+    <entity compositePrimaryKeyClass="CliContactoPK" abs="false" class="CliContacto" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866055602222">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="tipo" jbt="false" id="_15995866056462225">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_TIPO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nombre" jbt="false" id="_15995866056882226">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="valor" jbt="false" id="_15995866057312227">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="descripcion" jbt="false" id="_15995866057732228">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866058152229">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaVerficacion" jbt="false" id="_15995866058572230">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_VERFICACION" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866021632096" connected-attribute-id="_1599700445071781" v="true" xvt="" name="cliEmpresa" id="_1599700445070780">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_EMPRESA" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idContacto" jbt="false" id="_15995866055612223">
+                <xwm/>
+                <xm/>
+                <column name="ID_CONTACTO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614505359321">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="CLI_CONTACTO"/>
+    </entity>
+    <entity compositePrimaryKeyClass="ConPagoPK" abs="false" class="ConPago" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866058572231">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="descripcion" jbt="false" id="_15995866059412234">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="monto" jbt="false" id="_15995866059832235">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866060472236">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaRegistro" jbt="false" id="_15995866060902237">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_REGISTRO" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaAceptacion" jbt="false" id="_15995866060902238">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_ACEPTACION" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="tipo" jbt="false" id="_15995866060902239">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VD_TIPO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="referencia" jbt="false" id="_15995866061332240">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="idReferencia" jbt="false" id="_15995866061762241">
+                <xwm/>
+                <xm/>
+                <column name="ID_REFERENCIA" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866021632096" connected-attribute-id="_1599700745964796" v="true" xvt="" name="cliEmpresa" id="_1599700745963795">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_EMPRESA" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866051292210" connected-attribute-id="_1599701106200813" v="true" xvt="" name="conDepositoList" id="_1599701106202814">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idPago" jbt="false" id="_15995866058572232">
+                <xwm/>
+                <xm/>
+                <column name="ID_PAGO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614574296327">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="CTA_PAGO"/>
+    </entity>
+    <entity compositePrimaryKeyClass="ParDominioPK" abs="false" class="ParDominio" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866062492243">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="codigo" jbt="false" id="_15995866062922245">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nombreTabla" jbt="false" id="_15995866063352246">
+                <xwm/>
+                <xm/>
+                <column name="NOMBRE_TABLA" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nombreCampo" jbt="false" id="_15995866063792247">
+                <xwm/>
+                <xm/>
+                <column name="NOMBRE_CAMPO" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866064222248">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866042162173" connected-attribute-id="_1599699074649645" v="true" xvt="" name="parValorList" id="_1599699074650646">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idDominio" jbt="false" id="_15995866062492244">
+                <xwm/>
+                <xm/>
+                <column name="ID_DOMINIO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614634926338">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="PAR_DOMINIO"/>
+    </entity>
+    <entity compositePrimaryKeyClass="LogSesionPK" abs="false" class="LogSesion" v="true" jbn="false" xre="false" m="false" rootElement="_15995866009792067" id="_15995866065072252">
+        <ext e="true" n="bo.gob.senavex.siporta.AuditorAbstract"/>
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="com.hiska.result.Param" v="true" xvt="" am="PRIVATE" name="estado" jbt="false" id="_15995866066042255">
+                <xwm/>
+                <xm/>
+                <an e="true" n="@com.hiska.result.ParamElement"/>
+                <column name="VF_ESTADO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <convert c="com.hiska.result.converter.ParamConverter" d="false"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaLogin" jbt="false" id="_15995866066462256">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_LOGIN" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaLogout" jbt="false" id="_15995866066462257">
+                <xwm/>
+                <xm/>
+                <temporal>TIMESTAMP</temporal>
+                <column name="FECHA_LOGOUT" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_15995866048512199" connected-attribute-id="_1599700862947802" v="true" xvt="" name="segUsuario" id="_1599700862946801">
+                <xwm/>
+                <xm/>
+                <join-column name="ID_USUARIO" rc="" unique="false" nullable="false" insertable="true" updatable="true" column-definition="" table=""/>
+            </many-to-one>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15995866046812191" connected-attribute-id="_1599700951641807" v="true" xvt="" name="logEventoList" id="_1599700951642808">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idSesion" jbt="false" id="_15995866065082253">
+                <xwm/>
+                <xm/>
+                <column name="ID_SESION" unique="false" nullable="true" insertable="true" updatable="true"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <version attribute-type="Long" v="true" xvt="" name="version" ft="false" id="_1599614606606331">
+                <xwm/>
+                <xm/>
+                <column name="AUD_VERSION" unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </version>
+        </attributes>
+        <table name="LOG_SESION"/>
+    </entity>
+    <converter c="com.hiska.result.converter.ParamConverter" a="com.hiska.result.Param" f="java.lang.String" au="true"/>
+    <c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+        <cit>java.util.ArrayList</cit>
+        <cit>java.util.LinkedList</cit>
+        <cit>java.util.HashSet</cit>
+        <cit>java.util.TreeSet</cit>
+        <cit>java.util.HashMap</cit>
+    </c>
+    <wsl>
+        <ws n="Main" id="_15995866068952268">
+            <i ref="_15995866050842208" x="33" y="1696"/>
+            <i ref="_15995866065072252" x="1554" y="924"/>
+            <i ref="_15995866027212118" x="1285" y="1254"/>
+            <i ref="_15995866045542181" x="776" y="482"/>
+            <i ref="_15995866012182068" x="-448" y="386"/>
+            <i ref="_15995866055602222" x="-191" y="300"/>
+            <i ref="_15995866018152086" x="33" y="157"/>
+            <i ref="_15995866024562111" x="2012" y="1596"/>
+            <i ref="_15995866042162173" x="2052" y="482"/>
+            <i ref="_15995866051292210" x="1023" y="1596"/>
+            <i ref="_15995866029732125" x="1285" y="482"/>
+            <i ref="_15995866039402162" x="-176" y="1668"/>
+            <i ref="_15995866046812191" x="1779" y="1254"/>
+            <i ref="_15995866037722149" x="-453" y="904"/>
+            <i ref="_15995866066472259" x="-48" y="1274"/>
+            <i ref="_15995866048512199" x="1023" y="884"/>
+            <i ref="_15995866058572231" x="725" y="1154"/>
+            <i ref="_15995866062492243" x="1779" y="482"/>
+            <i ref="_15995866021632096" x="349" y="534"/>
+        </ws>
+    </wsl>
+</entity-mappings>

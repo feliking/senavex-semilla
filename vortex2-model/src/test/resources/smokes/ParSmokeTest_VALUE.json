@@ -1,0 +1,4323 @@
+{
+    "name": "Create ALL Parameter",
+    "entries": [
+
+        {
+            "name": "Create SegUsuario",
+            "inputData": {
+                "codigo": "01",
+                "nombreTabla": "SEG_USUARIO",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "name": "Create Estado",
+                    "inputData": {
+                        "valor": "ACT",
+                        "etiqueta": "ACTIVO"
+                    }
+                },
+                {
+                    "name": "Create Estado",
+                    "inputData": {
+                        "valor": "INACT",
+                        "etiqueta": "INACTIVO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegUsuario",
+            "inputData": {
+                "codigo": "02",
+                "nombreTabla": "SEG_USUARIO",
+                "nombreCampo": "VD_TIPO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "EXT",
+                        "etiqueta": "OPERADOR DE COMERCIO EXTERIOR"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "INT",
+                        "etiqueta": "OPERADOR DE SENAVEX"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SIS",
+                        "etiqueta": "OPERADOR DE SISTEMA"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegPersona",
+            "inputData": {
+                "codigo": "03",
+                "nombreTabla": "SEG_PERSONA",
+                "nombreCampo": "VD_PAIS"
+            },
+            "children": [
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AF",
+                        "etiqueta": "Afganistán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AL",
+                        "etiqueta": "Albania"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "DE",
+                        "etiqueta": "Alemania"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "DZ",
+                        "etiqueta": "Algeria"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AD",
+                        "etiqueta": "Andorra"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AO",
+                        "etiqueta": "Angola"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AI",
+                        "etiqueta": "Anguila"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AQ",
+                        "etiqueta": "Antártida"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AG",
+                        "etiqueta": "AntiguayBarbuda"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AN",
+                        "etiqueta": "AntillasNeerlandesas"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SA",
+                        "etiqueta": "ArabiaSaudita"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AR",
+                        "etiqueta": "Argentina"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AM",
+                        "etiqueta": "Armenia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AW",
+                        "etiqueta": "Aruba"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AU",
+                        "etiqueta": "Australia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AT",
+                        "etiqueta": "Austria"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AZ",
+                        "etiqueta": "Azerbayán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BE",
+                        "etiqueta": "Bélgica"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BS",
+                        "etiqueta": "Bahamas"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BH",
+                        "etiqueta": "Bahrein"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BD",
+                        "etiqueta": "Bangladesh"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BB",
+                        "etiqueta": "Barbados"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BZ",
+                        "etiqueta": "Belice"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BJ",
+                        "etiqueta": "Benín"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BT",
+                        "etiqueta": "Bhután"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BY",
+                        "etiqueta": "Bielorrusia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MM",
+                        "etiqueta": "Birmania"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BO",
+                        "etiqueta": "Bolivia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BA",
+                        "etiqueta": "BosniayHerzegovina"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BW",
+                        "etiqueta": "Botsuana"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BR",
+                        "etiqueta": "Brasil"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BN",
+                        "etiqueta": "Brunéi"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BG",
+                        "etiqueta": "Bulgaria"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BF",
+                        "etiqueta": "BurkinaFaso"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BI",
+                        "etiqueta": "Burundi"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CV",
+                        "etiqueta": "CaboVerde"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KH",
+                        "etiqueta": "Camboya"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CM",
+                        "etiqueta": "Camerún"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CA",
+                        "etiqueta": "Canadá"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TD",
+                        "etiqueta": "Chad"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CL",
+                        "etiqueta": "Chile"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CN",
+                        "etiqueta": "China"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CY",
+                        "etiqueta": "Chipre"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "VA",
+                        "etiqueta": "CiudaddelVaticano"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CO",
+                        "etiqueta": "Colombia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KM",
+                        "etiqueta": "Comoras"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CG",
+                        "etiqueta": "Congo"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CD",
+                        "etiqueta": "Congo"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KP",
+                        "etiqueta": "CoreadelNorte"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KR",
+                        "etiqueta": "CoreadelSur"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CI",
+                        "etiqueta": "CostadeMarfil"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CR",
+                        "etiqueta": "CostaRica"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "HR",
+                        "etiqueta": "Croacia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CU",
+                        "etiqueta": "Cuba"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "DK",
+                        "etiqueta": "Dinamarca"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "DM",
+                        "etiqueta": "Dominica"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "EC",
+                        "etiqueta": "Ecuador"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "EG",
+                        "etiqueta": "Egipto"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SV",
+                        "etiqueta": "ElSalvador"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AE",
+                        "etiqueta": "EmiratosÁrabesUnidos"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "ER",
+                        "etiqueta": "Eritrea"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SK",
+                        "etiqueta": "Eslovaquia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SI",
+                        "etiqueta": "Eslovenia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "ES",
+                        "etiqueta": "España"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "US",
+                        "etiqueta": "EstadosUnidosdeAmérica"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "EE",
+                        "etiqueta": "Estonia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "ET",
+                        "etiqueta": "Etiopía"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PH",
+                        "etiqueta": "Filipinas"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "FI",
+                        "etiqueta": "Finlandia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "FJ",
+                        "etiqueta": "Fiyi"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "FR",
+                        "etiqueta": "Francia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GA",
+                        "etiqueta": "Gabón"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GM",
+                        "etiqueta": "Gambia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GE",
+                        "etiqueta": "Georgia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GH",
+                        "etiqueta": "Ghana"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GI",
+                        "etiqueta": "Gibraltar"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GD",
+                        "etiqueta": "Granada"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GR",
+                        "etiqueta": "Grecia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GL",
+                        "etiqueta": "Groenlandia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GP",
+                        "etiqueta": "Guadalupe"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GU",
+                        "etiqueta": "Guam"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GT",
+                        "etiqueta": "Guatemala"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GF",
+                        "etiqueta": "GuayanaFrancesa"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GG",
+                        "etiqueta": "Guernsey"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GN",
+                        "etiqueta": "Guinea"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GQ",
+                        "etiqueta": "GuineaEcuatorial"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GW",
+                        "etiqueta": "Guinea-Bissau"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GY",
+                        "etiqueta": "Guyana"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "HT",
+                        "etiqueta": "Haití"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "HN",
+                        "etiqueta": "Honduras"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "HK",
+                        "etiqueta": "Hongkong"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "HU",
+                        "etiqueta": "Hungría"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "IN",
+                        "etiqueta": "India"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "ID",
+                        "etiqueta": "Indonesia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "IR",
+                        "etiqueta": "Irán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "IQ",
+                        "etiqueta": "Irak"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "IE",
+                        "etiqueta": "Irlanda"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BV",
+                        "etiqueta": "IslaBouvet"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "IM",
+                        "etiqueta": "IsladeMan"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CX",
+                        "etiqueta": "IsladeNavidad"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NF",
+                        "etiqueta": "IslaNorfolk"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "IS",
+                        "etiqueta": "Islandia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BM",
+                        "etiqueta": "IslasBermudas"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KY",
+                        "etiqueta": "IslasCaimán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CC",
+                        "etiqueta": "IslasCocos(Keeling)"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CK",
+                        "etiqueta": "IslasCook"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AX",
+                        "etiqueta": "IslasdeÅland"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "FO",
+                        "etiqueta": "IslasFeroe"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GS",
+                        "etiqueta": "IslasGeorgiasdelSurySandwichdelSur"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "HM",
+                        "etiqueta": "IslasHeardyMcDonald"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MV",
+                        "etiqueta": "IslasMaldivas"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "FK",
+                        "etiqueta": "IslasMalvinas"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MP",
+                        "etiqueta": "IslasMarianasdelNorte"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MH",
+                        "etiqueta": "IslasMarshall"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PN",
+                        "etiqueta": "IslasPitcairn"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SB",
+                        "etiqueta": "IslasSalomón"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TC",
+                        "etiqueta": "IslasTurcasyCaicos"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "UM",
+                        "etiqueta": "IslasUltramarinasMenoresdeEstadosUnidos"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "VG",
+                        "etiqueta": "IslasVírgenesBritánicas"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "VI",
+                        "etiqueta": "IslasVírgenesdelosEstadosUnidos"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "IL",
+                        "etiqueta": "Israel"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "IT",
+                        "etiqueta": "Italia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "JM",
+                        "etiqueta": "Jamaica"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "JP",
+                        "etiqueta": "Japón"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "JE",
+                        "etiqueta": "Jersey"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "JO",
+                        "etiqueta": "Jordania"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KZ",
+                        "etiqueta": "Kazajistán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KE",
+                        "etiqueta": "Kenia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KG",
+                        "etiqueta": "Kirgizstán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KI",
+                        "etiqueta": "Kiribati"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KW",
+                        "etiqueta": "Kuwait"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LB",
+                        "etiqueta": "Líbano"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LA",
+                        "etiqueta": "Laos"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LS",
+                        "etiqueta": "Lesoto"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LV",
+                        "etiqueta": "Letonia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LR",
+                        "etiqueta": "Liberia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LY",
+                        "etiqueta": "Libia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LI",
+                        "etiqueta": "Liechtenstein"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LT",
+                        "etiqueta": "Lituania"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LU",
+                        "etiqueta": "Luxemburgo"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MX",
+                        "etiqueta": "México"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MC",
+                        "etiqueta": "Mónaco"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MO",
+                        "etiqueta": "Macao"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MK",
+                        "etiqueta": "Macedônia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MG",
+                        "etiqueta": "Madagascar"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MY",
+                        "etiqueta": "Malasia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MW",
+                        "etiqueta": "Malawi"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "ML",
+                        "etiqueta": "Mali"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MT",
+                        "etiqueta": "Malta"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MA",
+                        "etiqueta": "Marruecos"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MQ",
+                        "etiqueta": "Martinica"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MU",
+                        "etiqueta": "Mauricio"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MR",
+                        "etiqueta": "Mauritania"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "YT",
+                        "etiqueta": "Mayotte"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "FM",
+                        "etiqueta": "Micronesia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MD",
+                        "etiqueta": "Moldavia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MN",
+                        "etiqueta": "Mongolia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "ME",
+                        "etiqueta": "Montenegro"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MS",
+                        "etiqueta": "Montserrat"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MZ",
+                        "etiqueta": "Mozambique"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NA",
+                        "etiqueta": "Namibia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NR",
+                        "etiqueta": "Nauru"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NP",
+                        "etiqueta": "Nepal"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NI",
+                        "etiqueta": "Nicaragua"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NE",
+                        "etiqueta": "Niger"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NG",
+                        "etiqueta": "Nigeria"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NU",
+                        "etiqueta": "Niue"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NO",
+                        "etiqueta": "Noruega"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NC",
+                        "etiqueta": "NuevaCaledonia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NZ",
+                        "etiqueta": "NuevaZelanda"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "OM",
+                        "etiqueta": "Omán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "NL",
+                        "etiqueta": "PaísesBajos"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PK",
+                        "etiqueta": "Pakistán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PW",
+                        "etiqueta": "Palau"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PS",
+                        "etiqueta": "Palestina"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PA",
+                        "etiqueta": "Panamá"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PG",
+                        "etiqueta": "PapúaNuevaGuinea"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PY",
+                        "etiqueta": "Paraguay"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PE",
+                        "etiqueta": "Perú"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PF",
+                        "etiqueta": "PolinesiaFrancesa"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PL",
+                        "etiqueta": "Polonia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PT",
+                        "etiqueta": "Portugal"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PR",
+                        "etiqueta": "PuertoRico"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "QA",
+                        "etiqueta": "Qatar"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "GB",
+                        "etiqueta": "ReinoUnido"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CF",
+                        "etiqueta": "RepúblicaCentroafricana"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CZ",
+                        "etiqueta": "RepúblicaCheca"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "DO",
+                        "etiqueta": "RepúblicaDominicana"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "RE",
+                        "etiqueta": "Reunión"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "RW",
+                        "etiqueta": "Ruanda"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "RO",
+                        "etiqueta": "Rumanía"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "RU",
+                        "etiqueta": "Rusia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "EH",
+                        "etiqueta": "SaharaOccidental"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "WS",
+                        "etiqueta": "Samoa"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "AS",
+                        "etiqueta": "SamoaAmericana"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "BL",
+                        "etiqueta": "SanBartolomé"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "KN",
+                        "etiqueta": "SanCristóbalyNieves"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SM",
+                        "etiqueta": "SanMarino"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "MF",
+                        "etiqueta": "SanMartín(Francia)"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "PM",
+                        "etiqueta": "SanPedroyMiquelón"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "VC",
+                        "etiqueta": "SanVicenteylasGranadinas"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SH",
+                        "etiqueta": "SantaElena"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LC",
+                        "etiqueta": "SantaLucía"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "ST",
+                        "etiqueta": "SantoToméyPríncipe"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SN",
+                        "etiqueta": "Senegal"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "RS",
+                        "etiqueta": "Serbia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SC",
+                        "etiqueta": "Seychelles"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SL",
+                        "etiqueta": "SierraLeona"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SG",
+                        "etiqueta": "Singapur"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SY",
+                        "etiqueta": "Siria"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SO",
+                        "etiqueta": "Somalia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "LK",
+                        "etiqueta": "Srilanka"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "ZA",
+                        "etiqueta": "Sudáfrica"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SD",
+                        "etiqueta": "Sudán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SE",
+                        "etiqueta": "Suecia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "CH",
+                        "etiqueta": "Suiza"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SR",
+                        "etiqueta": "Surinám"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SJ",
+                        "etiqueta": "SvalbardyJanMayen"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "SZ",
+                        "etiqueta": "Swazilandia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TJ",
+                        "etiqueta": "Tadjikistán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TH",
+                        "etiqueta": "Tailandia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TW",
+                        "etiqueta": "Taiwán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TZ",
+                        "etiqueta": "Tanzania"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "IO",
+                        "etiqueta": "TerritorioBritánicodelOcéanoÍndico"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TF",
+                        "etiqueta": "TerritoriosAustralesyAntárticasFranceses"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TL",
+                        "etiqueta": "TimorOriental"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TG",
+                        "etiqueta": "Togo"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TK",
+                        "etiqueta": "Tokelau"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TO",
+                        "etiqueta": "Tonga"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TT",
+                        "etiqueta": "TrinidadyTobago"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TN",
+                        "etiqueta": "Tunez"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TM",
+                        "etiqueta": "Turkmenistán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TR",
+                        "etiqueta": "Turquía"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "TV",
+                        "etiqueta": "Tuvalu"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "UA",
+                        "etiqueta": "Ucrania"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "UG",
+                        "etiqueta": "Uganda"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "UY",
+                        "etiqueta": "Uruguay"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "UZ",
+                        "etiqueta": "Uzbekistán"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "VU",
+                        "etiqueta": "Vanuatu"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "VE",
+                        "etiqueta": "Venezuela"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "VN",
+                        "etiqueta": "Vietnam"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "WF",
+                        "etiqueta": "WallisyFutuna"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "YE",
+                        "etiqueta": "Yemen"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "DJ",
+                        "etiqueta": "Yibuti"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "ZM",
+                        "etiqueta": "Zambia"
+                    }
+                },
+                {
+                    "name": "Create Pais",
+                    "inputData": {
+                        "valor": "ZW",
+                        "etiqueta": "Zimbabue"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegCorreo",
+            "inputData": {
+                "codigo": "04",
+                "nombreTabla": "SEG_CORREO",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "REG",
+                        "etiqueta": "REGISTRADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "REN",
+                        "etiqueta": "RENVIADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SEND",
+                        "etiqueta": "ENVIADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "ERR",
+                        "etiqueta": "ERROR"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "USE",
+                        "etiqueta": "USADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "DEL",
+                        "etiqueta": "ELIMINADO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegCorreo",
+            "inputData": {
+                "codigo": "04",
+                "nombreTabla": "SEG_CORREO",
+                "nombreCampo": "VD_PLANTILLA"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "USER_ACT",
+                        "etiqueta": "Activar Usuario"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "USER_REC",
+                        "etiqueta": "Recuperar Acceso"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "USER_INV",
+                        "etiqueta": "Invitacion Usuario"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegCorreo",
+            "inputData": {
+                "codigo": "04",
+                "nombreTabla": "SEG_CORREO",
+                "nombreCampo": "VD_TIPO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "ID_USUARIO",
+                        "etiqueta": "Id Usuario"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "ID_OPERADOR",
+                        "etiqueta": "Id Operador"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegPersona",
+            "inputData": {
+                "codigo": "04",
+                "nombreTabla": "SEG_PERSONA",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "REG",
+                        "etiqueta": "REGISTRADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "VERF",
+                        "etiqueta": "VERIFICADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "OBS",
+                        "etiqueta": "OBSERVADO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegPersona",
+            "inputData": {
+                "codigo": "05",
+                "nombreTabla": "SEG_PERSONA",
+                "nombreCampo": "VD_EXPEDICION_DOCUMENTO"
+            },
+            "children": [
+                {
+                    "name": "Create ExpedicionDoc",
+                    "inputData": {
+                        "valor": "CH",
+                        "etiqueta": "Chuquisaca"
+                    }
+                },
+                {
+                    "name": "Create ExpedicionDoc",
+                    "inputData": {
+                        "valor": "LP",
+                        "etiqueta": "La Paz"
+                    }
+                },
+                {
+                    "name": "Create ExpedicionDoc",
+                    "inputData": {
+                        "valor": "CB",
+                        "etiqueta": "Cochabamba"
+                    }
+                },
+                {
+                    "name": "Create ExpedicionDoc",
+                    "inputData": {
+                        "valor": "OR",
+                        "etiqueta": "Oruro"
+                    }
+                },
+                {
+                    "name": "Create ExpedicionDoc",
+                    "inputData": {
+                        "valor": "PT",
+                        "etiqueta": "Potosí"
+                    }
+                },
+                {
+                    "name": "Create ExpedicionDoc",
+                    "inputData": {
+                        "valor": "TJ",
+                        "etiqueta": "Tarija"
+                    }
+                },
+                {
+                    "name": "Create ExpedicionDoc",
+                    "inputData": {
+                        "valor": "SC",
+                        "etiqueta": "Santa"
+                    }
+                },
+                {
+                    "name": "Create ExpedicionDoc",
+                    "inputData": {
+                        "valor": "BE",
+                        "etiqueta": "Beni"
+                    }
+                },
+                {
+                    "name": "Create ExpedicionDoc",
+                    "inputData": {
+                        "valor": "PD",
+                        "etiqueta": "Pando"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegPersona",
+            "inputData": {
+                "codigo": "06",
+                "nombreTabla": "SEG_PERSONA",
+                "nombreCampo": "VD_GENERO"
+            },
+            "children": [
+                {
+                    "name": "Create Genero",
+                    "inputData": {
+                        "valor": "M",
+                        "etiqueta": "MASCULINO"
+                    }
+                },
+                {
+                    "name": "Create Genero",
+                    "inputData": {
+                        "valor": "F",
+                        "etiqueta": "FEMENINO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegPersona",
+            "inputData": {
+                "codigo": "07",
+                "nombreTabla": "SEG_PERSONA",
+                "nombreCampo": "VD_TIPO_DOCUMENTO"
+            },
+            "children": [
+                {
+                    "name": "Create TipoDoc",
+                    "inputData": {
+                        "valor": "CI",
+                        "etiqueta": "Cédula de Identidad"
+                    }
+                },
+                {
+                    "name": "Create TipoDoc",
+                    "inputData": {
+                        "valor": "CE",
+                        "etiqueta": "Carnet Extranjería"
+                    }
+                },
+                {
+                    "name": "Create TipoDoc",
+                    "inputData": {
+                        "valor": "PA",
+                        "etiqueta": "Pasaporte"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegOperador",
+            "inputData": {
+                "codigo": "09X",
+                "nombreTabla": "SEG_OPERADOR",
+                "nombreCampo": "VD_PERFIL"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "RL",
+                        "etiqueta": "Representante Legal"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "ART",
+                        "etiqueta": "Autorización para Realizar Trámites"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "RFDE",
+                        "etiqueta": "Registrar y Firmar Documentos de Exportación"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create SegOperador",
+            "inputData": {
+                "codigo": "09",
+                "nombreTabla": "SEG_OPERADOR",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "REG",
+                        "etiqueta": "REGISTRADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "INV",
+                        "etiqueta": "INVITADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "RECH",
+                        "etiqueta": "RECHAZADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "ACT",
+                        "etiqueta": "ACTIVADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "INAC",
+                        "etiqueta": "INACTIVADO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create RegSeguimiento",
+            "inputData": {
+                "codigo": "010",
+                "nombreTabla": "REG_SEGUIMIENTO",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "name": "Create Estado",
+                    "inputData": {
+                        "valor": "ACT",
+                        "etiqueta": "ACTIVO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create RegSeguimiento",
+            "inputData": {
+                "codigo": "011",
+                "nombreTabla": "REG_SEGUIMIENTO",
+                "nombreCampo": "VD_TIPO"
+            },
+            "children": [
+                {
+                    "name": "Create Tipo",
+                    "inputData": {
+                        "valor": "ACT",
+                        "etiqueta": "ACTIVO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create RegRegistro",
+            "inputData": {
+                "codigo": "012",
+                "nombreTabla": "REG_REGISTRO",
+                "nombreCampo": "VD_ORIGEN"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "NEW",
+                        "etiqueta": "NUEVO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "MIG",
+                        "etiqueta": "MIGRADO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create RegRegistro",
+            "inputData": {
+                "codigo": "012",
+                "nombreTabla": "REG_REGISTRO",
+                "nombreCampo": "VD_TIPO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "RUEX",
+                        "etiqueta": "Registro Unico de Exportador"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "RUI",
+                        "etiqueta": "Registro Unico de Importador"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create RegRegistro",
+            "inputData": {
+                "codigo": "013",
+                "nombreTabla": "REG_REGISTRO",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "REG",
+                        "etiqueta": "REGISTRADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CAN",
+                        "etiqueta": "CANCELADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "REG_OBS",
+                        "etiqueta": "REGISTRO OBSERVADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "REG_CORR",
+                        "etiqueta": "REGISTRO CORREGIDO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "ACEP",
+                        "etiqueta": "ACEPTADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "PAG",
+                        "etiqueta": "PAGADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "PAG_OBS",
+                        "etiqueta": "PAGO OBSERVADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "PAG_CORR",
+                        "etiqueta": "PAGO CORREGIDO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "APRO",
+                        "etiqueta": "APROBADO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create ParValor",
+            "inputData": {
+                "codigo": "014",
+                "nombreTabla": "PAR_VALOR",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "name": "Create Estado",
+                    "inputData": {
+                        "valor": "ACT",
+                        "etiqueta": "ACTIVO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create ParDominio",
+            "inputData": {
+                "codigo": "015",
+                "nombreTabla": "PAR_DOMINIO",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "name": "Create Estado",
+                    "inputData": {
+                        "valor": "ACT",
+                        "etiqueta": "ACTIVO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create LogSesion",
+            "inputData": {
+                "codigo": "016",
+                "nombreTabla": "LOG_SESION",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "name": "Create Estado",
+                    "inputData": {
+                        "valor": "ACT",
+                        "etiqueta": "ACTIVO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create ConPago",
+            "inputData": {
+                "codigo": "017",
+                "nombreTabla": "CTA_PAGO",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "REG",
+                        "etiqueta": "REGISTRADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "PAG",
+                        "etiqueta": "PAGADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "OBS",
+                        "etiqueta": "OBSERVADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CORR",
+                        "etiqueta": "CORREGIDO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "ACEP",
+                        "etiqueta": "ACEPTADO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create ConPago",
+            "inputData": {
+                "codigo": "018",
+                "nombreTabla": "CTA_PAGO",
+                "nombreCampo": "VD_TIPO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "RUEX",
+                        "etiqueta": "PAGO RUEX"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "RUI",
+                        "etiqueta": "PAGO RUI"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "DDJJ",
+                        "etiqueta": "PAGO DDJJ"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CERT",
+                        "etiqueta": "PAGO CERT"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create ConPago",
+            "inputData": {
+                "codigo": "020",
+                "nombreTabla": "CTA_PAGO",
+                "nombreCampo": "VD_MONEDA"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "BS",
+                        "etiqueta": "BOLIVIANOS"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "UFV",
+                        "etiqueta": "UFV"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "USD",
+                        "etiqueta": "DOLARES"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "RMB",
+                        "etiqueta": "Yuan"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create ConDeposito",
+            "inputData": {
+                "codigo": "019",
+                "nombreTabla": "CTA_DEPOSITO",
+                "nombreCampo": "VD_CUENTA"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "BUN-1000784555",
+                        "etiqueta": "BUN-1000784555"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "BNB-10948811201",
+                        "etiqueta": "BNB-10948811201"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create ConDeposito",
+            "inputData": {
+                "codigo": "020",
+                "nombreTabla": "CTA_DEPOSITO",
+                "nombreCampo": "VD_MONEDA"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "BS",
+                        "etiqueta": "BOLIVIANOS"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "UFV",
+                        "etiqueta": "UFV"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "USD",
+                        "etiqueta": "DOLARES"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "RMB",
+                        "etiqueta": "Yuan"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create ConDeposito",
+            "inputData": {
+                "codigo": "020",
+                "nombreTabla": "CTA_DEPOSITO",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "REG",
+                        "etiqueta": "REGISTRADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "RECH",
+                        "etiqueta": "RECHAZADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "ACEP",
+                        "etiqueta": "ACEPTADO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliEmpresa",
+            "inputData": {
+                "codigo": "021",
+                "nombreTabla": "CLI_EMPRESA",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "name": "Create Estado",
+                    "inputData": {
+                        "valor": "REG",
+                        "etiqueta": "REGISTRADO"
+                    }
+                }, {
+                    "inputData": {
+                        "valor": "OBS",
+                        "etiqueta": "OBSERVADO"
+                    }
+                }, {
+                    "inputData": {
+                        "valor": "VERF",
+                        "etiqueta": "VERIFICADO"
+                    }
+                }, {
+                    "inputData": {
+                        "valor": "BVOL",
+                        "etiqueta": "BAJA VOLUNATRIA"
+                    }
+                }, {
+                    "inputData": {
+                        "valor": "BFOR",
+                        "etiqueta": "BAJA FORZADA"
+                    }
+                }, {
+                    "inputData": {
+                        "valor": "SBVOL",
+                        "etiqueta": "SOLICITUD DE BAJA VOLUNTARIA"
+                    }
+                }, {
+                    "inputData": {
+                        "valor": "SBFOR",
+                        "etiqueta": "SOLICITUD DE BAJA FORZADA"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliEmpresa",
+            "inputData": {
+                "codigo": "022",
+                "nombreTabla": "CLI_EMPRESA",
+                "nombreCampo": "VD_TIPO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "APUB",
+                        "etiqueta": "Administración Pública"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "AGRE",
+                        "etiqueta": "Asociaciones Gremiales"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "COOP",
+                        "etiqueta": "Cooperativas"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CRC",
+                        "etiqueta": "Contrato de Riesgo Compartido"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "FED",
+                        "etiqueta": "Federaciones"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "FUN",
+                        "etiqueta": "Fundación"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "ONG",
+                        "etiqueta": "Organizaciones No Gubernamentales"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "OPP",
+                        "etiqueta": "Organizaciones de pequeños productores"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "PN",
+                        "etiqueta": "Persona Natural"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SA",
+                        "etiqueta": "Sociedad Anónima"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SAC",
+                        "etiqueta": "Sociedad Accidental"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SAM",
+                        "etiqueta": "Sociedad Anonima Mixta"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SC",
+                        "etiqueta": "Sociedad Colectiva"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SCA",
+                        "etiqueta": "Sociedad en Comandita por Acciones"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SCE",
+                        "etiqueta": "Sociedades Constituídas en el Extranjero"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SCS",
+                        "etiqueta": "Sociedad en Comandita Simple"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SEM",
+                        "etiqueta": "Sociedad de Economía Mixta"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SRL",
+                        "etiqueta": "Sociedad de Responsabilidad Limitada"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "UPCU",
+                        "etiqueta": "Unidad Productiva y/o Comercializadora Unipersonal(UNIPERSONAL)"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliEmpresa",
+            "inputData": {
+                "codigo": "022",
+                "nombreTabla": "CLI_EMPRESA",
+                "nombreCampo": "VD_ACTIVIDAD"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "PRO",
+                        "etiqueta": "PRODUCTOR"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "COM",
+                        "etiqueta": "COMERCIALIZADOR"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "PRCO",
+                        "etiqueta": "PRODUCTOR Y COMERCIALIZADOR"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliEmpresa",
+            "inputData": {
+                "codigo": "022",
+                "nombreTabla": "CLI_EMPRESA",
+                "nombreCampo": "VD_AFILIACIONES"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "CAINCO",
+                        "etiqueta": "Cámara de Industria, Comercio, Servicios y Turismo de Santa Cruz - CAINCO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CADEX",
+                        "etiqueta": "Cámara de Exportadores de Santa Cruz - CADEX"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CAMEX",
+                        "etiqueta": "Cámara de Exportadores - CAMEX"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CNC",
+                        "etiqueta": "Cámara Nacional de Comercio"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CNI",
+                        "etiqueta": "Cámara Nacional de Industrias - CNI"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "UN",
+                        "etiqueta": "Unión de Bananeros"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CADEXNOR",
+                        "etiqueta": "Cámara de Exportadores del Norte - CADEXNOR"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CADEXCO",
+                        "etiqueta": "Cámara de Exportadores de Cochabamba - CADEXCO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CADEXOR",
+                        "etiqueta": "Cámara de Exportadores de Oruro - CADEXOR"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CADEPIA",
+                        "etiqueta": "Camara de la Pequeña Industria y Artesania - CADEPIA"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CFB",
+                        "etiqueta": "Cámara Forestal de Bolivia"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "ANAPO",
+                        "etiqueta": "Asociación de Productores de Oleaginosas y Trigo - ANAPO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "AMM",
+                        "etiqueta": "Asociación de Mineros Medianos"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CM",
+                        "etiqueta": "Cámara de Minería"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "OEPAIC",
+                        "etiqueta": "Red Nacional de Asociaciones de Productores Artesanas y Artesanos con Identidad Cultural - OEPAIC"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CABOLQUI",
+                        "etiqueta": "Cámara Boliviana de Exportadores de Quinua y Productos Orgánicos - CABOLQUI"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "OTRO",
+                        "etiqueta": "Otros"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CBA",
+                        "etiqueta": "Cámara Boliviano Alemana"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CONAMYPE",
+                        "etiqueta": "Confederación Nacional de la Micro y Pequeña de Bolivia -Conamype"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "FEDEMYPE",
+                        "etiqueta": "Federación de Medianos y Pequeños Empresarios - Fedemype"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "FECAFEB",
+                        "etiqueta": "Federación de Caficultores Exportadores de Bolivia - FECAFEB"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliDocumento",
+            "inputData": {
+                "codigo": "023",
+                "nombreTabla": "CLI_DOCUMENTO",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "REG",
+                        "etiqueta": "REGISTRADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "OBS",
+                        "etiqueta": "OBSERVADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CORR",
+                        "etiqueta": "CORREGIDO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "ACEP",
+                        "etiqueta": "ACEPTADO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliDocumento",
+            "inputData": {
+                "codigo": "024",
+                "nombreTabla": "CLI_DOCUMENTO",
+                "nombreCampo": "VD_TIPO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "NIT",
+                        "etiqueta": "Identificacion Tributaria"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "FUNDEMPRESA",
+                        "etiqueta": "Codigo Funda Empresa"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "OEA",
+                        "etiqueta": "Registro OEA"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliDireccion",
+            "inputData": {
+                "codigo": "025",
+                "nombreTabla": "CLI_DIRECCION",
+                "nombreCampo": "VD_DEPARTAMENTO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "LP",
+                        "etiqueta": "LA PAZ"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "OR",
+                        "etiqueta": "ORURO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "PO",
+                        "etiqueta": "POTOSI"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "TR",
+                        "etiqueta": "TARIJA"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SC",
+                        "etiqueta": "SANTA CRUZ"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "BE",
+                        "etiqueta": "BENI"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "PA",
+                        "etiqueta": "PANDO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CB",
+                        "etiqueta": "COCHABAMBA"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliDireccion",
+            "inputData": {
+                "codigo": "026",
+                "nombreTabla": "CLI_DIRECCION",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "REG",
+                        "etiqueta": "REGISTRADO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "VERF",
+                        "etiqueta": "VERIFICADO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliDireccion",
+            "inputData": {
+                "codigo": "027",
+                "nombreTabla": "CLI_DIRECCION",
+                "nombreCampo": "VD_MUNICIPIO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Achacachi",
+                        "etiqueta": "Achacachi"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Achocalla",
+                        "etiqueta": "Achocalla"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Alto Beni",
+                        "etiqueta": "Alto Beni"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Ancoraimes",
+                        "etiqueta": "Ancoraimes"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Apolo",
+                        "etiqueta": "Apolo"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Aucapata",
+                        "etiqueta": "Aucapata"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Ayata",
+                        "etiqueta": "Ayata"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Ayo Ayo",
+                        "etiqueta": "Ayo Ayo"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Batallas",
+                        "etiqueta": "Batallas"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Cairoma",
+                        "etiqueta": "Cairoma"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Cajuata",
+                        "etiqueta": "Cajuata"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Calacoto",
+                        "etiqueta": "Calacoto"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Calamarca",
+                        "etiqueta": "Calamarca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Caquiaviri",
+                        "etiqueta": "Caquiaviri"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Caranavi",
+                        "etiqueta": "Caranavi"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Catacora",
+                        "etiqueta": "Catacora"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Charaña",
+                        "etiqueta": "Charaña"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Chararilla",
+                        "etiqueta": "Chararilla"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Chua Cocani",
+                        "etiqueta": "Chua Cocani"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Chulumani",
+                        "etiqueta": "Chulumani"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Chuma",
+                        "etiqueta": "Chuma"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Collana",
+                        "etiqueta": "Collana"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Colquencha",
+                        "etiqueta": "Colquencha"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Colquiri",
+                        "etiqueta": "Colquiri"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Comanche",
+                        "etiqueta": "Comanche"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Combaya",
+                        "etiqueta": "Combaya"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Copacabana",
+                        "etiqueta": "Copacabana"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Coripata",
+                        "etiqueta": "Coripata"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Coro Coro",
+                        "etiqueta": "Coro Coro"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Coroico",
+                        "etiqueta": "Coroico"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Curva",
+                        "etiqueta": "Curva"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Desaguadero",
+                        "etiqueta": "Desaguadero"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "El Alto",
+                        "etiqueta": "El Alto"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Escoma",
+                        "etiqueta": "Escoma"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Guanay",
+                        "etiqueta": "Guanay"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Guaqui",
+                        "etiqueta": "Guaqui"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Huarina",
+                        "etiqueta": "Huarina"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Huatajata",
+                        "etiqueta": "Huatajata"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Humanata",
+                        "etiqueta": "Humanata"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Ichoca",
+                        "etiqueta": "Ichoca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Inquisivi",
+                        "etiqueta": "Inquisivi"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Irupana",
+                        "etiqueta": "Irupana"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Ixiamas",
+                        "etiqueta": "Ixiamas"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Jeús de Machaca",
+                        "etiqueta": "Jeús de Machaca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Juan José Pérez",
+                        "etiqueta": "Juan José Pérez"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "La Asunta",
+                        "etiqueta": "La Asunta"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Laja",
+                        "etiqueta": "Laja"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "La Paz",
+                        "etiqueta": "La Paz"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Licoma Pampa",
+                        "etiqueta": "Licoma Pampa"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Luribay",
+                        "etiqueta": "Luribay"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Malla",
+                        "etiqueta": "Malla"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Mapiri",
+                        "etiqueta": "Mapiri"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Mecapaca",
+                        "etiqueta": "Mecapaca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Mocomoco",
+                        "etiqueta": "Mocomoco"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Nazacara de Pacajes",
+                        "etiqueta": "Nazacara de Pacajes"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Palca",
+                        "etiqueta": "Palca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Palos Blancos",
+                        "etiqueta": "Palos Blancos"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Papel Pampa",
+                        "etiqueta": "Papel Pampa"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Patacamaya",
+                        "etiqueta": "Patacamaya"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Pelechuco",
+                        "etiqueta": "Pelechuco"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Pucarani",
+                        "etiqueta": "Pucarani"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Puerto Acosta",
+                        "etiqueta": "Puerto Acosta"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Puerto Carabuco",
+                        "etiqueta": "Puerto Carabuco"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Puerto Pérez",
+                        "etiqueta": "Puerto Pérez"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Quiabaya",
+                        "etiqueta": "Quiabaya"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Quime",
+                        "etiqueta": "Quime"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "San Andrés de Machaca",
+                        "etiqueta": "San Andrés de Machaca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "San Buena Ventura",
+                        "etiqueta": "San Buena Ventura"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "San Pedro de Curahuara",
+                        "etiqueta": "San Pedro de Curahuara"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "San Pedro de Tiquina",
+                        "etiqueta": "San Pedro de Tiquina"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Santiago de Callapa",
+                        "etiqueta": "Santiago de Callapa"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Santiago de Huata",
+                        "etiqueta": "Santiago de Huata"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Santiago de Machaca",
+                        "etiqueta": "Santiago de Machaca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Sapahaqui",
+                        "etiqueta": "Sapahaqui"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Sica Sica",
+                        "etiqueta": "Sica Sica"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Sorata",
+                        "etiqueta": "Sorata"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Tacacoma",
+                        "etiqueta": "Tacacoma"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Taraco",
+                        "etiqueta": "Taraco"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Teoponte",
+                        "etiqueta": "Teoponte"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Tiawanacu",
+                        "etiqueta": "Tiawanacu"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Tipuani",
+                        "etiqueta": "Tipuani"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Tito Yupanqui",
+                        "etiqueta": "Tito Yupanqui"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Umala",
+                        "etiqueta": "Umala"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Viacha",
+                        "etiqueta": "Viacha"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Waldo Ballivian",
+                        "etiqueta": "Waldo Ballivian"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Yaco",
+                        "etiqueta": "Yaco"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "LP",
+                        "valor": "Yanacachi",
+                        "etiqueta": "Yanacachi"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Andamarca",
+                        "etiqueta": "Andamarca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Antequera",
+                        "etiqueta": "Antequera"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Belén de Andamarca",
+                        "etiqueta": "Belén de Andamarca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Caracollo",
+                        "etiqueta": "Caracollo"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Challapata",
+                        "etiqueta": "Challapata"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Chipaya",
+                        "etiqueta": "Chipaya"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Choquecota",
+                        "etiqueta": "Choquecota"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Coipasa",
+                        "etiqueta": "Coipasa"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Corque",
+                        "etiqueta": "Corque"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Cruz de Machacamarca",
+                        "etiqueta": "Cruz de Machacamarca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Cuahuara de Carangas",
+                        "etiqueta": "Cuahuara de Carangas"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Curaguara",
+                        "etiqueta": "Curaguara"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "EL Chorro",
+                        "etiqueta": "EL Chorro"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Escara",
+                        "etiqueta": "Escara"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Esmeralda",
+                        "etiqueta": "Esmeralda"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Eucaliptus",
+                        "etiqueta": "Eucaliptus"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Huachacalla",
+                        "etiqueta": "Huachacalla"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Huanuni",
+                        "etiqueta": "Huanuni"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Huayllamarca",
+                        "etiqueta": "Huayllamarca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "La Rivera",
+                        "etiqueta": "La Rivera"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Machacamarca",
+                        "etiqueta": "Machacamarca"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Oruro",
+                        "etiqueta": "Oruro"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Pampa AUllagas",
+                        "etiqueta": "Pampa AUllagas"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Pari o Soracachi",
+                        "etiqueta": "Pari o Soracachi"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Pazña",
+                        "etiqueta": "Pazña"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Poopó",
+                        "etiqueta": "Poopó"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Quillacas",
+                        "etiqueta": "Quillacas"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Sabaya",
+                        "etiqueta": "Sabaya"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Salinas de Garci Mendoza",
+                        "etiqueta": "Salinas de Garci Mendoza"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Santiago de Huari",
+                        "etiqueta": "Santiago de Huari"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Todos Santos",
+                        "etiqueta": "Todos Santos"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Toledo",
+                        "etiqueta": "Toledo"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Totora",
+                        "etiqueta": "Totora"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Turco",
+                        "etiqueta": "Turco"
+                    }
+                },
+                {
+                    "inputData": {
+                        "padre": "OR",
+                        "valor": "Yunguyo del Litoral",
+                        "etiqueta": "Yunguyo del Litoral"
+                    }
+                }                
+            ]
+        },
+
+        {
+            "name": "Create CliDireccion",
+            "inputData": {
+                "codigo": "028",
+                "nombreTabla": "CLI_DIRECCION",
+                "nombreCampo": "VD_TIPO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "OFI",
+                        "etiqueta": "OFICINA"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "FAB",
+                        "etiqueta": "FABRICA"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "DEP",
+                        "etiqueta": "DEPOSITO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliContacto",
+            "inputData": {
+                "codigo": "029",
+                "nombreTabla": "CLI_CONTACTO",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "REG",
+                        "etiqueta": "REGISTRADO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliContacto",
+            "inputData": {
+                "codigo": "030",
+                "nombreTabla": "CLI_CONTACTO",
+                "nombreCampo": "VD_TIPO"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "EMAIL",
+                        "etiqueta": "CORREO ELECTRONICO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "SITE",
+                        "etiqueta": "PAGINA WEB"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "FAX",
+                        "etiqueta": "NUMERO FAX"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "FONO",
+                        "etiqueta": "NUMERO TELEFONICO"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "CEL",
+                        "etiqueta": "NUMERO CELULAR"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliCategoria",
+            "inputData": {
+                "codigo": "031",
+                "nombreTabla": "CLI_CATEGORIA",
+                "nombreCampo": "VD_ACTIVOS_UFV"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "<150K",
+                        "etiqueta": "1-150.000"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "<1.5M",
+                        "etiqueta": "150.001-1.500.000"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "<6.0M",
+                        "etiqueta": "1.500.001-6.000.000"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "+6.0M",
+                        "etiqueta": "Más de 6.000.000 "
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliCategoria",
+            "inputData": {
+                "codigo": "032",
+                "nombreTabla": "CLI_CATEGORIA",
+                "nombreCampo": "VD_CATEGORIA"
+            },
+            "children": [
+                {
+                    "name": "Create Categoria",
+                    "inputData": {
+                        "valor": "ACT",
+                        "etiqueta": "ACTIVO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliCategoria",
+            "inputData": {
+                "codigo": "033",
+                "nombreTabla": "CLI_CATEGORIA",
+                "nombreCampo": "VF_ESTADO"
+            },
+            "children": [
+                {
+                    "name": "Create Estado",
+                    "inputData": {
+                        "valor": "ACT",
+                        "etiqueta": "ACTIVO"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliCategoria",
+            "inputData": {
+                "codigo": "034",
+                "nombreTabla": "CLI_CATEGORIA",
+                "nombreCampo": "VD_EXPORTACIONES_RUBROS"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "1",
+                        "etiqueta": "I.- Animales vivos y productos de reino animal (carne, leche, y productos lácteos, huevos de ave, miel natural)"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "2",
+                        "etiqueta": "II.- Productos del reino vegetal (plantas, flores, hortalizas, raíces, frutas, café, té, especies, semillas, resinas vegetales)"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "3",
+                        "etiqueta": "III.- Grasas y aceites minerales o vegetales, productos de su desdoblamiento, grasas alimenticias elaboradas, ceras de origen animal o vegetal)"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "4",
+                        "etiqueta": "IV.- Productos de las Industrias Alimentarias, bebidas, líquidos, alcohólicos, y vinagres, tabaco y sucedáneos del tabaco elaborado."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "5",
+                        "etiqueta": "V.- Productos minerales (sal, azufre, tierras y piedras, yesos y cementos, minerales, metalíferos, combustibles y aceites minerales)."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "6",
+                        "etiqueta": "VI.- Productos de las industrias químicas o de las industrias conexas (farmacéuticos, abonos, cosméticos, de limpieza, pólvora y explosivos, fotográficos, químicos)."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "7",
+                        "etiqueta": "VII.- Plástico y sus Manofacturas (Plástico, Caucho y sus Manufacturas)"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "8",
+                        "etiqueta": "VIII.- Pieles, cueros, peletería y manufacturas de estas materias, artículos de talabateria o guarnicionería, artículos de viaje, bolsos de mano (carteras)."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "9",
+                        "etiqueta": "IX.- Madera, cabon vegetal y manufacturas de madera corcho y sus manufacturas de esparteria o cesteria."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "10",
+                        "etiqueta": "X.- Pasta de madera o de las demas materias fibrosas celuosicas, papel o carbon para reciclar (desperdicios y desechos) papel o carton y sus aplicaciones."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "11",
+                        "etiqueta": "XI.- Materia textiles y sus manufacturas (seda, lana, pelo, algodón, filamentos sintéticos, alfombras, encajes, tejidos de punto, prendas de vestir)."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "12",
+                        "etiqueta": "XII.- Calzados, sombreros y demas tocados, paraguas, quitasoles, bstones, latigos, fustas y sus partes, plumas preparadas y articulos de plumas, flores artificiales."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "13",
+                        "etiqueta": "XIII.- Manufacturas de piedra, yeso fraguable, cemento, aimanto (asbesto), mica o materias análogas, productos cerámicos, vidrio u sus manufacturas."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "14",
+                        "etiqueta": "XIV.- Perlas finas (naturales) o cultivadas, piedras preciosas o semipreciosas, metales preciosos, chapados de metal precioso, y manufacturas bisuteria, monedas."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "15",
+                        "etiqueta": "XV.- Metales comunes y manufacturas de estos metales (hierro y acero, cobre, niquel, aluminio, plomo, cinc, estaño)."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "16",
+                        "etiqueta": "XVI.- Máquinas y aparatos , material electrico, aparatos de grabación o reproducción de sonido/imagen , sonido en televisión y acsesorios de estos aparatos"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "17",
+                        "etiqueta": "XVII.- Material de transporte (vehiculos de transporte aéreo, terrestre, maritimo y sus partes)."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "18",
+                        "etiqueta": "XVIII.- Instrumento de óptica, fotografia/cinematografia. de medida, control o precisión, medicoquirurgicos, relojeria, musicales"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "19",
+                        "etiqueta": "XIX.- Armas, municiones, sus partes y accesorios."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "20",
+                        "etiqueta": "XX.- Mercancias y productos diversos (mobiliario, juguetes, manufacturas diversas)."
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "21",
+                        "etiqueta": "XXI.- Objetos de Arte o colección y antiguedades"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliCategoria",
+            "inputData": {
+                "codigo": "035",
+                "nombreTabla": "CLI_CATEGORIA",
+                "nombreCampo": "VD_EXPORTACIONES_UFV"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "NIN",
+                        "etiqueta": "Ninguno"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "<75K",
+                        "etiqueta": "1-75.000"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "<750K",
+                        "etiqueta": "75.001-750.000"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "<7.5M",
+                        "etiqueta": "750.001-7.500.000"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "+7.5M",
+                        "etiqueta": "Más de 7.500.000 "
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliCategoria",
+            "inputData": {
+                "codigo": "036",
+                "nombreTabla": "CLI_CATEGORIA",
+                "nombreCampo": "VD_IMPORTACIONES_RUBROS"
+            },
+            "children": [
+                {
+                    "name": "Create ImportacionesRubros",
+                    "inputData": {
+                        "valor": "0",
+                        "etiqueta": "Ninguno"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliCategoria",
+            "inputData": {
+                "codigo": "037",
+                "nombreTabla": "CLI_CATEGORIA",
+                "nombreCampo": "VD_IMPORTACIONES_UFV"
+            },
+            "children": [
+                {
+                    "name": "Create ImportacionesUfv",
+                    "inputData": {
+                        "valor": "0",
+                        "etiqueta": "Ninguno"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliCategoria",
+            "inputData": {
+                "codigo": "038",
+                "nombreTabla": "CLI_CATEGORIA",
+                "nombreCampo": "VD_NRO_EMPLEADOS"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "<9",
+                        "etiqueta": "1-9"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "<19",
+                        "etiqueta": "10-19"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "<49",
+                        "etiqueta": "20-49"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "+49",
+                        "etiqueta": "Más de 49"
+                    }
+                }
+            ]
+        },
+
+        {
+            "name": "Create CliCategoria",
+            "inputData": {
+                "codigo": "039",
+                "nombreTabla": "CLI_CATEGORIA",
+                "nombreCampo": "VD_VENTAS_UFV"
+            },
+            "children": [
+                {
+                    "inputData": {
+                        "valor": "NIN",
+                        "etiqueta": "Ninguno"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "<0.6M",
+                        "etiqueta": "1-600.000"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "<3.0M",
+                        "etiqueta": "600.001-3.000.00"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "<12M",
+                        "etiqueta": "3.000.001-12.000.000"
+                    }
+                },
+                {
+                    "inputData": {
+                        "valor": "+12M",
+                        "etiqueta": "Más de 12.000.000 "
+                    }
+                }
+            ]
+        },
+
+        {
+            "ignore": true
+        }
+    ]
+}
+

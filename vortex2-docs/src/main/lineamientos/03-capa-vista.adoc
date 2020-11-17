@@ -1,0 +1,97 @@
+# Lineamientos de desarrollo JSF
+
+JSF tiene 2 componentes, XHTML y BACKINGBEAN
+
+* *XHTML* son las vistas declaradas (page / template / componente composer / decorator / fragment )
+
+* *BACKINGBEAN* son las clases java que se enlazan con las vistas (SCOPE: request / view / session / application)
+
+El proyecto sera estructura de la siguiente manera:
+
+[source,]
+----
+/src
+    /<paquete base>.bean
+        <BEAN FUNCIONALIDAD>Bean
+            - Metodos "Action" de invocacion a un servicio
+            - Objetos Pivote de Manipulacion
+            - Referencia a las Especificaciones del Negocio
+            - NO DEBE CONTENER VALIDACIONES
+            - NO DEBE CONTENER LOGICA DE NEGOCIO
+/webapp
+    /resources
+        /comp
+            <Componentes FORMULARIO / LISTADO>
+            - <objeto>Form.xhtml
+            - <objeto>View.xhtml
+            - <objeto>Table.xhtml
+            - <objeto>Form01.xhtml
+                - Contiene animaciones
+                - Controles Visuales
+                - I18N
+    /<FUNCIONALIDAD>
+        /inbox.xhtml 
+        /create.xhtml
+        /update.xhtml
+        /remove.xhtml
+        /detail.xhtml
+        /proc01.xhtml
+----
+
+
+# Jerarquia
+
+Para un control adecuado de las funcionalidades a desarrollar, se debera considerar la jerarquia:
+
+[source,]
+----
+<FUNCIONALIDAD>/inbox.xhtml
+        -> <Componente>/<objeto>Filter.xhtml #Criterios de Busqueda
+        -> <Componente>/<objeto>Table.xhtml  #Litado de Registros
+        => Servicio de Filtrado
+        => Servicio de Codigo - Descripcion
+
+<FUNCIONALIDAD>/create.xhtml
+        -> <Componente>/<objeto>Form.xhtml   #Formulario Editable 
+        => Servicio de Persistencia
+        => Servicio de Codigo - Descripcion
+        
+<FUNCIONALIDAD>/update.xhtml
+        -> <Componente>/<objeto>Form.xhtml   #Formulario Editable
+        => Servicio de Actualizacion
+        => Servicio de Codigo - Descripcion
+        
+<FUNCIONALIDAD>/detail.xhtml
+        -> <Componente>/<objeto>View.xhtml   #Formulario Readonly
+        => Servicio de Codigo - Descripcion
+        
+<FUNCIONALIDAD>/remove.xhtml
+        -> <Componente>/<objeto>View.xhtml   #Formulario Readonly
+        => Servicio de Codigo - Descripcion
+----
+
+    
+# Algoritmo basico de Controller Bean
+
+[source,java]
+----
+
+
+   public String cliEmpresaPersistAction() {
+      cliEmpresa.setEstado(Param.create("REG"));
+      LOGGER.log(Level.INFO, "value: {0}", cliEmpresa);
+      ResultItem<CliEmpresa> result = cliEmpresaServ.cliEmpresaPersist(cliEmpresa);
+      LOGGER.log(Level.INFO, "result: {0}", result);
+      // Convierte los mensajes del servicio a mensajes JSF
+      MessageUtil.processResult(result);
+      result.ifSuccess(() -> {
+         cliEmpresa = null;
+         cliEmpresaFilter.paginationReload();
+         cliEmpresaFilterApplyListener();
+      });
+      // Navegacion del Pantallas
+      return result.isError() ? null : "inbox";
+   }
+----
+    
+        

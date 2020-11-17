@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                xmlns:util="http://xmlns.jcp.org/jsf/composite/util"
+                xmlns:ruex="http://xmlns.jcp.org/jsf/composite/comp/ruex"
+                template="#{_config.template}">
+    <ui:define name="title">
+        <span  class="text-primary">
+            <i class="fa fa-check"/>
+            REGISTRO DE DEPOSITOS
+        </span>
+    </ui:define>
+    <ui:define name="content">
+        <h:form enctype="multipart/form-data">
+            <hsk:note rendered="#{_regRegistro.regRegistro == null}">
+                #{TXT.ERROR_STATE}
+                <h:commandLink value="#{BTN.PAGE_RETURN}"
+                               action="inbox"
+                               immediate="true"
+                               styleClass="text-danger"/>
+            </hsk:note>
+
+            <hsk:cardForm rendered="#{_regRegistro.regRegistro != null}" styleClass="center col-12 col-xl-10">
+                <f:facet name="header">
+                    REGISTRO DE DEPOSITOS
+                    <i class="fa fa-key"/>
+                    #{_regRegistro.regRegistro.idRegistro}
+                </f:facet>
+                <h5 class="card-title cursor-pointer"
+                    data-toggle="collapse" 
+                    data-target="#regRegistro">
+                    <h:outputText value="#{_regRegistro.regRegistro.tipo}"/>
+                </h5>
+                <div id="regRegistro" class="collapse">
+                    <ruex:registroView value="#{_regRegistro.regRegistro}"
+                                       cliEmpresaRendered="false"
+                                       descripcionRendered="false"/>
+                </div>
+                <h5 class="card-title cursor-pointer"
+                    data-toggle="collapse" 
+                    data-target="#ctaPago">
+                    <h:outputText value="#{_regRegistro.regRegistro.ctaPago.tipo}"/>
+                </h5>
+                <div id="ctaPago" class="collapse show">
+                    <ruex:pagoForm value="#{_regRegistro.regRegistro.ctaPago}"
+                                   disabled="true"
+                                   observacionRendered="false"/>
+                </div>
+
+                <h5 class="card-title">
+                    REGISTRAR DEPOSITO
+                </h5>
+                <ruex:depositoTable value="#{_regRegistro.regRegistro.ctaPago.ctaDepositoList}"
+                                    rendered="#{_regRegistro.part.partList}">
+                    <h:column>
+                        <f:facet name="header">
+                            Comprobante
+                        </f:facet>
+                        <h:commandLink action="#{_regRegistro.descargarArchivoAction(row.docComprobante)}"
+                                       styleClass="btn btn-sm btn-secundary m-0 p-0"
+                                       immediate="true"
+                                       target="_new" 
+                                       disabled="#{row.docComprobante == null}">
+                            <i class="fa fa-download"/>
+                            #{row.docComprobante.nombre}
+                        </h:commandLink>
+
+                    </h:column>
+                </ruex:depositoTable>
+                <hsk:rowLabel size="sm"
+                              classRow="col-12"
+                              classText="col-2"
+                              classValue="col-10"
+                              text="#{LBL.PAGO.OBSERVACION}">
+                    <h:inputTextarea value="#{_regRegistro.regRegistro.ctaPago.observacion}"
+                                     styleClass="form-control form-control-sm"
+                                     rows="1"/>
+                </hsk:rowLabel>
+
+                <f:facet name="footer">
+                    <h:commandLink action="#{_regRegistro.retornarAction}"
+                                   immediate="true"
+                                   styleClass="btn btn-sm btn-secondary ml-1">
+                        <i class="fa fa-arrow-left"/>
+                        #{BTN.CANCEL}
+                    </h:commandLink>
+                    <h:commandLink action="#{_regRegistro.rechazarDepositosAction()}"
+                                   styleClass="btn btn-sm btn-danger ml-1 center">
+                        <i class="fa fa-times"/>
+                        OBSERVAR DEPOSITOS
+                    </h:commandLink>
+
+                    <h:commandLink action="#{_regRegistro.aceptarDepositosAction()}"
+                                   styleClass="btn btn-sm btn-primary ml-1 center">
+                        <i class="fa fa-check"/>
+                        ACEPTAR DEPOSITOS
+                    </h:commandLink>
+                </f:facet>
+            </hsk:cardForm>
+        </h:form>
+    </ui:define>
+</ui:composition>

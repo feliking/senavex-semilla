@@ -1,0 +1,114 @@
+# Configuracion
+
+1. Instalado el Modulo JDBC Postgres
++
+Copiar y descomprimir el archivo postgres.zip en el directorio: %WILDFLY_HOME%/modules
++
+[source,]
+----
+>/$WILDFLY_HOME/$ tree
+.
+├── appclient
+├── bin
+├── docs
+├── modules
+│   ├── bo
+│   │   └── gob
+│   │       └── senavex
+│   │           └── jdbc-postgresql
+│   │               └── main
+│   ├── postgres.zip
+│   └── system
+├── standalone
+└── welcome-content
+----
++
+1. Configuracion JDBC Driver
++
+Copie el fragmento XML en el archivo standalone-full.xml
++
+[source,xml]
+----
+<!-- CONFIGURACION JDBC DRIVER -->
+<driver name="jdbc-postgresql"
+        module="bo.gob.senavex.jdbc-postgresql">
+    <driver-class>org.postgresql.Driver</driver-class>
+</driver>
+----
++
+1. Configuracion JDBC Conection
++
+Copie el fragmento XML en el archivo standalone-full.xml
++
+[source,xml]
+----
+<!-- CONFIGURACION JDBC CONECTION -->
+<datasource jndi-name="java:/senavex-dev/jdbc/vortex2-store"
+            pool-name="senavex-dev/jdbc/vortex2-store">
+    <connection-url>
+        jdbc:postgresql://TU_SERVER:TU_PORT/TU_DB
+    </connection-url>
+    <driver>jdbc-postgresql</driver>
+    <security>
+        <user-name>TU_USER</user-name>
+        <password>TU_PASS</password>
+    </security>
+</datasource>
+----
++
+1. Configuracion Puerto SMTP
++
+Copie el fragmento XML en el archivo standalone-full.xml
++
+[source,xml]
+----
+    <!-- CONFIGURACION SERVIDOR SMTP -->
+    <outbound-socket-binding name="gmail-smtp">
+        <remote-destination host="smtp.gmail.com" port="587"/>
+    </outbound-socket-binding>
+----
++
+1. Configurado cuenta Mail
++
+Copie el fragmento XML en el archivo standalone-full.xml
++
+[source,xml]
+----
+<!--
+Verifique que su cuenta de suaurio GMAIL este configurado para enviar Mensajes desde Aplicaciones
+-->
+<mail-session name="mail/vortex2-send" 
+              jndi-name="java:/senavex-dev/mail/vortex2-send"
+              from="TU_USUARIO@senavex.gob.bo">
+    <smtp-server outbound-socket-binding-ref="gmail-smtp" 
+                 tls="true" 
+                 username="TU_USUARIO@senavex.gob.bo" 
+                 password="TU_PASSWORD"/>
+</mail-session>
+----
++
+1. Configurar Dominio de Seguridad
++
+Copie el fragmento XML en el archivo standalone-full.xml
++
+[source,xml]
+----
+<!-- CONFIGURACION DOMINIO DE SEGURIDAD -->
+<security-domain name="vortex2-realm">
+    <authentication>
+        <login-module code="Database" flag="required">
+            <module-option name="dsJndiName" 
+                           value="java:/senavex-dev/jdbc/vortex2-store"/>
+            <module-option name="principalsQuery" 
+                           value="SELECT CLAVE_ACCESO FROM VIEW_USUARIO WHERE CORREO_ELECTRONICO = ?"/>
+            <module-option name="rolesQuery" 
+                           value="SELECT CODIGO, 'Roles' FROM VIEW_PERMISO WHERE CORREO_ELECTRONICO = ?"/>
+            <module-option name="hashAlgorithm"
+                           value="SHA-256"/>
+            <module-option name="hashEncoding"
+                           value="hex"/>
+        </login-module>
+    </authentication>
+</security-domain>
+----
++

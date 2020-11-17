@@ -1,0 +1,77 @@
+# Proyecto SENAVEX
+
+## Estructura del Proyecto
+
+A continuacion se define la estructura del proyecto MAVEN:
+
+[source,]
+----
+user@pc:/work/dev/senavex-01$ tree vortex2 -L 3
+vortex2             <1>
+├── vortex2-docs    <2>
+├── vortex2-model   <3>
+├── vortex2-i16d    <4>
+└── vortex2-web     <5>
+----
+
+<1> Directorio Raiz
+<2> Modulo de Documentacion
+<3> Modulo Modelo <Libreria de modelado de la BD con JPA>
+* Este modulo solo debera contener controles a nivel del Modelo
+** Controles de Auditoria 
+** Mapeo de Columnas
+** Codificacion de Codigos
+<4> Modulo de Interoperabilidad, para conectarse a otros servicios bajo nuestro protocolo de comunicacion
+<5> Modulo WEB del Proyecto
+* Este modulo contiene la implementacion del model a una aplicacion, se define las siguientes capas:
+** Especificacion de Negocio: Funcionalidades definidas
+** Logica de Negocio: Implementacion del Algoritmo basado en el **MODELO** 
+** Controladores de Vista: Capa de invocacion a la Especificacion del Negocio
+** Paginas XHTML: Para el diseño de pantallas e invocacion solo a la capa Controlador
+
+[NOTE]
+===========
+La estructura del proyecto esta basada en MAVEN, vea los siugnetes link para conocer mas la herramienta:
+
+* https://www.arquitecturajava.com/maven-ii/
+* https://static1.1.sqspcdn.com/static/f/923743/15025126/1320942755733/Tutorial_de_Maven_3_Erick_Camacho.pdf
+
+===========
+
+## Framework
+
+El proyecto se basara en los siguientes frameworks.
+
+* JSF: JavaService Faces: Para el desarrollo de las vistas
+** Tutoral: https://www.tutorialspoint.com/jsf/index.htm  
+
+* JPA: Java Persist API: ORM para la manipulacion de los datos.
+** Tutorial: https://www.tutorialspoint.com/es/jpa/index.htm
+
+Estos framework, estan basados en un conjunto de patrones de desarrollo.
+
+* Patrones de desarrollo: Conjunto de algoritmos y estructuras de clases para encarar el proyecto
+** https://devexperto.com/patrones-de-diseno-software/
+
+
+## Servidor JEE
+
+Se hara uso de las siguientes especificaciones del servidor, para facilitar el desarrollo del mismo:
+
+* JMAIL: Para la configuracion de correos electronicos
+* JAAS: Para configurar el acceso a paginas y metodos
+* JNDI: Para enlazar configuraciones, clases o implementaciones
+* JDBC: Para configurar el acceso a la base de datos
+
+
+## Versiones utilizadas
+
+A continuacion se lista las versiones del entorno de desarrollo:
+
+* JSF: 2.3
+* JDK: 13.0
+* WildFly: 20
+* Maven: 3.6.2
+* NetBeans: 12.0
+
+

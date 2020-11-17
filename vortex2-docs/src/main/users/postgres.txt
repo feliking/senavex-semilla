@@ -1,0 +1,31 @@
+Server Portable
+
+IP: 35.193.173.250
+PORT: 5431
+
+URL: jdbc:postgresql://127.0.0.1:5431/vortex2_r01
+
+# SDB /opt --> /dev/sdb
+mount /dev/sdb /opt
+
+# /opt/pgsql is a POSTGRES_HOME
+
+DATABASE:
+
+vortex2_r01  # Vortex2 Release 01
+
+
+
+ADMIN:
+u_admin/u_admin$password
+
+VORTEX
+u_vortex/u_vortex$password
+
+VORTEX2
+u_vortex2/u_vortex2$password
+
+
+
+
+

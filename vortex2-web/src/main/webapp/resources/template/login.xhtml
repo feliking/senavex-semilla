@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <link rel="apple-touch-icon" sizes="57x57" href="#{request.contextPath}/resources/favicon/apple-icon-57x57.png"/>
+        <link rel="apple-touch-icon" sizes="60x60" href="#{request.contextPath}/resources/favicon/apple-icon-60x60.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="#{request.contextPath}/resources/favicon/apple-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="#{request.contextPath}/resources/favicon/apple-icon-76x76.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="#{request.contextPath}/resources/favicon/apple-icon-114x114.png"/>
+        <link rel="apple-touch-icon" sizes="120x120" href="#{request.contextPath}/resources/favicon/apple-icon-120x120.png"/>
+        <link rel="apple-touch-icon" sizes="144x144" href="#{request.contextPath}/resources/favicon/apple-icon-144x144.png"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="#{request.contextPath}/resources/favicon/apple-icon-152x152.png"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="#{request.contextPath}/resources/favicon/apple-icon-180x180.png"/>
+        <link rel="icon" type="image/png" sizes="192x192"  href="#{request.contextPath}/resources/favicon/android-icon-192x192.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="#{request.contextPath}/resources/favicon/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="96x96" href="#{request.contextPath}/resources/favicon/favicon-96x96.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="#{request.contextPath}/resources/favicon/favicon-16x16.png"/>
+        <link rel="manifest" href="#{request.contextPath}/resources/favicon/manifest.json"/>
+        <meta name="msapplication-TileColor" content="#ffffff"/>
+        <meta name="msapplication-TileImage" content="#{request.contextPath}/resources/favicon/ms-icon-144x144.png"/>
+        <meta name="theme-color" content="#ffffff"/>
+        <h:outputStylesheet name="assets/css/hsk.css" />
+        <h:outputStylesheet name="assets/css/hsk-fix.css" />
+        <h:outputStylesheet name="assets/css/custom.css" />
+        <h:outputStylesheet name="assets/css/fontawesome.css" />
+        <h:outputStylesheet name="assets/css/line-awesome.css" />
+        <h:outputScript name="assets/js/popper.js" />
+        <h:outputScript name="assets/js/hsk.js" />
+        <ui:insert name="head"/>
+        <title>#{_config.title} - #{PAGE_TITLE}</title>
+    </h:head>
+    <h:body styleClass="c-app #{_config.styleClass}">
+        <hsk:sidebar id="sidebar"
+                     title="#{_config.title}"
+                     menus="#{_acceso.menus}">
+            <f:facet name="brand-full">
+                <h:graphicImage name="assets/images/brand-full.png" width="230"/>
+            </f:facet>
+            <f:facet name="brand-minimized">
+                <h:graphicImage name="assets/images/brand-minimized.png" width="50"/>
+            </f:facet>
+        </hsk:sidebar>
+        <hsk:config id="config"
+                    profileName="#{_acceso.usuario.tipo.label}"
+                    fullName="#{_acceso.persona.nombreCompleto}"
+                    username="#{_acceso.usuario.correoElectronico}"
+                    email="#{_acceso.usuario.correoElectronico}"
+
+                    systemName="SENAVEX"
+                    moduleName="VORTEX v2"
+                    pageName="Pagina Funcional"
+                    rolName="Rol Generico"
+                    location="Regional La Paz"
+                    building="Senavex"
+                    
+                    loginDate="#{_acceso.config.loginDate}"
+                    configDate="#{_acceso.config.configDate}"
+                    systemDate="#{_acceso.config.systemDate}"
+                    
+                    rolList="#{['ROL-A', 'ROL-B']}">
+            <h:form>
+                <h:commandLink styleClass="bt btn-sm btn-primary"
+                               action="#{_acceso.recargarAction()}">
+                    <i class="fa fa-reload"/>
+                    Recargar Configuracion
+                    <f:ajax render="@all" immediate="true"/>
+                </h:commandLink>
+            </h:form>
+        </hsk:config>
+        <div class="c-wrapper c-fixed-components">
+            <hsk:header sidebarId="sidebar" 
+                        configId="config"
+                        email="#{_acceso.usuario.correoElectronico}"
+                        username="#{_acceso.persona.nombreCompleto}"
+                        fullName="#{_acceso.persona.nombreCompleto}"
+                        profileName="#{_acceso.usuario.tipo.label}"
+                        loginDate="#{_acceso.config.loginDate}"
+                        actionLogout="#{_acceso.logoutAction}"
+                        styleClass="#{_acceso.styleClass}"
+                        >
+                <f:facet name="title">
+                    <h4>
+                        <b>VORTEX</b>
+                        <sub>v2</sub>
+                        <h:form>
+                            <h:commandButton value="Recargar" class="xx-reload"/>
+                        </h:form>
+                    </h4>
+                </f:facet>
+                <f:facet name="subtitle">
+                    <ui:insert name="title"/>
+                </f:facet>
+            </hsk:header>
+            <div class="c-body">
+                <main class="c-main p-0">
+                    <div class="container-fluid pt-2">
+                        <ui:insert name="content"/>
+                    </div>
+                </main>
+                <hsk:footer today="#{_config.today}"
+                            url="#{_config.url}"
+                            title="#{_config.title}"
+                            year="2020"/>
+            </div>
+        </div>
+        <hsk:messageFlash id="message-flash" styleClass="toaster-top-right mt-2 mr-2"/>
+    </h:body>
+</html>

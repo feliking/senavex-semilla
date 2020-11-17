@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:cc="http://java.sun.com/jsf/composite"
+     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+     xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
+    <cc:interface>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.CliDocumento"/>
+        <cc:attribute name="styleClass" default="row"/>
+        <cc:attribute name="classOutput" default="form-control form-control-sm"/>
+        <!-- attribute handler -->
+
+        <!-- nombre -->
+        <cc:attribute name="nombreLabel" default="#{LBL.DOCUMENTO.NOMBRE}"/>
+        <cc:attribute name="nombreRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- numero -->
+        <cc:attribute name="numeroLabel" default="#{LBL.DOCUMENTO.NUMERO}"/>
+        <cc:attribute name="numeroRendered" default="true" type="java.lang.Boolean"/>
+
+
+        <!-- observacion -->
+        <cc:attribute name="observacionLabel" default="#{LBL.DOCUMENTO.OBSERVACION}"/>
+        <cc:attribute name="observacionRendered" default="true" type="java.lang.Boolean"/>
+        <cc:facet name="observacionText"/>
+
+
+        <!-- descripcion -->
+        <cc:attribute name="descripcionLabel" default="#{LBL.DOCUMENTO.DESCRIPCION}"/>
+        <cc:attribute name="descripcionRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- tipo -->
+        <cc:attribute name="tipoLabel" default="#{LBL.DOCUMENTO.TIPO}"/>
+        <cc:attribute name="tipoRendered" default="true" type="java.lang.Boolean"/>
+
+        <!-- estado -->
+        <cc:attribute name="estadoLabel" default="#{LBL.DOCUMENTO.ESTADO}"/>
+        <cc:attribute name="estadoRendered" default="true" type="java.lang.Boolean"/>
+
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="row row-view #{cc.attrs.styleClass}">
+            <hsk:rowLabel text="#{cc.attrs.tipoLabel}"
+                          rendered="#{cc.attrs.tipoRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:outputText value="#{cc.attrs.value.tipo.label}"
+                              title="#{cc.attrs.tipoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.estadoLabel}"
+                          rendered="#{cc.attrs.estadoRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:outputText value="#{cc.attrs.value.estado.label}"
+                              title="#{cc.attrs.estadoLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.nombreLabel}"
+                          rendered="#{cc.attrs.nombreRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:outputText value="#{cc.attrs.value.nombre}"
+                              title="#{cc.attrs.nombreLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.numeroLabel}"
+                          rendered="#{cc.attrs.numeroRendered}"
+                          size="sm"
+                          classRow="col-6"
+                          classText="col-4"
+                          classValue="col-8">
+                <h:outputText value="#{cc.attrs.value.numero}"
+                              title="#{cc.attrs.numeroLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.descripcionLabel}"
+                          rendered="#{cc.attrs.descripcionRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <h:outputText value="#{cc.attrs.value.descripcion}"
+                              title="#{cc.attrs.descripcionLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+            </hsk:rowLabel>
+            <hsk:rowLabel text="#{cc.attrs.observacionLabel}"
+                          rendered="#{cc.attrs.observacionRendered}"
+                          size="sm"
+                          classRow="col-12"
+                          classText="col-2"
+                          classValue="col-10">
+                <h:outputText value="#{cc.attrs.value.observacion}"
+                              title="#{cc.attrs.observacionLabel}"
+                              styleClass="#{cc.attrs.classOutput}"/>
+            </hsk:rowLabel>
+            <cc:insertChildren/>
+        </div>
+    </cc:implementation>
+</div>

@@ -1,0 +1,35 @@
+# ./jboss-cli.sh --file=/store/work/dev/senavex-01/siporta/config/create.cli -c
+
+
+# MAIL
+/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=gmail-smtp/:add(host=smtp.gmail.com,port=587,fixed-source-port=false)
+
+/subsystem=mail/mail-session=mail\/vortex2-send/:add(jndi-name=java:/senavex-dev/mail/vortex2-send,debug=false,from=wyujra@senavex.gob.bo)
+
+/subsystem=mail/mail-session=mail\/vortex2-send/custom=smtp/:add(outbound-socket-binding-ref=gmail-smtp,password=Senavex2020,ssl=true,tls=true,username=wyujra)
+
+
+# JDBC
+
+/subsystem=datasources/jdbc-driver=jdbc-postgresql/:add(driver-name=jdbc-postgresql,driver-module-name=bo.gob.senavex.jdbc-postgresql,driver-class-name=org.postgresql.Driver)
+                                                        
+
+
+
+
+/subsystem=security/security-domain=vortex2-realm:add
+
+/subsystem=security/security-domain=vortex2-realm/authentication=classic:add
+
+/subsystem=security/security-domain=vortex2-realm/authentication=classic/login-module=Database:add( \
+  code=Database, \
+  flag=required, \
+  module-options=[ \
+    "dsJndiName"=>"java:/senavex-dev/jdbc/vortex2-store", \
+    "principalsQuery"=>"SELECT CLAVE_ACCESO FROM VIEW_USUARIO WHERE CORREO_ELECTRONICO = ?", \
+    "rolesQuery"=>"SELECT CODIGO, 'Roles' FROM VIEW_PERMISO WHERE CORREO_ELECTRONICO = ?", \
+    "hashAlgorithm"=>"SHA-256", \
+    "hashEncoding"=>"hex" \
+  ])
+
+:reload

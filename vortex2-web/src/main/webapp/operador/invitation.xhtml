@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk"
+                xmlns:seg="http://xmlns.jcp.org/jsf/composite/comp/seg"
+                xmlns:cli="http://xmlns.jcp.org/jsf/composite/comp/cli"
+                template="#{_config.template}">
+    <ui:define name="title">
+        <span  class="text-primary">
+            <i class="fa fa-eye"/>
+            #{TXT.OPERADOR.TITLE} - #{TXT.OPERADOR.PAGE_DETAIL}
+        </span>
+    </ui:define>
+    <ui:define name="content">
+        <h:form>
+            <hsk:note rendered="#{_segOperador.segOperador == null}">
+                #{TXT.ERROR_STATE}
+                <h:commandLink value="#{BTN.PAGE_RETURN}"
+                               action="inbox"
+                               immediate="true"
+                               styleClass="text-danger"/>
+            </hsk:note>
+            <hsk:cardForm rendered="#{_segOperador.segOperador != null}"
+                          styleClass="col-12 col-xl-9 center">
+                <f:facet name="header">
+                    #{TXT.OPERADOR.TITLE_VIEW}
+                    <i class="fa fa-key"/>
+                    #{_segOperador.segOperador.idOperador}
+                </f:facet>
+                <h5 class="card-title">Empresa</h5>
+                <cli:empresaTitle value="#{_segOperador.segOperador.cliEmpresa}"/>
+                
+                <h5 class="card-title">Operador</h5>
+                <seg:operadorView value="#{_segOperador.segOperador}"/>
+
+                <f:facet name="footer">
+                    <h:commandLink action="#{_segOperador.navegationAction(null, 'inbox')}"
+                                   immediate="true"
+                                   styleClass="btn btn-sm btn-secondary ml-1">
+                        <i class="fa fa-arrow-left"/>
+                        #{BTN.CANCEL}
+                    </h:commandLink>
+                    <h:commandLink action="#{_segOperador.rechazarInvitacionAction}"
+                                   styleClass="btn btn-sm btn-danger ml-1">
+                        <i class="fa fa-times"/>
+                        #{BTN.OPE_RECHAZAR}
+                    </h:commandLink>
+                    <h:commandLink action="#{_segOperador.activarInvitacionAction}"
+                                   styleClass="btn btn-sm btn-primary ml-1">
+                        <i class="fa fa-check"/>
+                        #{BTN.OPE_ACEPTAR}
+                    </h:commandLink>
+                </f:facet>
+            </hsk:cardForm>
+        </h:form>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+     xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <cc:interface>
+        <cc:attribute name="value" required="true"/>
+        <cc:attribute name="styleClass"/>
+        <cc:attribute name="iconName" default="cil-user"/>
+        <cc:attribute name="render" default="#{cc.clientId}"/>
+        <cc:attribute name="ref" default="#{_help.random}"/>
+        <cc:attribute name="image" default="#{request.contextPath}/captcha.png"/>
+    </cc:interface>
+
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="#{cc.attrs.styleClass}">
+            <div class="captcha m-0 mb-3">
+                <img class="item" 
+                     src="#{cc.attrs.image}?#{cc.attrs.ref}" 
+                     onclick="this.src = '#{cc.attrs.image}?' + new Date().getTime()"/>
+                <h:inputSecret id="captcha"
+                               value="#{cc.attrs.value}"
+                               required="true"
+                               label="Captcha"
+                               maxlength="6"
+                               styleClass="item"/>
+                <cc:insertChildren/>
+                <h:message for="captcha"/>
+            </div>
+        </div>
+    </cc:implementation>
+</div>

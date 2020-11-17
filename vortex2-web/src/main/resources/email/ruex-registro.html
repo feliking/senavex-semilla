@@ -1,0 +1,54 @@
+<html lang="es">
+    <head>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <img src="${url-logo}" 
+                             alt="Senavex">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <header>
+                            REGISTRO RUEX
+                        </header>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            Se ha recibido una solicitud de registro RUEX Nro:<i>${nro}</i>
+                        </p>
+                        <p>
+                            Para activar su cuenta haga click en el siguiente boton:
+                        </p>
+                        <a href="${url-base}/public/register.xhtml?id=${id}" class="blue">
+                            Activar mi cuenta
+                        </a>
+                        <p>
+                            Caso contrario, si usted no solicito el acceso al sistema, 
+                            por favor haga click en el siguiente boton para eliminar la solicitud!
+                        </p>
+                        <a href="${url-base}/public/error.xhtml?id=${id}" class="red">
+                            Eliminar Solicitud
+                        </a>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <footer>
+                            Av. Camacho esq. Bueno Nº 1488 5to Piso Edif. Viceministerio de Comercio Interno 
+                            <br/>
+                            <b>Teléfono:</b> (591 – 2) 2113621 / <b>Fax:</b> (591 – 2) 2372055
+                        </footer>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

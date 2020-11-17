@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+     xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <cc:interface>
+        <cc:attribute name="styleClass"/>
+        <cc:attribute name="tabs" default="2"/>
+        <cc:attribute name="active" default="1"/>
+        <cc:attribute name="disabled" default="false"/>
+        <cc:attribute name="current" default="#{cc.attrs.active}"/>
+        <cc:attribute name="progress" default="true"/>
+        <cc:facet name="T1" shortDescription="Title T1 - Tn, n=tabs"/>
+        <cc:facet name="C1" shortDescription="Content C1 - Cn, n=tabs"/>
+        <cc:facet name="header"/>
+        <cc:facet name="footer"/>
+    </cc:interface>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="card card-tabs #{cc.attrs.styleClass}">
+            <h:panelGroup rendered="#{not empty cc.facets.header}" styleClass="card-header font-weight-bold">
+                <cc:renderFacet name="header"/>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{cc.attrs.progress}" styleClass="progress card-progress">
+                <div class="progress-bar" role="progressbar" style="width: #{ (100 * cc.attrs.current) / cc.attrs.tabs }%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </h:panelGroup>
+            <c:set var="content" value="C#{cc.attrs.current}"/>
+            <div class="card-body">
+                <ul class="card-nav nav">
+                    <c:forEach var="it"
+                               begin="1"
+                               end="#{cc.attrs.tabs}">
+                        <c:set var="title" value="T#{it}"/>
+                        <c:set var="temp" value="C#{it}"/>
+                        <li class="nav-item #{temp == content? 'active' : ''}">
+                            <h:commandLink styleClass="nav-link" disabled="#{cc.attrs.disabled}">
+                                <cc:renderFacet name="#{title}"/>
+                                <h:outputText value="#{title} Not Defined" rendered="#{empty cc.facets[ title ]}"/>
+                                <f:setPropertyActionListener value="#{it}" target="#{cc.attrs.current}"/>
+                                <f:ajax render="#{cc.clientId}"/>
+                            </h:commandLink>
+                        </li>
+                    </c:forEach>
+                </ul>
+                <cc:renderFacet name="#{content}"/>
+                <cc:insertChildren/>
+            </div>
+            <h:panelGroup rendered="#{not empty cc.facets.footer}" styleClass="card-footer">
+                <cc:renderFacet name="footer"/>
+            </h:panelGroup>
+        </div>
+    </cc:implementation>
+</div>

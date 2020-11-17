@@ -1,0 +1,5 @@
+CREATE DATABASE vortex2;
+
+
+CREATE USER u_vortex2;
+

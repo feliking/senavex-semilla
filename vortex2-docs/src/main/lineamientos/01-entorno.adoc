@@ -1,0 +1,109 @@
+# Entono de Desarrollo
+
+## Estructura de Directorio
+
+Para mitigar los riesgos de la ausencia de un personal en la institucion, se adopta la siguiente estructura de directorios, que uniformara al grupo de trabajo en sistemas:
+[source,bash]
+----
+user@pc:/$ tree / -L 2 <1>
+.
+├── data  <2>
+│   ├── instaladores
+│   └── backups
+├── env   <3>
+│   ├── dbeaver
+│   ├── jasper
+│   ├── jdk
+│   ├── maven
+│   ├── netbeans
+│   └── server
+└── work  <4>
+    ├── dev
+    │   ├── ruex-01
+    │   ├── ruex-02
+    │   ├── senavex-01
+    │   ├── senavex-02
+    │   └── senavex-03
+    └── <Otros directorios de trabajo>
+----
+<1> Ubicacion en la RAIZ del disco
+    - En Windows se recomienda el Disco D
+    - En Linux se recomienda montar la particion en el directorio /u01
+<2> Destinado a almacenar datos importante del usuario
+    - Instaladores
+    - Backups
+    - Otros documentos
+<3> Herramientas de desarrollo
+Este directorio debera contener todo el entorno de desarrollo requerido para el proyecto
+
+- Servidores de Aplicaciones
+- Editores de Codigo
+- IDE's 
+- Herramietas de diseño de Reportes
+- Herramietas de BD
+- Otros
+    
+<4> Ubicacion de Proyectos desarrollados.
+Este directorio debera contener los proyecto de software desarrollador u otros relacionados.
+
+- */work/dev* Contiene el codigo de los proyecto, versionado o agrupados por hitos o versiones deplegadas (No confundir con GIT o SVN)
+
+<5> Destinado a almacenar datos importante del usuario
+
+Esta organizacion de directorios permitira al grupo de sistemas organizar los proyecto y facilitara un mantenimiento rapido y transparente.
+
+## Herramientas para el entorno de desarrollo
+
+Directorio */env/* 
+
+Para el presente proyecto, se define el uso de las siguientes herramientas:
+
+- *JDK:* La plataforma JAVA a utilizar sera OpenJDK version 13
+
+* URL: https://jdk.java.net/archive/
+
+- *MAVEN:* Build management tool, Herramienta de Compilacion y Empaquetamiento de proyectos. 
+
+* URL: https://maven.apache.org/download.cgi
+* Version: 3.6.0 o superior
+
+- *IDE de desarrollo:* Se recomienda el uso de *NETBEANS* como IDE de desarrollo, pero puede utilizar ECLIPSE, JDEVELOPER, JIDEA u otra herramienta que permita compilar proyecto JAVA con la herramienta *MAVEN* y sea de su dominio personal.
+
+* NETBEANS: http://netbeans.apache.org/download/index.html Version: 12.0 o superiror
+* ECLIPSE: https://www.eclipse.org/downloads/ Version: 2020 o superior
+* JDEVELOPER: https://www.oracle.com/application-development/technologies/jdeveloper.html Version: Ultima
+* JIDEA: https://www.jetbrains.com/es-es/idea/
+
+- *Reportes:* Para el diseño de reportes, se hara uso de JReport
+* URL: https://community.jaspersoft.com/ Version: 6.4.0
+
+- *Servidor Java:* Para el depliegue del servidor, se adopta wl servidor WILDFLY
+* URL: https://www.wildfly.org/downloads/ Version: 20
+
+
+
+[source,bash]
+----
+user@pc:/$ tree /env -L 2 <1>
+/env
+├── jasper
+│   └── TIB_js-studiocomm_6.4.0
+├── jdk
+│   ├── jdk-13.0
+│   ├── jdk-13.0.1+9
+├── maven
+│   ├── 3.6.2
+│   └── repository
+├── netbeans
+│   ├── 11.3
+│   └── 12.0
+├── server
+│   ├── WildFly-20-Senavex
+└── otros
+----
+
+
+WARNING: Las herramientas de este directorio deberan estar configurado para ejecutarse con *JDK13* instalado */env/jdk/jdk-13.XX*. Evite definir *VARIABLES DE ENTORNO* que puedan contradecir este lineamiento.
+
+
+NOTE: Se requiere una base de datos es PostgreSQL para trabajar con el proyecto. Pero tambien puede optar por una base de datos SQLite o H2 para trabajar en memoria.
