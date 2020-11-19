@@ -36,21 +36,9 @@ public class SegConfigLogic {
       boolean isExt = Param.isEquals(segUsuario.getTipo(), "EXT");
       boolean isInt = Param.isEquals(segUsuario.getTipo(), "INT");
       boolean isSis = Param.isEquals(segUsuario.getTipo(), "SIS");
-      if (isExt || isSis) {
-         item = createMenu("Formulario RUEX", "fa fa-plus-square", "/formulario/ruex.xhtml");
-         menus.add(item);
-      }
-      if (isInt || isSis) {
-         item = createMenu("Empresas", "fa fa-hotel", "/empresa/inbox.xhtml");
-         menus.add(item);
-         item = createMenu("Correos", "fa fa-mail-bulk", "/correo/inbox.xhtml");
-         menus.add(item);
-      }
-      item = createMenu("Registros", "fa fa-qrcode", "/registro/inbox.xhtml");
+      item = createMenu("Añadir una nueva persona", "fa fa-money-bill", "/persona/nuevo.xhtml");
       menus.add(item);
-      item = createMenu("Pagos", "fa fa-money-bill", "/pago/inbox.xhtml");
-      menus.add(item);
-      item = createMenu("Operador", "fa fa-user-tie", "/operador/inbox.xhtml");
+      item = createMenu("Listar personas", "fa fa-user-tie", "/persona/lista.xhtml");
       menus.add(item);
       return new ResultList<>(menus);
    }

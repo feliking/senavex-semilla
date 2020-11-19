@@ -20,10 +20,11 @@
         <class>bo.gob.senavex.vortex2.model.SegOperador</class>
         <class>bo.gob.senavex.vortex2.model.SegPersona</class>
         <class>bo.gob.senavex.vortex2.model.SegUsuario</class>
+        <class>bo.gob.senavex.vortex2.model.Persona</class>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://172.17.0.3:5432/vortex2"/>
-            <property name="javax.persistence.jdbc.user" value="admin"/>
-            <property name="javax.persistence.jdbc.password" value="admin1234"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1:5432/semilla"/>
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <property name="javax.persistence.jdbc.password" value="postgres"/>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
