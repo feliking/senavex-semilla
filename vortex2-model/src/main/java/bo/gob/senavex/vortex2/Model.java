@@ -20,4 +20,5 @@ public interface Model {
    static String PAR_PERSIST = "vortex2-store";
    static String REG_PERSIST = "vortex2-store";
    static String SEG_PERSIST = "vortex2-store";
+   static String PERSONA_PERSIST = "vortex2-store";
 }
