@@ -5,10 +5,11 @@
  */
 package bo.gob.senavex.vortex2.serv;
 
+import com.hiska.result.ResultItem;
 /**
  *
  * @author Felix
  */
 public class PersonaServ {
-    
+    ResultItem<Persona> registrarPersona(Persona);
 }

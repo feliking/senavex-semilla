@@ -5,10 +5,19 @@
  */
 package bo.gob.senavex.vortex2.impl;
 
+import javax.ejb.Local;
+import javax.ejb.Stateless;
+import bo.gob.senavex.vortex2.serv.PersonaServ;
+import bo.gob.senavex.vortex2.logic.PersonaLogic;
 /**
  *
  * @author Felix
  */
-public class PersonaImpl {
+@Stateless
+@Local(PersonaServ.class)
+public class PersonaImpl implements PersonaServ {
+    @Inject
+   private PersonaLogic personaLogic;
+    
     
 }
