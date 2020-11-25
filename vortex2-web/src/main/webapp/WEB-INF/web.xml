@@ -79,6 +79,7 @@
             <url-pattern>/empresa/*</url-pattern>
             <url-pattern>/correo/*</url-pattern>
             <url-pattern>/pago/*</url-pattern>
+            <url-pattern>/persona/*</url-pattern>
             <url-pattern>/faces/publico/home.xhtml</url-pattern>
             <url-pattern>/faces/formulario/*</url-pattern>
             <url-pattern>/faces/operador/*</url-pattern>

@@ -28,11 +28,11 @@
                     <i class="fa fa-user"/>
                     #{PAGE.REGISTER_PERSONA}
                 </h5>
-                <persona:personaForm value="#{_register.persona}"/>
+                <persona:personaForm value="#{_persona.persona}"/>
                 <f:facet name="footer">
                     <div class="row">
                         <div class="col-3">
-                            <h:commandLink   action="login"
+                            <h:commandLink   action="#{_persona.registrarPersona()}"
                                              styleClass="btn btn-success"
                                              immediate="true">
                                 <i class="fa fa-check"/>

@@ -5,7 +5,7 @@
      xmlns:cc="http://java.sun.com/jsf/composite"
      xmlns:hsk="http://xmlns.jcp.org/jsf/composite/hsk">
     <cc:interface>
-        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.SegPersona"/>
+        <cc:attribute name="value" required="true" type="bo.gob.senavex.vortex2.model.Persona"/>
         <cc:attribute name="disabled" default="false" type="java.lang.Boolean"/>
         <cc:attribute name="size" default="sm"/>
         <cc:attribute name="styleClass" default="row"/>
@@ -14,17 +14,17 @@
         <!-- attribute handler -->
 
         <!-- idPersona -->
-        <cc:attribute name="idPersonaLabel" default="#{LBL.PERSONA.ID}"/>
-        <cc:attribute name="idPersonaDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
-        <cc:attribute name="idPersonaRendered" default="false" type="java.lang.Boolean"/>
-        <cc:attribute name="idPersonaRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="idLabel" default="#{LBL.PERSONA.ID}"/>
+        <cc:attribute name="idDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="idRendered" default="false" type="java.lang.Boolean"/>
+        <cc:attribute name="idRequired" default="true" type="java.lang.Boolean"/>
 
 
         <!-- nombres -->
-        <cc:attribute name="nombresLabel" default="Nombre"/>
-        <cc:attribute name="nombresDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
-        <cc:attribute name="nombresRendered" default="true" type="java.lang.Boolean"/>
-        <cc:attribute name="nombresRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreLabel" default="Nombre"/>
+        <cc:attribute name="nombreDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="nombreRequired" default="true" type="java.lang.Boolean"/>
         
         
         <!-- fechaNacimiento -->
@@ -35,47 +35,47 @@
         
         
         <!-- ciudadNacimiento -->
-        <cc:attribute name="expedicionDocumentoLabel" default="#{LBL.PERSONA.EXPEDICION_DOCUMENTO}"/>
-        <cc:attribute name="expedicionDocumentoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
-        <cc:attribute name="expedicionDocumentoRendered" default="true" type="java.lang.Boolean"/>
-        <cc:attribute name="expedicionDocumentoRequired" default="true" type="java.lang.Boolean"/>
-        <cc:attribute name="expedicionDocumentoOption" default="#{_option.segPersonaExpedicionDocumentoOption}" type="java.util.List"/>
+        <cc:attribute name="ciudadNacimientoLabel" default="Ciudad de nacimiento"/>
+        <cc:attribute name="ciudadNacimientoDisabled" default="#{cc.attrs.disabled}" type="java.lang.Boolean"/>
+        <cc:attribute name="ciudadNacimientoRendered" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="ciudadNacimientoRequired" default="true" type="java.lang.Boolean"/>
+        <cc:attribute name="ciudadNacimientoOption" default="#{_option.segPersonaExpedicionDocumentoOption}" type="java.util.List"/>
 
 
     </cc:interface>
     <cc:implementation>
         <div id="#{cc.clientId}" class="row row-form #{cc.attrs.styleClass}">
-            <hsk:rowLabel text="#{cc.attrs.idPersonaLabel}"
-                          rendered="#{cc.attrs.idPersonaRendered}"
+            <hsk:rowLabel text="#{cc.attrs.idLabel}"
+                          rendered="#{cc.attrs.idRendered}"
                           size="#{cc.attrs.size}"
                           classRow="col-6"
                           classText="col-4"
                           classValue="col-8">
-                <h:inputText id="idPersona"
-                             value="#{cc.attrs.value.idPersona}"
-                             label="#{cc.attrs.idPersonaLabel}"
-                             title="#{cc.attrs.idPersonaLabel}"
-                             disabled="#{cc.attrs.idPersonaDisabled}"
-                             required="#{cc.attrs.idPersonaRequired}"
+                <h:inputText id="id"
+                             value="#{cc.attrs.value.id}"
+                             label="#{cc.attrs.idLabel}"
+                             title="#{cc.attrs.idLabel}"
+                             disabled="#{cc.attrs.idDisabled}"
+                             required="#{cc.attrs.idRequired}"
                              styleClass="#{cc.attrs.classInput}"
                              autocomplete="off"/>
                 <h:message for="idPersona"/>
             </hsk:rowLabel>
 
-            <hsk:rowLabel text="#{cc.attrs.nombresLabel}"
-                          rendered="#{cc.attrs.nombresRendered}"
+            <hsk:rowLabel text="#{cc.attrs.nombreLabel}"
+                          rendered="#{cc.attrs.nombreRendered}"
                           size="#{cc.attrs.size}"
                           classRow="col-12"
                           classText="col-2"
                           classValue="col-10">
-                <h:inputText id="nombres"
-                             value="#{cc.attrs.value.nombres}"
-                             label="#{cc.attrs.nombresLabel}"
-                             title="#{cc.attrs.nombresLabel}"
-                             disabled="#{cc.attrs.nombresDisabled}"
-                             required="#{cc.attrs.nombresRequired}"
+                <h:inputText id="nombre"
+                             value="#{cc.attrs.value.nombre}"
+                             label="#{cc.attrs.nombreLabel}"
+                             title="#{cc.attrs.nombreLabel}"
+                             disabled="#{cc.attrs.nombreDisabled}"
+                             required="#{cc.attrs.nombreRequired}"
                              styleClass="#{cc.attrs.classInput}"/>
-                <h:message for="nombres"/>
+                <h:message for="nombre"/>
             </hsk:rowLabel>
 
 
@@ -99,29 +99,29 @@
             </hsk:rowLabel>
 
 
-            <hsk:rowLabel text="#{cc.attrs.expedicionDocumentoLabel}"
-                          rendered="#{cc.attrs.expedicionDocumentoRendered}"
+            <hsk:rowLabel text="#{cc.attrs.ciudadNacimientoLabel}"
+                          rendered="#{cc.attrs.ciudadNacimientoRendered}"
                           size="#{cc.attrs.size}"
                           classRow="col-12 col-md-6"
                           classText="col-12 col-md-4"
                           classValue="col-12 col-md-8">
-                <h:selectOneMenu id="expedicionDocumento"
-                                 value="#{cc.attrs.value.expedicionDocumento}"
-                                 label="#{cc.attrs.expedicionDocumentoLabel}"
-                                 title="#{cc.attrs.expedicionDocumentoLabel}"
-                                 disabled="#{cc.attrs.expedicionDocumentoDisabled}"
-                                 required="#{cc.attrs.expedicionDocumentoRequired}"
+                <h:selectOneMenu id="ciudadNacimiento"
+                                 value="#{cc.attrs.value.ciudadNacimiento}"
+                                 label="#{cc.attrs.ciudadNacimientoLabel}"
+                                 title="#{cc.attrs.ciudadNacimientoLabel}"
+                                 disabled="#{cc.attrs.ciudadNacimientoDisabled}"
+                                 required="#{cc.attrs.ciudadNacimientoRequired}"
                                  styleClass="#{cc.attrs.classInput}"
                                  converter="hiska.faces.Param">
                     <f:selectItem itemValue="#{null}" 
                                   itemLabel=""/>
                     <f:selectItems var="item" 
-                                   value="#{cc.attrs.expedicionDocumentoOption}" 
+                                   value="#{cc.attrs.ciudadNacimientoOption}" 
                                    itemValue="#{item.value}" 
                                    itemLabel="#{item.label}" 
                                    itemDescription="#{item.description}"/>
                 </h:selectOneMenu>
-                <h:message for="expedicionDocumento"/>
+                <h:message for="ciudadNacimiento"/>
             </hsk:rowLabel>
 
         </div>
